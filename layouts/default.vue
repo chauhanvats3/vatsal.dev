@@ -1,7 +1,7 @@
 <template>
   <div class="body">
     <NavBar @hamburgerClicked="toggleSidebar" />
-    <div class="body-content">
+    <div class="body-content" ref="bodyContent">
       <div class="main" ref="main">
         <Nuxt />
       </div>
@@ -44,17 +44,9 @@ export default {
   methods: {
     toggleSidebar() {
       if (!this.sidebarVisible) {
-        this.$refs.sidebarWrapper.scrollIntoView({
-          behavior: "smooth",
-          block: "end",
-          inline: "nearest",
-        });
+        this.$refs.bodyContent.classList.toggle("showSidebar");
       } else {
-        this.$refs.main.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
-          inline: "nearest",
-        });
+        this.$refs.bodyContent.classList.toggle("showSidebar");
       }
       this.sidebarVisible = !this.sidebarVisible;
     },
@@ -63,6 +55,21 @@ export default {
 </script>
 
 <style lang="scss">
+.noscroll {
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 html {
   font-family: "Nunito", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -88,7 +95,7 @@ html {
 a {
   height: 100%;
   text-decoration: none;
-  color: white;
+  color: inherit;
 }
 
 ul {
@@ -96,6 +103,9 @@ ul {
 }
 .body {
   overflow-x: hidden;
+  position: relative;
+  min-width: 96vw;
+  min-height: 100vh;
 }
 .body-content {
   @extend %display-flex;
@@ -103,18 +113,46 @@ ul {
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 175vw;
+
   .main {
-    width: 100vw;
-    height: calc(100vh - #{$navbar-height});
+    min-width: 95vw;
+    width: 100%;
+    min-height: calc(100vh - #{$navbar-height});
     background: black;
-    height: 200vh;
+
+    position: absolute;
+    left: 0;
+    transition: all 0.4s ease-in-out;
+    border: 5px solid blue;
   }
 
   .sidebarWrapper {
     width: 75vw;
     height: calc(100vh - #{$navbar-height});
     transition: all 0.3s ease-in-out;
+    position: fixed;
+    right: -75vw;
+    transition: all 0.4s ease-in-out;
+    background: white;
+  }
+}
+
+.body-content.showSidebar {
+  .main {
+    left: -75vw;
+  }
+  .sidebarWrapper {
+    right: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 </style>
