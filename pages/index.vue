@@ -13,17 +13,17 @@
   @extend %display-flex;
   font-size: 3.5rem;
   width: 100%;
-  height: 100%;
+  height: fit-content;
   justify-items: flex-start;
 
   .designer,
   .developer {
-    height: 100vh;
+    height: calc(100vh - #{$navbar-height});
     width: 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: 95%, 75%;
-    background-position: center center;
+    background-size: 60vh;
+    background-position: center;
   }
 
   .designer {
