@@ -35,7 +35,7 @@ export default {
       font-family: $bad-script;
 
       p {
-        color: $blue-dark;
+        color: $green-light;
       }
     }
   }

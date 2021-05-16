@@ -118,12 +118,9 @@ ul {
     min-width: 95vw;
     width: 100%;
     min-height: calc(100vh - #{$navbar-height});
-    background: black;
-
     position: absolute;
     left: 0;
     transition: all 0.4s ease-in-out;
-    border: 5px solid blue;
   }
 
   .sidebarWrapper {
@@ -133,7 +130,6 @@ ul {
     position: fixed;
     right: -75vw;
     transition: all 0.4s ease-in-out;
-    background: white;
   }
 }
 
