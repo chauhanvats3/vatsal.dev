@@ -2,7 +2,7 @@
   <div class="sidebar">
     <ul>
       <li v-for="item in menuItems" :key="item.title">
-        <NuxtLink to="{item.link}">
+        <NuxtLink :to="item.link">
           <p class="menuItem">{{ item.title }}</p>
         </NuxtLink>
       </li>
@@ -32,10 +32,9 @@ export default {
       width: 100%;
       margin: 20px;
       font-size: 4rem;
-      font-family: $bad-script;
 
       p {
-        color: $green-light;
+        color: $black;
       }
     }
   }

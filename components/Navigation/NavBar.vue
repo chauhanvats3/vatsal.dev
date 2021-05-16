@@ -8,7 +8,7 @@
     <div class="menu">
       <ul>
         <li v-for="item in menu" :key="item.title">
-          <NuxtLink to="{item.link}">
+          <NuxtLink :to="item.link">
             <p class="menuItem">{{ item.title }}</p>
           </NuxtLink>
         </li>
