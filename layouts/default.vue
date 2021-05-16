@@ -65,6 +65,7 @@ export default {
   padding: 10px 35px;
   border-radius: 1.3rem;
   cursor: pointer;
+  width: fit-content;
 
   p {
     color: $blue-metal;

@@ -7,7 +7,7 @@
       <EachProjectCard :dataset="this.dataset" />
     </div>
 
-    <div class="btn btn-portfolio">
+    <div class="btn btn-portfolio" @click="portfolioButtonClicked">
       <p>Portfolio</p>
     </div>
   </div>
@@ -28,6 +28,11 @@ export default {
       },
     };
   },
+  methods: {
+    portfolioButtonClicked() {
+      this.$router.push({ path: "/portfolio" });
+    },
+  },
 };
 </script>
  
@@ -41,6 +46,7 @@ export default {
       font-size: 5rem;
       color: $blue-dark;
       padding: 10px;
+      text-transform: uppercase;
     }
   }
 
@@ -48,10 +54,6 @@ export default {
     @extend %display-flex;
 
     width: 100%;
-  }
-
-  .btn-portfolio {
-    width: fit-content;
   }
 }
 </style>
