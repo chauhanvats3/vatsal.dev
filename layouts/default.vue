@@ -59,6 +59,20 @@ export default {
   overflow: hidden;
 }
 
+.btn {
+  font-family: $bad-script;
+  background: $black;
+  padding: 10px 35px;
+  border-radius: 1.3rem;
+  cursor: pointer;
+
+  p {
+    color: $blue-metal;
+    padding: 0;
+    font-size: 1.7rem;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

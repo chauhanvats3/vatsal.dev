@@ -6,13 +6,22 @@
     <div class="developer">
       <p class="info">And Bring Them To Life</p>
 
-      <div class="btn btn-chat">
+      <div class="btn btn-chat" @click="chatButtonClicked">
         <p>Let's Chat</p>
       </div>
     </div>
   </div>
 </template>
 
+<script>
+export default {
+  methods: {
+    chatButtonClicked() {
+      this.$router.push({ path: "/contact" });
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .home {
@@ -57,18 +66,20 @@
       url("/images/home/hero/base-shadow.svg");
     justify-content: space-between;
     color: white;
+    position: relative;
+
     .info {
       background: rgba(58, 58, 58, 0.425);
     }
+
     .btn-chat {
-      font-family: $bad-script;
-      background: $black;
-      padding: 10px 35px;
-      margin: 15px;
-      border-radius: 1.3rem;
+      position: absolute;
+      bottom: -4%;
+
       p {
         color: $blue-metal;
         padding: 0;
+        font-size: 1.7rem;
       }
     }
   }

@@ -1,8 +1,57 @@
-<template></template>
+<template>
+  <div class="portfolio">
+    <div class="heading">
+      <h1>Recently, I Worked For</h1>
+    </div>
+    <div class="cardWrapper">
+      <EachProjectCard :dataset="this.dataset" />
+    </div>
+
+    <div class="btn btn-portfolio" @click="chatButtonClicked">
+      <p>Portfolio</p>
+    </div>
+  </div>
+</template>
  
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      dataset: {
+        title: "Shri Ganga View Guest House",
+        pills: ["Web Design", "Web Development", "Chrome Extension", "Logo"],
+        bgColor: "#125C6E",
+        bgImage: "/images/projects/gangaview/web-mobile/image.png",
+        bgShadow: "/images/projects/gangaview/web-mobile/shadow.svg",
+        bgBase: "/images/projects/gangaview/web-mobile/base.svg",
+        link: "https://gangaview.com",
+      },
+    };
+  },
+};
 </script>
  
 <style lang='scss' scoped>
+.portfolio {
+  margin: 50px 0;
+  @extend %display-flex;
+  .heading {
+    h1 {
+      font-weight: 100;
+      font-size: 5rem;
+      color: $blue-dark;
+      padding: 10px;
+    }
+  }
+
+  .cardWrapper {
+    @extend %display-flex;
+
+    width: 100%;
+  }
+
+  .btn-portfolio {
+    width: fit-content;
+  }
+}
 </style>
