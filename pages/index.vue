@@ -3,6 +3,7 @@
     <HomeHero />
     <HomePortfolio />
     <HomeTestimonials />
+    <HomeServices />
   </div>
 </template>
 

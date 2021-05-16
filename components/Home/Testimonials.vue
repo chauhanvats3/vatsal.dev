@@ -50,6 +50,8 @@ export default {
   @extend %display-flex;
   align-items: center;
   .heading {
+    align-self: flex-start;
+
     h1 {
       font-weight: 100;
       font-size: 5rem;

@@ -1,0 +1,119 @@
+<template>
+  <div class="services">
+    <div class="heading">
+      <h1>I Can</h1>
+    </div>
+    <div class="content">
+      <div class="design">
+        <div class="vector"></div>
+        <div class="text">
+          <h1>Design.</h1>
+          <p>UI/UX/Logo</p>
+        </div>
+      </div>
+      <div class="develop">
+        <div class="text">
+          <h1>Develop.</h1>
+          <p>Website/Extension</p>
+        </div>
+        <div class="vector"></div>
+      </div>
+    </div>
+  </div>
+</template>
+ 
+<script>
+export default {};
+</script>
+ 
+<style lang='scss' scoped>
+.services {
+  margin: 50px 0;
+  @extend %display-flex;
+  .heading {
+    align-self: flex-start;
+
+    h1 {
+      font-weight: 100;
+      font-size: 5rem;
+      color: $blue-dark;
+      padding: 10px;
+      text-transform: uppercase;
+    }
+  }
+  .content {
+    @extend %display-flex;
+    width: 100%;
+    .design,
+    .develop {
+      @extend %display-flex;
+      width: min(500px, 90%);
+      flex-flow: row nowrap;
+      margin: 30px;
+      .vector {
+        width: 50%;
+        height: 250px;
+        background-repeat: no-repeat;
+        will-change: background-position;
+      }
+      .text {
+        width: 50%;
+        h1 {
+          font-size: 4rem;
+          font-weight: 100;
+        }
+        p {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .design {
+      .text {
+        text-align: right;
+      }
+      .vector {
+        align-self: flex-start;
+        background-image: url(/vector/services/design-base.svg),
+          url(/vector/services/design-shadow.svg);
+        background-size: 200px, 240px;
+        background-position: center 55%, center 50%;
+        animation: animatedBackgroundDesign 1s ease infinite alternate;
+      }
+    }
+
+    .develop {
+      .vector {
+        align-self: flex-end;
+        background-image: url(/vector/services/dev-base.svg),
+          url(/vector/services/dev-shadow.svg);
+        background-size: 200px, 240px;
+        background-position: center 55%, left 50%;
+        animation: animatedBackgroundDev 1s ease infinite alternate;
+      }
+    }
+  }
+}
+
+@keyframes animatedBackgroundDesign {
+  0% {
+    background-position: center 45%, center 150%;
+    background-size: 200px, 240px;
+  }
+
+  100% {
+    background-position: center 75%, center 100%;
+    background-size: 180px, 220px;
+  }
+}
+
+@keyframes animatedBackgroundDev {
+  0% {
+    background-position: center 75%, 50% 80%;
+  }
+
+  100% {
+    background-position: center 45%, 150% 150%;
+  }
+}
+</style>

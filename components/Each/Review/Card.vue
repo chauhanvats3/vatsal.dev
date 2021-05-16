@@ -46,11 +46,11 @@ export default {
     .blobBack {
       background-color: rgba(var(--bg-color), 1);
       mask: var(--blob-back) no-repeat center;
-      width: 100%;
-      height: 100%;
+      width: 115%;
+      height: 115%;
       position: absolute;
-      top: 5px;
-      left: 5px;
+      top: 0px;
+      left: 0px;
     }
 
     .image {
@@ -59,8 +59,8 @@ export default {
       width: 95%;
       height: 95%;
       position: absolute;
-      top: 10px;
-      left: 10px;
+      top: 15px;
+      left: 15px;
     }
   }
 
