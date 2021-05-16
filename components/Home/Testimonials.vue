@@ -16,6 +16,8 @@
 <script>
 export default {
   data() {
+    var rand1 = this.getRandomNumber();
+    var rand2 = this.getRandomNumber();
     return {
       dataset: {
         name: "Jonathan Doe",
@@ -24,14 +26,19 @@ export default {
           "  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti, excepturi aperiam? Unde, quis rerum, hic earum quisquam aspernatur doloremque quod quas quidem laboriosam accusantium, reiciendis molestiae eveniet animi dolores adipisci!",
         bgColor: "113, 157, 168",
         image: "/images/projects/gangaview/review.jpg",
-        blobBack: "/blobs/back/1.svg",
-        blobFront: "/blobs/front/1.svg",
+        blobBack: `/blobs/back/${rand1}.svg`,
+        blobFront: `/blobs/front/${rand2}.svg`,
       },
     };
   },
   methods: {
     portfolioButtonClicked() {
       this.$router.push({ path: "/portfolio" });
+    },
+    getRandomNumber() {
+      let res = Math.ceil(Math.random() * 100) % 12;
+      res = res < 1 ? this.getRandomNumber() : res;
+      return res;
     },
   },
 };

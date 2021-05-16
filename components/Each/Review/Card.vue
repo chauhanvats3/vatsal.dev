@@ -46,21 +46,21 @@ export default {
     .blobBack {
       background-color: rgba(var(--bg-color), 1);
       mask: var(--blob-back) no-repeat center;
-      width: 110%;
-      height: 110%;
+      width: 100%;
+      height: 100%;
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 5px;
+      left: 5px;
     }
 
     .image {
       background: var(--image) no-repeat center;
       mask: var(--blob-front) no-repeat center;
-      width: 100%;
-      height: 100%;
+      width: 95%;
+      height: 95%;
       position: absolute;
-      top: 25px;
-      left: 0;
+      top: 10px;
+      left: 10px;
     }
   }
 
@@ -81,7 +81,7 @@ export default {
     .heading {
       @extend %display-flex;
       align-items: flex-start;
-      margin-left: 140px;
+      margin-left: 150px;
       font-size: 2rem;
       min-height: 100px;
 
