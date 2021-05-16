@@ -1,8 +1,8 @@
 <template>
-  <div class="projectCard" :style="cssProps" @click.self="handleClick">
+  <div class="projectCard" :style="cssProps" @click="handleClick">
     <div class="title">
       <p>{{ dataset.title }}</p>
-      <a :href="dataset.link" target="_blank"
+      <a :href="dataset.link" target="_blank" @click.stop
         ><img src="/icons/link.svg" alt=""
       /></a>
     </div>

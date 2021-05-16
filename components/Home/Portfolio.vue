@@ -7,7 +7,7 @@
       <EachProjectCard :dataset="this.dataset" />
     </div>
 
-    <div class="btn btn-portfolio" @click="chatButtonClicked">
+    <div class="btn btn-portfolio">
       <p>Portfolio</p>
     </div>
   </div>
