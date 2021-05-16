@@ -74,8 +74,7 @@ export default {};
       }
       .vector {
         align-self: flex-start;
-        background-image: url(/vector/services/design-base.svg),
-          url(/vector/services/design-shadow.svg);
+        background-image: url(/vector/services/design-base.svg);
         background-size: 200px, 240px;
         background-position: center 55%, center 50%;
         animation: animatedBackgroundDesign 1s ease infinite alternate;
@@ -85,8 +84,7 @@ export default {};
     .develop {
       .vector {
         align-self: flex-end;
-        background-image: url(/vector/services/dev-base.svg),
-          url(/vector/services/dev-shadow.svg);
+        background-image: url(/vector/services/dev-base.svg);
         background-size: 200px, 240px;
         background-position: center 55%, left 50%;
         animation: animatedBackgroundDev 1s ease infinite alternate;
