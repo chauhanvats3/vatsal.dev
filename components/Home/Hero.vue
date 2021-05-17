@@ -12,7 +12,6 @@
         </div>
       </a>
     </div>
-    <ScrollToTop />
   </div>
 </template>
 
