@@ -4,6 +4,7 @@
     <div class="body-content" ref="bodyContent">
       <div class="main" ref="main">
         <Nuxt />
+        <Footer />
       </div>
       <div class="sidebarWrapper" ref="sidebarWrapper">
         <Sidebar :menuItems="menuItems" />
@@ -63,6 +64,7 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  box-shadow: 0 0 0px 1000px #ffffff inset !important;
 }
 
 .noscroll {

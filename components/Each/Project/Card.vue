@@ -2,7 +2,7 @@
   <div class="projectCard" :style="cssProps" @click="handleClick" ref="card">
     <div class="title">
       <p>{{ dataset.title }}</p>
-      <a :href="dataset.link" target="_blank" @click.stop
+      <a :href="dataset.link" target="_blank" @click.stop rel="noreferrer"
         ><img src="/icons/link.svg" alt=""
       /></a>
     </div>

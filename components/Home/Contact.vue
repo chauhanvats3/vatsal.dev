@@ -1,5 +1,5 @@
 <template>
-  <div class="contact">
+  <div class="contact" id="contact">
     <div class="heading">
       <h1>Need My Expertise?</h1>
     </div>
@@ -27,7 +27,25 @@
 
     <div class="social">
       <p>Or Connect With Me On</p>
-      <div class="brands"></div>
+      <div class="brands">
+        <a
+          href="https://instagram.com/dazed._.confused"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div v-html="require(`/static/icons/instagram.svg?raw`)" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/chauhanvats3/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div v-html="require(`/static/icons/linkedin.svg?raw`)" />
+        </a>
+        <a href="https://wa.me/919148220111" target="_blank" rel="noreferrer">
+          <div v-html="require(`/static/icons/whatsapp.svg?raw`)" />
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -103,13 +121,21 @@ export default {
     color: $blue-metal;
   }
   .social {
+    width: 100%;
     p {
       font-size: 3rem;
     }
     .brands {
       align-self: center;
       width: 100%;
+      margin: 20px;
       @extend %display-flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+
+      div {
+        cursor: pointer;
+      }
     }
   }
 }
