@@ -5,9 +5,7 @@
     </div>
     <div class="content">
       <div class="design">
-        <div class="vector">
-          <DesignBase />
-        </div>
+        <div class="vector"></div>
         <div class="text">
           <h1>Design.</h1>
           <p>UI/UX/Logo</p>
@@ -18,24 +16,17 @@
           <h1>Develop.</h1>
           <p>Website/Extension</p>
         </div>
-        <div class="vector">
-          <DevBase />
-        </div>
+        <div class="vector"></div>
       </div>
     </div>
   </div>
 </template>
-
+ 
 <script>
-import DevBase from "/static/vector/services/dev-base.min.svg?inline";
-import DesignBase from "/static/vector/services/design-base.min.svg?inline";
-
-export default {
-  components: { DevBase, DesignBase }
-};
+export default {};
 </script>
-
-<style lang="scss" scoped>
+ 
+<style lang='scss' scoped>
 .services {
   margin: 50px 0;
   @extend %display-flex;
@@ -61,11 +52,9 @@ export default {
       margin: 30px;
       .vector {
         width: 50%;
-        height: 200px;
-
-        img {
-          filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.12));
-        }
+        height: 250px;
+        background-repeat: no-repeat;
+        will-change: background-position;
       }
       .text {
         width: 50%;
@@ -85,14 +74,42 @@ export default {
       }
       .vector {
         align-self: flex-start;
+        background-image: url(/vector/services/design-base.svg);
+        background-size: 200px, 240px;
+        background-position: center 55%, center 50%;
       }
     }
 
     .develop {
       .vector {
         align-self: flex-end;
+        background-image: url(/vector/services/dev-base.svg);
+        background-size: 200px, 240px;
+        background-position: center 55%, left 50%;
       }
     }
+  }
+}
+
+@keyframes animatedBackgroundDesign {
+  0% {
+    background-position: center 45%, center 150%;
+    background-size: 200px, 240px;
+  }
+
+  100% {
+    background-position: center 75%, center 100%;
+    background-size: 180px, 220px;
+  }
+}
+
+@keyframes animatedBackgroundDev {
+  0% {
+    background-position: center 75%, 50% 80%;
+  }
+
+  100% {
+    background-position: center 45%, 150% 150%;
   }
 }
 </style>

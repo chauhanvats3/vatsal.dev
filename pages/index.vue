@@ -1,14 +1,12 @@
 <template>
   <div>
     <HomeHero />
+    <HomeServices />
     <HomePortfolio />
     <HomeTestimonials />
-    <HomeServices />
   </div>
 </template>
 
-<script>
-</script>
+<script></script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

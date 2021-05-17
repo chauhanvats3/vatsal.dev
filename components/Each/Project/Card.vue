@@ -18,29 +18,26 @@
     </div>
   </div>
 </template>
- 
+
 <script>
 export default {
   props: ["dataset"],
   computed: {
     cssProps() {
       return {
-        "--bg-color": this.dataset.bgColor,
-        "--bg-image": `url("${this.dataset.bgImage}")`,
-        "--bg-base": `url("${this.dataset.bgBase}")`,
-        "--bg-shadow": `url("${this.dataset.bgShadow}")`,
+        "--bg-color": this.dataset.bgColor
       };
-    },
+    }
   },
   methods: {
     handleClick() {
       this.$router.push({ path: "/portfolio" });
-    },
-  },
+    }
+  }
 };
 </script>
- 
-<style lang='scss' scoped>
+
+<style lang="scss" scoped>
 .projectCard {
   @extend %display-flex;
   background: var(--bg-color);

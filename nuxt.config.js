@@ -47,7 +47,6 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    "@nuxtjs/svg",
     'nuxt-animejs'
   ],
 
@@ -57,7 +56,9 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    "@nuxtjs/svg",
+
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
