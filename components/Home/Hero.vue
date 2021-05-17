@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="hero" ref="hero">
     <div class="designer">
       <p class="info">I Design Elegant UI</p>
     </div>
@@ -19,12 +19,37 @@ export default {
     chatButtonClicked() {
       this.$router.push({ path: "/contact" });
     }
+  },
+  mounted() {
+    let callback = (entries, observer) => {
+      entries.forEach(entry => {
+        // Each entry describes an intersection change for one observed
+        // target element:
+        //   entry.boundingClientRect
+        //   entry.intersectionRatio
+        //   entry.intersectionRect
+        //   entry.isIntersecting
+        //   entry.rootBounds
+        //   entry.target
+        //   entry.time
+
+        if (entry.isIntersecting) {
+          console.log("Intersecting");
+          this.$refs.hero.classList.add("animate");
+        } else {
+          console.log("Not Intersecting");
+          this.$refs.hero.classList.remove("animate");
+        }
+      });
+    };
+    let observer = new IntersectionObserver(callback, {});
+    observer.observe(this.$refs.hero);
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.home {
+.hero {
   @extend %display-flex;
   font-size: 3.5rem;
   width: 100%;
@@ -40,7 +65,6 @@ export default {
     background-repeat: no-repeat;
     background-size: 60vh;
     background-position: center 62%;
-    animation: animatedBackground 1.5s ease infinite alternate;
     will-change: background-position;
 
     p {
@@ -82,6 +106,13 @@ export default {
         font-size: 2.5rem;
       }
     }
+  }
+}
+
+.hero.animate {
+  .designer,
+  .developer {
+    animation: animatedBackground 1.5s ease infinite alternate;
   }
 }
 
