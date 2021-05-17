@@ -11,7 +11,7 @@ export default {};
 <style lang="scss" scoped>
 a {
   position: fixed;
-  bottom: 50px;
+  bottom: 15px;
   right: 15px;
   height: 50px;
   width: 50px;
