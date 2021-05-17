@@ -16,13 +16,12 @@ export default {};
   background: linear-gradient(90deg, $blue-dark, $green-light);
   @extend %display-flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
-  padding: 5px 10px;
+  justify-content: space-between;
+  padding: 5px 20px;
   a {
     @extend %display-flex;
     color: $white;
     font-size: 2rem;
-    font-weight: normal;
   }
 }
 </style>

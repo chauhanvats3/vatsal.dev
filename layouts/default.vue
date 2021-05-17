@@ -1,8 +1,10 @@
 <template>
-  <div class="body">
+  <div class="body" id="body">
     <NavBar @hamburgerClicked="toggleSidebar" />
     <div class="body-content" ref="bodyContent">
-      <div class="main" ref="main">
+      <div class="main" ref="main" id="main">
+        <ScrollToTop />
+
         <Nuxt />
         <Footer />
       </div>
@@ -67,6 +69,15 @@ select:-webkit-autofill:focus {
   box-shadow: 0 0 0px 1000px #ffffff inset !important;
 }
 
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .noscroll {
   overflow: hidden;
 }
@@ -87,17 +98,6 @@ select:-webkit-autofill:focus {
 }
 
 html {
-  scroll-behavior: smooth;
-}
-.noselect {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-html {
   font-family: "Nunito", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 10px;
@@ -117,6 +117,7 @@ html {
   box-sizing: border-box;
   padding: 0; /* Remove padding */
   margin: 0; /* Remove margins */
+  scroll-behavior: smooth;
 }
 
 a {

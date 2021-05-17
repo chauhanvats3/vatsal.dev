@@ -1,0 +1,43 @@
+<template>
+  <a href="#main" id="scrollToTop">
+    <div v-html="require(`/static/icons/toTop.svg?raw`)" />
+  </a>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style lang="scss" scoped>
+a {
+  position: fixed;
+  bottom: 50px;
+  right: 15px;
+  height: 50px;
+  width: 50px;
+  background-color: #04445d4f;
+  font-size: 5rem;
+  @extend %display-flex;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 25px;
+
+  @supports (backdrop-filter: blur()) {
+    backdrop-filter: blur(2px);
+  }
+  div {
+    width: 100%;
+    height: 100%;
+    @extend %display-flex;
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+a.show {
+  opacity: 1;
+}
+</style>

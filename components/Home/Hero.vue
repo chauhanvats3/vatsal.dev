@@ -1,15 +1,18 @@
 <template>
-  <div class="hero" ref="hero">
+  <div class="hero" ref="hero" id="hero">
     <div class="designer">
       <p class="info">I Design Elegant UI</p>
     </div>
     <div class="developer">
       <p class="info">And Bring Them To Life</p>
 
-      <div class="btn btn-chat" @click="chatButtonClicked">
-        <p>Let's Chat</p>
-      </div>
+      <a href="#contact" class="chat-link">
+        <div class="btn btn-chat">
+          <p>Let's Chat</p>
+        </div>
+      </a>
     </div>
+    <ScrollToTop />
   </div>
 </template>
 
@@ -26,9 +29,11 @@ export default {
         if (entry.isIntersecting) {
           console.log("Intersecting");
           this.$refs.hero.classList.add("animate");
+          document.querySelector("#scrollToTop").classList.remove("show");
         } else {
           console.log("Not Intersecting");
           this.$refs.hero.classList.remove("animate");
+          document.querySelector("#scrollToTop").classList.add("show");
         }
       });
     };
@@ -86,14 +91,21 @@ export default {
       background: rgba(58, 58, 58, 0.425);
     }
 
-    .btn-chat {
-      position: absolute;
-      bottom: -4%;
+    .chat-link {
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
 
-      p {
-        color: $blue-metal;
-        padding: 0;
-        font-size: 2.5rem;
+      .btn-chat {
+        position: absolute;
+        bottom: -4%;
+
+        p {
+          color: $blue-metal;
+          padding: 0;
+          font-size: 2.5rem;
+        }
       }
     }
   }
