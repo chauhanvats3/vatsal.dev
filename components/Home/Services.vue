@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import DevBase from "/static/vector/services/dev-base.min.svg?inline";
-import DesignBase from "/static/vector/services/design-base.min.svg?inline";
+import DevBase from "/static/images/services/dev-base.min.svg?inline";
+import DesignBase from "/static/images/services/design-base.min.svg?inline";
 
 export default {
   components: { DevBase, DesignBase }

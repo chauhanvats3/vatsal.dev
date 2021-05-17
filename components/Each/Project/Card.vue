@@ -1,20 +1,18 @@
 <template>
-  <div class="projectCard" :style="cssProps" @click="handleClick">
+  <div class="projectCard" :style="cssProps" @click="handleClick" ref="card">
     <div class="title">
       <p>{{ dataset.title }}</p>
       <a :href="dataset.link" target="_blank" @click.stop
         ><img src="/icons/link.svg" alt=""
       /></a>
     </div>
+    <div class="images">
+      <img class="image" :src="dataset.whole" alt="" ref="image" />
+    </div>
     <div class="pills">
       <ul>
         <li v-for="pill in dataset.pills" :key="pill">{{ pill }}</li>
       </ul>
-    </div>
-    <div class="images">
-      <img :src="dataset.bgImage" alt="" class="image" />
-      <img :src="dataset.bgBase" alt="" class="base" />
-      <img :src="dataset.bgShadow" alt="" class="shadow" />
     </div>
   </div>
 </template>
@@ -32,6 +30,9 @@ export default {
   methods: {
     handleClick() {
       this.$router.push({ path: "/portfolio" });
+    },
+    handleScroll() {
+      console.log(this.$refs.card);
     }
   }
 };
@@ -99,28 +100,9 @@ export default {
     justify-content: flex-start;
     overflow: hidden;
 
-    img {
-      top: 0;
-      left: 0;
-      height: 80%;
-      position: absolute;
-    }
-
     .image {
-      z-index: 3;
-      top: -10.5%;
-      left: 10%;
-      height: 79%;
-    }
-    .base {
-      z-index: 2;
+      position: absolute;
       top: -10%;
-      left: 10%;
-    }
-    .shadow {
-      top: -15%;
-      height: 100%;
-      z-index: 1;
     }
   }
 }

@@ -12,7 +12,7 @@
     </div>
   </div>
 </template>
- 
+
 <script>
 export default {
   data() {
@@ -22,21 +22,22 @@ export default {
         pills: ["Web Design", "Web Development", "Chrome Extension", "Logo"],
         bgColor: "#125C6E",
         bgImage: "/images/projects/gangaview/web-mobile/image.png",
-        bgShadow: "/images/projects/gangaview/web-mobile/shadow.svg",
-        bgBase: "/images/projects/gangaview/web-mobile/base.svg",
-        link: "https://gangaview.com",
-      },
+        bgShadow: "projects/gangaview/web-mobile/shadow",
+        bgBase: "projects/gangaview/web-mobile/base",
+        whole: "/images/projects/gangaview/web-mobile/whole.png",
+        link: "https://gangaview.com"
+      }
     };
   },
   methods: {
     portfolioButtonClicked() {
       this.$router.push({ path: "/portfolio" });
-    },
-  },
+    }
+  }
 };
 </script>
- 
-<style lang='scss' scoped>
+
+<style lang="scss" scoped>
 .portfolio {
   margin: 50px 0;
   @extend %display-flex;

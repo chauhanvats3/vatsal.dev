@@ -13,7 +13,7 @@
     </div>
   </div>
 </template>
- 
+
 <script>
 export default {
   props: ["dataset"],
@@ -23,14 +23,14 @@ export default {
         "--bg-color": this.dataset.bgColor,
         "--image": `url('${this.dataset.image}')`,
         "--blob-back": `url('${this.dataset.blobBack}')`,
-        "--blob-front": `url('${this.dataset.blobFront}')`,
+        "--blob-front": `url('${this.dataset.blobFront}')`
       };
-    },
-  },
+    }
+  }
 };
 </script>
- 
-<style lang='scss' scoped>
+
+<style lang="scss" scoped>
 .reviewCard {
   width: min(90%, 650px);
   height: 400px;
@@ -46,11 +46,11 @@ export default {
     .blobBack {
       background-color: rgba(var(--bg-color), 1);
       mask: var(--blob-back) no-repeat center;
-      width: 115%;
-      height: 115%;
+      width: 105%;
+      height: 105%;
       position: absolute;
       top: 0px;
-      left: 0px;
+      left: 10px;
     }
 
     .image {
