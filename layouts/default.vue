@@ -20,25 +20,25 @@ export default {
       menuItems: [
         {
           link: "/",
-          title: "Home",
+          title: "Home"
         },
         {
           link: "/testimonials",
-          title: "Testimonials",
+          title: "Testimonials"
         },
         {
           link: "/projects",
-          title: "Projects",
+          title: "Projects"
         },
         {
           link: "/concepts",
-          title: "Concepts",
+          title: "Concepts"
         },
         {
           link: "/contact",
-          title: "Contact Me",
-        },
-      ],
+          title: "Contact Me"
+        }
+      ]
     };
   },
   methods: {
@@ -49,8 +49,8 @@ export default {
         this.$refs.bodyContent.classList.toggle("showSidebar");
       }
       this.sidebarVisible = !this.sidebarVisible;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -70,7 +70,7 @@ export default {
   p {
     color: $blue-metal;
     padding: 0;
-    font-size: 1.7rem;
+    font-size: 2.5rem;
   }
 }
 

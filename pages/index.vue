@@ -5,6 +5,7 @@
     <HomePortfolio />
     <HomeTestimonials />
     <HomeAbout />
+    <HomeContact />
   </div>
 </template>
 

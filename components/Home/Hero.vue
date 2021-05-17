@@ -18,8 +18,8 @@ export default {
   methods: {
     chatButtonClicked() {
       this.$router.push({ path: "/contact" });
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -79,7 +79,7 @@ export default {
       p {
         color: $blue-metal;
         padding: 0;
-        font-size: 1.7rem;
+        font-size: 2.5rem;
       }
     }
   }
