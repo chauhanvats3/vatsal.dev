@@ -10,9 +10,10 @@
       required
       autocomplete="off"
       @input="emitVal"
+      ref="field"
     />
-    <label for="metadata.id" class="form__label noselect"
-      >{{ metadata.inputname
+    <label for="metadata.id" class="form__label noselect" @click="labelClicked">
+      {{ metadata.inputname
       }}<span class="hint">{{ metadata.hint }}</span></label
     >
   </div>
@@ -24,6 +25,9 @@ export default {
   methods: {
     emitVal() {
       this.$emit("input:val", this.$props.val);
+    },
+    labelClicked() {
+      this.$refs.field.focus();
     }
   }
 };
@@ -45,7 +49,7 @@ export default {
   border-bottom: 2px solid $blue-metal;
   outline: 0;
   font-size: 3rem;
-  color: $blue-dark;
+  color: $blue-dark !important;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.5s ease-in;
@@ -72,7 +76,7 @@ export default {
   font-size: 2rem;
   color: $blue-metal;
   text-align: left;
-  z-index: -1;
+  z-index: 10;
 }
 
 .hint {
