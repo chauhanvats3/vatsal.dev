@@ -13,14 +13,14 @@ export default {};
 .footer {
   width: 100%;
   height: 45px;
-  background: $blue-metal;
+  background: linear-gradient(90deg, $blue-dark, $green-light);
   @extend %display-flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   padding: 5px 10px;
   a {
     @extend %display-flex;
-    color: $black;
+    color: $white;
     font-size: 2rem;
     font-weight: normal;
   }
