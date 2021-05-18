@@ -21,6 +21,8 @@ export default {
 <style lang="scss" scoped>
 .sidebar {
   width: 100%;
+  min-height: 100%;
+  background-color: $black;
 
   ul {
     @extend %display-flex;
@@ -34,7 +36,7 @@ export default {
       font-size: 4rem;
 
       p {
-        color: $blue-dark;
+        color: white;
       }
     }
   }

@@ -40,7 +40,7 @@
         <p>The smell of food slathered with <span>oregano and garlic.</span></p>
         <p><span>Paradoxes.</span> Challanges. Riddles. Nature.</p>
         <p>
-          <span>Astronomy.</span> History. Philosophy.
+          <span>Cosmology.</span> History. Philosophy.
           <span>Travel.</span> Bizarre Events. <span>Mysteries.</span>
         </p>
       </div>

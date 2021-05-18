@@ -66,7 +66,7 @@ export default {
         },
         {
           link: "/portfolio",
-          title: "Protfolio"
+          title: "Portfolio"
         },
         {
           link: "/concepts",
@@ -127,6 +127,12 @@ export default {
         @extend %display-flex;
         height: $navbar-height;
         margin: 0 25px;
+      }
+
+      li:hover {
+        .menuItem {
+          color: $blue-metal;
+        }
       }
     }
   }

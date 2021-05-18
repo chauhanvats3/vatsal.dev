@@ -27,11 +27,9 @@ export default {
     let callback = (entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          console.log("Intersecting");
           this.$refs.hero.classList.add("animate");
           document.querySelector("#scrollToTop").classList.add("hide");
         } else {
-          console.log("Not Intersecting");
           this.$refs.hero.classList.remove("animate");
           document.querySelector("#scrollToTop").classList.remove("hide");
         }

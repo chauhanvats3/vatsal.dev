@@ -58,8 +58,6 @@ export default {
 
       let valFill = this.validateFill();
 
-      console.log(valFill);
-
       if (!valFill.res) {
         this.$refs.btn.innerText = `${valFill.error}`;
         this.$refs.btn.classList.add("error");
@@ -194,7 +192,34 @@ export default {
   }
 
   .btn.error {
-    background-color: #ca0000;
+    background: linear-gradient(
+      103deg,
+      #f44336 0%,
+      #f44336 10%,
+      #d32f2f 10%,
+      #d32f2f 20%,
+      #a81830 20%,
+      #a81830 30%,
+      #780018 30%,
+      #780018 40%,
+      #a81830 40%,
+      #a81830 50%,
+      #d32f2f 50%,
+      #d32f2f 60%,
+      #f44336 60%,
+      #f44336 70%,
+      #d32f2f 70%,
+      #d32f2f 80%,
+      #a81830 80%,
+      #a81830 90%,
+      #780018 90%,
+      #780018 100%
+    );
+
+    background-size: 150%;
+    background-position: left;
+    animation: movingGradientBG 2.5s ease-in-out infinite alternate;
+
     color: white;
   }
 
