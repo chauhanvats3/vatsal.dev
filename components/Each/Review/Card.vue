@@ -45,7 +45,7 @@ export default {
 
     .blobBack {
       background-color: rgba(var(--bg-color), 1);
-      mask: var(--blob-back) no-repeat center;
+      mask: var(--blob-front) no-repeat center;
       width: 105%;
       height: 105%;
       position: absolute;
@@ -59,8 +59,8 @@ export default {
       width: 95%;
       height: 95%;
       position: absolute;
-      top: 15px;
-      left: 15px;
+      top: 8px;
+      left: 17px;
     }
   }
 

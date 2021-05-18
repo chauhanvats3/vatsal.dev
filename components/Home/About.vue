@@ -101,7 +101,7 @@ export default {
 
       .blobBack {
         background-color: #09517c;
-        mask: var(--rand1) no-repeat center;
+        mask: var(--rand2) no-repeat center;
         width: 100%;
         height: 100%;
         position: absolute;
@@ -116,8 +116,8 @@ export default {
         width: 90%;
         height: 90%;
         position: absolute;
-        top: 10px;
-        left: 15px;
+        top: 6px;
+        left: 8px;
       }
     }
 
