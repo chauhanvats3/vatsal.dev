@@ -101,24 +101,23 @@ export default {
 
       .blobBack {
         background-color: #09517c;
-        mask: var(--rand2) no-repeat center;
-        width: 100%;
-        height: 100%;
+        mask: var(--rand1) no-repeat center;
+        width: 120%;
+        height: 120%;
         position: absolute;
-        top: 0px;
-        left: 0px;
-        display: none;
+        top: -5px;
+        left: -5px;
       }
 
       .image {
         background: url(/images/vatsal.jpg) no-repeat center;
-        background-size: 100%;
+        background-size: 85%;
         mask: var(--rand2) no-repeat center;
-        width: 100%;
-        height: 100%;
+        width: 130%;
+        height: 130%;
         position: absolute;
-        top: 6px;
-        left: 8px;
+        top: -5px;
+        left: -5px;
       }
     }
 

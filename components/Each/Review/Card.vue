@@ -45,23 +45,23 @@ export default {
 
     .blobBack {
       background-color: rgba(var(--bg-color), 1);
-      mask: var(--blob-front) no-repeat center;
-      width: 105%;
-      height: 105%;
+      mask: var(--blob-back) no-repeat center;
+      width: 120%;
+      height: 120%;
       position: absolute;
-      top: 0px;
-      left: 10px;
-      display: none;
+      top: -5px;
+      left: -5px;
     }
 
     .image {
       background: var(--image) no-repeat center;
+      background-size: 85%;
       mask: var(--blob-front) no-repeat center;
-      width: 100%;
-      height: 100%;
+      width: 130%;
+      height: 130%;
       position: absolute;
-      top: 8px;
-      left: 17px;
+      top: -5px;
+      left: -5px;
     }
   }
 
