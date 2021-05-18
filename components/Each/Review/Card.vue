@@ -44,7 +44,11 @@ export default {
     top: -35px;
 
     .blobBack {
-      background-color: rgba(var(--bg-color), 1);
+      background: linear-gradient(
+        -115.08deg,
+        rgba(var(--bg-color), 1) 0%,
+        rgba(var(--bg-color), 0) 100%
+      );
       mask: var(--blob-back) no-repeat center;
       width: 120%;
       height: 120%;
