@@ -51,13 +51,14 @@ export default {
       position: absolute;
       top: 0px;
       left: 10px;
+      display: none;
     }
 
     .image {
       background: var(--image) no-repeat center;
       mask: var(--blob-front) no-repeat center;
-      width: 95%;
-      height: 95%;
+      width: 100%;
+      height: 100%;
       position: absolute;
       top: 8px;
       left: 17px;

@@ -55,6 +55,17 @@ export default {
   methods: {
     submitForm(e) {
       if (e.target.classList.contains("disable")) return;
+
+      let valFill = this.validateFill();
+
+      console.log(valFill);
+
+      if (!valFill.res) {
+        this.$refs.btn.innerText = `${valFill.error}`;
+        this.$refs.btn.classList.add("error");
+        return;
+      }
+
       e.target.innerText = "Sending...";
       e.target.classList.add("sending");
       this.api_send_c_form({
@@ -89,6 +100,23 @@ export default {
         this.$refs.btn.innerText = "Error!";
         this.$refs.btn.classList.add("error");
       }
+    },
+    validateFill() {
+      if (!this.dataset.name.val) return { res: false, error: "Name Required" };
+
+      if (!this.dataset.email.val)
+        return { res: false, error: "Email Required" };
+      else if (!this.validateEmail(this.dataset.email.val))
+        return { res: false, error: "Invalid Email" };
+
+      if (!this.dataset.message.val)
+        return { res: false, error: "Message Required" };
+
+      return { res: true };
+    },
+    validateEmail(email) {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
     }
   },
   data() {

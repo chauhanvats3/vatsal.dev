@@ -107,14 +107,15 @@ export default {
         position: absolute;
         top: 0px;
         left: 0px;
+        display: none;
       }
 
       .image {
         background: url(/images/vatsal.jpg) no-repeat center;
         background-size: 100%;
         mask: var(--rand2) no-repeat center;
-        width: 90%;
-        height: 90%;
+        width: 100%;
+        height: 100%;
         position: absolute;
         top: 6px;
         left: 8px;

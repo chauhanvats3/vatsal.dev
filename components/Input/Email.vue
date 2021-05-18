@@ -7,7 +7,6 @@
       :inputname="metadata.inputname"
       :id="metadata.id"
       v-model="val"
-      required
       autocomplete="off"
       @input="emitVal"
       ref="field"
