@@ -7,7 +7,13 @@
       /></a>
     </div>
     <div class="images">
-      <img class="image" :src="dataset.whole" alt="" ref="image" />
+      <img
+        class="image"
+        :src="dataset.whole"
+        alt=""
+        ref="image"
+        loading="eager"
+      />
     </div>
     <div class="pills">
       <ul>

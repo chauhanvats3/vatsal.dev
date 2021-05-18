@@ -8,7 +8,7 @@
 
       <a href="#contact" class="chat-link">
         <div class="btn btn-chat">
-          <p>Let's Chat</p>
+          <p>Let's Talk</p>
         </div>
       </a>
     </div>
