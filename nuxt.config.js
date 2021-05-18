@@ -2,6 +2,11 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
   devtools: true,
+  loading: {
+    color: "#04445d",
+    height: "3px",
+    continuous: true
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {

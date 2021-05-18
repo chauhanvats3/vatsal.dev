@@ -2,10 +2,10 @@
   <div>
     <HomeHero />
     <HomeServices />
-    <HomePortfolio />
-    <HomeTestimonials />
-    <HomeAbout />
-    <HomeContact />
+    <LazyHomePortfolio />
+    <LazyHomeTestimonials />
+    <LazyHomeAbout />
+    <LazyHomeContact />
   </div>
 </template>
 

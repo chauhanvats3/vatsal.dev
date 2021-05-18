@@ -2,8 +2,15 @@
   <div class="navbar">
     <NuxtLink to="/">
       <div class="logo">
-        <img src="/logo/logo-full.svg" alt="" /></div
-    ></NuxtLink>
+        <img
+          srcset="/logo/logo-full-280w.png 280w, /logo/logo-full.svg 2000w"
+          sizes="(max-width: 600px) 280px,
+            2000px"
+          src="/logo/logo-full-280w.png"
+          alt="Vatsal Chauhan Logo"
+        />
+      </div>
+    </NuxtLink>
 
     <div class="menu">
       <ul>
@@ -55,29 +62,29 @@ export default {
       menu: [
         {
           link: "/testimonials",
-          title: "Testimonials",
+          title: "Testimonials"
         },
         {
-          link: "/projects",
-          title: "Projects",
+          link: "/portfolio",
+          title: "Protfolio"
         },
         {
           link: "/concepts",
-          title: "Concepts",
+          title: "Concepts"
         },
         {
           link: "/contact",
-          title: "Contact Me",
-        },
-      ],
+          title: "Contact Me"
+        }
+      ]
     };
   },
   methods: {
     hamburgerClicked() {
       this.$refs.Hamburger.classList.toggle("active");
       this.$emit("hamburgerClicked");
-    },
-  },
+    }
+  }
 };
 </script>
 

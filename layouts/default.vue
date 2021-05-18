@@ -30,8 +30,8 @@ export default {
           title: "Testimonials"
         },
         {
-          link: "/projects",
-          title: "Projects"
+          link: "/portfolio",
+          title: "Portfolio"
         },
         {
           link: "/concepts",
