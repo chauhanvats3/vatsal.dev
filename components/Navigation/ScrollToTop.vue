@@ -18,7 +18,7 @@ a {
   background-color: #04445d4f;
   font-size: 5rem;
   @extend %display-flex;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.3s ease;
   border-radius: 25px;
   z-index: 90;
@@ -37,7 +37,7 @@ a {
   }
 }
 
-a.show {
-  opacity: 1;
+a.hide {
+  opacity: 0;
 }
 </style>

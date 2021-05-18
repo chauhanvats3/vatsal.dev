@@ -28,11 +28,11 @@ export default {
         if (entry.isIntersecting) {
           console.log("Intersecting");
           this.$refs.hero.classList.add("animate");
-          document.querySelector("#scrollToTop").classList.remove("show");
+          document.querySelector("#scrollToTop").classList.add("hide");
         } else {
           console.log("Not Intersecting");
           this.$refs.hero.classList.remove("animate");
-          document.querySelector("#scrollToTop").classList.add("show");
+          document.querySelector("#scrollToTop").classList.remove("hide");
         }
       });
     };

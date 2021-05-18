@@ -1,7 +1,8 @@
 <template>
   <div>
     <HomeHero />
-    <HomeServices />
+    <ScrollToTop />
+    <LazyHomeServices />
     <LazyHomePortfolio />
     <LazyHomeTestimonials />
     <LazyHomeAbout />

@@ -3,8 +3,6 @@
     <NavBar @hamburgerClicked="toggleSidebar" />
     <div class="body-content" ref="bodyContent">
       <div class="main" ref="main" id="main">
-        <ScrollToTop />
-
         <Nuxt />
         <Footer />
       </div>
