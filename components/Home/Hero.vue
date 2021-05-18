@@ -71,7 +71,7 @@ export default {
 
   .designer {
     background-image: url(/images/home/hero/designer.svg),
-      url("/images/home/hero/base-shadow.svg");
+      url("/images/home/hero/base.svg");
     font-family: $bad-script;
     justify-content: flex-end;
     .info {
@@ -81,7 +81,7 @@ export default {
 
   .developer {
     background-image: url(/images/home/hero/developer.png),
-      url("/images/home/hero/base-shadow.svg");
+      url("/images/home/hero/base.svg");
     justify-content: space-between;
     color: white;
     position: relative;

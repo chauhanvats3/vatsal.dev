@@ -28,6 +28,9 @@
     <div class="social">
       <p>Or Connect With Me On</p>
       <div class="brands">
+        <a href="https://wa.me/919148220111" target="_blank" rel="noreferrer">
+          <div v-html="require(`/static/icons/whatsapp.svg?raw`)" />
+        </a>
         <a
           href="https://instagram.com/dazed._.confused"
           target="_blank"
@@ -41,9 +44,6 @@
           rel="noreferrer"
         >
           <div v-html="require(`/static/icons/linkedin.svg?raw`)" />
-        </a>
-        <a href="https://wa.me/919148220111" target="_blank" rel="noreferrer">
-          <div v-html="require(`/static/icons/whatsapp.svg?raw`)" />
         </a>
       </div>
     </div>
