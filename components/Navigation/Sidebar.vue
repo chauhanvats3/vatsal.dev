@@ -14,7 +14,7 @@
 export default {
   props: ["menuItems"],
   methods: {},
-  mounted() {},
+  mounted() {}
 };
 </script>
 
@@ -34,7 +34,7 @@ export default {
       font-size: 4rem;
 
       p {
-        color: $black;
+        color: $blue-dark;
       }
     }
   }

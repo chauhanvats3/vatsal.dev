@@ -1,9 +1,7 @@
 const nodemailer = require("nodemailer");
-//const nodeHtmlToImage = require('node-html-to-image')
 
 exports.handler = async function(event, context) {
   const params = event.queryStringParameters;
-  const dataset = JSON.parse(params.dataset);
   let transporter;
 
   transporter = nodemailer.createTransport({
@@ -19,8 +17,8 @@ exports.handler = async function(event, context) {
   let info = await transporter.sendMail({
     from: process.env.ZOHO_EMAIL,
     to: process.env.ZOHO_AUTH_USER,
-    subject: ``,
-    text: ""
+    subject: `[Enquiry] There's a message from ${params.name}`,
+    text: `Sender Name : ${params.name} \nSender Email : ${params.email} \nMessage : ${params.message}`
   });
 
   console.log("Message sent: %s", info);

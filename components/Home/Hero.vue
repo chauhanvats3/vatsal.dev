@@ -1,6 +1,7 @@
 <template>
   <div class="hero" ref="hero" id="hero">
     <div class="designer">
+      <p class="empty-info"></p>
       <p class="info">I Design Elegant UI</p>
     </div>
     <div class="developer">
@@ -73,7 +74,12 @@ export default {
     background-image: url(/images/home/hero/designer.svg),
       url("/images/home/hero/base.svg");
     font-family: $bad-script;
-    justify-content: flex-end;
+    justify-content: space-between;
+
+    .empty-info {
+      width: 100%;
+      height: 100%;
+    }
     .info {
       background: rgba(156, 156, 156, 0.425);
     }

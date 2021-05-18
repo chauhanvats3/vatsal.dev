@@ -4,7 +4,7 @@
       <h1>Need My Expertise?</h1>
     </div>
     <p>Drop a message and I'll contact you right back</p>
-    <form @click.stop.prevent="submitForm" class="form">
+    <form @click.stop.prevent class="form">
       <InputText
         :metadata="dataset.name"
         :val.sync="dataset.name.val"
@@ -21,7 +21,7 @@
         @input:val="dataset.message.val = $event"
       />
     </form>
-    <div class="btn" @click="submitForm">
+    <div class="btn" @click="submitForm($event)" ref="btn">
       Send
     </div>
 
@@ -53,8 +53,42 @@
 <script>
 export default {
   methods: {
-    submitForm() {
-      console.log("Not Yet Implemented");
+    submitForm(e) {
+      if (e.target.classList.contains("disable")) return;
+      e.target.innerText = "Sending...";
+      e.target.classList.add("sending");
+      this.api_send_c_form({
+        name: this.dataset.name.val,
+        email: this.dataset.email.val,
+        message: this.dataset.message.val,
+        event: e
+      });
+    },
+    async api_send_c_form({ name, email, message }) {
+      let mailStatus;
+      try {
+        const mailURL = `/api/sendMail?name=${name}&email=${email}&message=${message}`;
+        const mailResponse = await fetch(mailURL);
+        const mailData = await mailResponse;
+
+        if (mailData.status === 200) {
+          mailStatus = "Mail Sent Successfully";
+          this.$refs.btn.innerText = "Delivered";
+          this.$refs.btn.classList.add("disable");
+          this.$refs.btn.classList.remove("sending");
+        } else {
+          mailStatus = "Error Sending Mail";
+          this.$refs.btn.innerText = "Error!";
+          this.$refs.btn.classList.add("error");
+          this.$refs.btn.classList.remove("sending");
+        }
+      } catch (err) {
+        console.error(err);
+        mailStatus = "Error Sending Mail";
+
+        this.$refs.btn.innerText = "Error!";
+        this.$refs.btn.classList.add("error");
+      }
     }
   },
   data() {
@@ -119,6 +153,27 @@ export default {
     align-self: center;
     font-size: 2.5rem;
     color: $blue-metal;
+    will-change: background-position;
+  }
+
+  .btn.sending {
+    cursor: wait;
+    background: linear-gradient(45deg, $blue-dark, $green-light);
+    background-size: 200%;
+    background-position: left;
+    animation: movingGradientBG 0.8s ease-in-out infinite alternate;
+    color: white;
+  }
+
+  .btn.error {
+    background-color: #ca0000;
+    color: white;
+  }
+
+  .btn.disable {
+    color: black;
+    cursor: not-allowed;
+    background: gray;
   }
   .social {
     width: 100%;
@@ -136,6 +191,16 @@ export default {
       div {
         cursor: pointer;
       }
+    }
+  }
+
+  @keyframes movingGradientBG {
+    0% {
+      background-position: left;
+    }
+
+    100% {
+      background-position: right;
     }
   }
 }
