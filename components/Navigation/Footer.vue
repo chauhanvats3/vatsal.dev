@@ -13,7 +13,9 @@ export default {};
 .footer {
   width: 100%;
   height: 45px;
-  background: linear-gradient(90deg, $blue-metal, $green-light);
+  background: linear-gradient(103deg, $blue-dark, $green-light);
+  background-size: 150%;
+  background-position: center;
   @extend %display-flex;
   flex-flow: row nowrap;
   justify-content: space-between;

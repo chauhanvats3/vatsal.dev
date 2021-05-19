@@ -1,13 +1,15 @@
 <template>
-  <div class="body" id="body">
-    <NavBar @hamburgerClicked="toggleSidebar" />
-    <div class="body-content" ref="bodyContent">
-      <div class="main" ref="main" id="main">
-        <Nuxt />
-        <Footer />
-      </div>
-      <div class="sidebarWrapper" ref="sidebarWrapper">
-        <Sidebar :menuItems="menuItems" />
+  <div class="wholeWrapper">
+    <div class="body" id="body">
+      <NavBar @hamburgerClicked="toggleSidebar" />
+      <div class="body-content" ref="bodyContent">
+        <div class="main" ref="main" id="main">
+          <Nuxt />
+          <Footer />
+        </div>
+        <div class="sidebarWrapper" ref="sidebarWrapper">
+          <Sidebar :menuItems="menuItems" />
+        </div>
       </div>
     </div>
   </div>

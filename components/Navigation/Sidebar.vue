@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     <ul>
-      <li v-for="item in menuItems" :key="item.title">
+      <li v-for="item in menuItems" :key="item.title" @click="itemClicked">
         <NuxtLink :to="item.link">
           <p class="menuItem">{{ item.title }}</p>
         </NuxtLink>
@@ -13,7 +13,12 @@
 <script>
 export default {
   props: ["menuItems"],
-  methods: {},
+  methods: {
+    itemClicked() {
+      document.querySelector(".hamburger").classList.toggle("active");
+      document.querySelector(".body-content").classList.toggle("showSidebar");
+    }
+  },
   mounted() {}
 };
 </script>
