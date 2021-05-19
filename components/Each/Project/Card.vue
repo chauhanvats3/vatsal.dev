@@ -26,6 +26,11 @@
 <script>
 export default {
   props: ["dataset"],
+  data() {
+    return {
+      parallax: {}
+    };
+  },
   computed: {
     cssProps() {
       return {
@@ -39,7 +44,7 @@ export default {
     },
     addParallax() {
       const anime = this.$anime;
-      let parallax = anime({
+      this.$data.parallax = anime({
         targets: this.$refs.image,
         translateY: 70,
         delay: function(el, i) {
@@ -47,11 +52,15 @@ export default {
         },
         elasticity: 200,
         easing: "easeInOutSine",
-        autoplay: true
+        autoplay: false
       });
     },
     scrolling(e) {
       //Make Magic
+      //parallax.seek(animation.duration * (seekProgressEl.value / 100));
+
+      let parallax = this.$data.parallax;
+      //parallax.seek();
     }
   },
   mounted() {
@@ -70,7 +79,7 @@ export default {
         }
       });
     };
-    let observer = new IntersectionObserver(callback, { threshold: 0.1 });
+    let observer = new IntersectionObserver(callback, { threshold: 0.3 });
     observer.observe(this.$refs.image);
   }
 };
