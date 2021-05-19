@@ -46,9 +46,9 @@ export default {
       const anime = this.$anime;
       this.$data.parallax = anime({
         targets: this.$refs.image,
-        translateY: 70,
+        translateY: -70,
         translateZ: 0,
-        translateX: -15,
+        translateX: 15,
         delay: function(el, i) {
           return i * 100;
         },
@@ -154,8 +154,8 @@ export default {
 
     .image {
       position: absolute;
-      top: -20%;
-      left: 10%;
+      top: -10%;
+      left: 8%;
     }
   }
 }
