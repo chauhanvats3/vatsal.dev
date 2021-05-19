@@ -22,7 +22,8 @@ export default {
 .sidebar {
   width: 100%;
   min-height: 100%;
-  background-color: $black;
+  background: url(/images/low-poly-grid-sidebar-dark.svg);
+  background-size: 400%;
 
   ul {
     @extend %display-flex;
