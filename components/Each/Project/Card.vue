@@ -60,7 +60,10 @@ export default {
       //parallax.seek(animation.duration * (seekProgressEl.value / 100));
 
       let parallax = this.$data.parallax;
-      //parallax.seek();
+      let bounding = this.$refs.image.getBoundingClientRect();
+      let decider =
+        (bounding.bottom / (window.innerHeight + bounding.height)) % 100;
+      parallax.seek(parallax.duration * decider);
     }
   },
   mounted() {
@@ -79,7 +82,7 @@ export default {
         }
       });
     };
-    let observer = new IntersectionObserver(callback, { threshold: 0.3 });
+    let observer = new IntersectionObserver(callback, { threshold: 0 });
     observer.observe(this.$refs.image);
   }
 };

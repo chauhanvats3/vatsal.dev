@@ -5,8 +5,6 @@
     </div>
     <div class="cardWrapper">
       <EachProjectCard :dataset="this.dataset" />
-      <EachProjectCard :dataset="this.dataset" />
-      <EachProjectCard :dataset="this.dataset" />
     </div>
 
     <div class="btn btn-portfolio" @click="portfolioButtonClicked">
