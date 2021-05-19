@@ -95,7 +95,6 @@ export default {
     }
 
     .chat-link {
-      width: 100%;
       display: flex;
       flex-flow: row nowrap;
       justify-content: center;

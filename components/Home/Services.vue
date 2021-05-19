@@ -1,5 +1,5 @@
 <template>
-  <div class="services">
+  <div class="services" ref="services">
     <div class="heading">
       <h1>I Can</h1>
     </div>
@@ -31,7 +31,90 @@ import DevBase from "/static/images/services/dev-base.min.svg?inline";
 import DesignBase from "/static/images/services/design-base.min.svg?inline";
 
 export default {
-  components: { DevBase, DesignBase }
+  components: { DevBase, DesignBase },
+  mounted() {
+    let tl = this.createAnimation();
+
+    let callback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          console.log(tl);
+          tl.play();
+        } else {
+          tl.pause();
+        }
+      });
+    };
+    let observer = new IntersectionObserver(callback, {});
+    observer.observe(this.$refs.services);
+  },
+  methods: {
+    createAnimation() {
+      const anime = this.$anime;
+      var tl = anime.timeline({
+        easing: "easeInOutExpo",
+        duration: 1000,
+        autoplay: false,
+        loop: true,
+        direction: "alternate"
+      });
+      tl.add({
+        targets: ".design > .content >.group",
+        translateX: 28,
+        translateY: 50,
+        translateZ: 0,
+        delay: 500
+      })
+        .add(
+          {
+            targets: ".design > .content >.cls-4",
+            translateX: -29,
+            translateY: -51,
+            translateZ: 0
+          },
+          500
+        )
+        .add({
+          targets: ".design > .content >.cls-3",
+          translateX: -29,
+          translateY: -51,
+          translateZ: 0
+        })
+        .add(
+          {
+            targets: ".design > .content >.group",
+            translateX: 38,
+            translateY: 70,
+            translateZ: 0
+          },
+          "-=1000"
+        )
+        .add({
+          targets: ".design > .content >.group>.cls-3",
+          translateX: -47,
+          translateY: 26,
+          translateZ: 0
+        })
+        .add(
+          {
+            targets: ".design > .content >.group>.cls-4",
+            translateX: 75,
+            translateY: -35,
+            translateZ: 0
+          },
+          "-=1000"
+        )
+        .add({
+          targets: ".bogus",
+          translateX: 75,
+          translateY: -35,
+          translateZ: 0,
+          duration: 200
+        });
+
+      return tl;
+    }
+  }
 };
 </script>
 
