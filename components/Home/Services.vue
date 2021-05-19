@@ -154,6 +154,10 @@ export default {
       padding: 10px;
       text-transform: uppercase;
     }
+
+    @media (min-width: 1000px) {
+      padding-left: 25%;
+    }
   }
   .content {
     @extend %display-flex;
@@ -196,6 +200,18 @@ export default {
     .develop {
       .vector {
         align-self: flex-end;
+      }
+    }
+
+    @media (min-width: 1300px) {
+      flex-flow: row wrap;
+      min-height: 50vh;
+
+      .design,
+      .develop {
+        .text {
+          text-align: center;
+        }
       }
     }
   }

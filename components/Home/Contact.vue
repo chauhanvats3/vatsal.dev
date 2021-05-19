@@ -162,6 +162,9 @@ export default {
       padding: 10px;
       text-transform: uppercase;
     }
+    @media (min-width: 1000px) {
+      padding-left: 25%;
+    }
   }
 
   p {
@@ -169,6 +172,10 @@ export default {
     padding: 20px;
     padding-bottom: 0;
     color: $black;
+
+    @media (min-width: 1000px) {
+      padding-left: 25%;
+    }
   }
 
   .form {
@@ -276,6 +283,9 @@ export default {
     width: 100%;
     p {
       font-size: 3rem;
+      @media (min-width: 1000px) {
+        padding-left: 25%;
+      }
     }
     .brands {
       align-self: center;
@@ -284,6 +294,10 @@ export default {
       @extend %display-flex;
       flex-flow: row nowrap;
       justify-content: space-around;
+
+      @media (min-width: 1000px) {
+        padding: 0 25%;
+      }
 
       div {
         cursor: pointer;

@@ -1,5 +1,5 @@
 <template>
-  <div class="testimonials">
+  <div class="testimonials" :style="cssProps">
     <div class="heading">
       <h1>Which Left Them Saying</h1>
     </div>
@@ -12,7 +12,7 @@
     </div>
   </div>
 </template>
- 
+
 <script>
 export default {
   data() {
@@ -25,11 +25,17 @@ export default {
         review:
           "  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti, excepturi aperiam? Unde, quis rerum, hic earum quisquam aspernatur doloremque quod quas quidem laboriosam accusantium, reiciendis molestiae eveniet animi dolores adipisci!",
         bgColor: "113, 157, 168",
-        image: "/images/projects/gangaview/review.jpg",
-        blobBack: `/blobs/back/${rand1}.svg`,
-        blobFront: `/blobs/front/${rand2}.svg`,
-      },
+        image: "/images/projects/gangaview/review.jpg"
+      }
     };
+  },
+  computed: {
+    cssProps() {
+      var rand1 = this.getRandomNumber();
+      return {
+        "--bgColor": `${this.dataset.bgColor}`
+      };
+    }
   },
   methods: {
     portfolioButtonClicked() {
@@ -39,12 +45,12 @@ export default {
       let res = Math.ceil(Math.random() * 100) % 12;
       res = res < 1 ? this.getRandomNumber() : res;
       return res;
-    },
-  },
+    }
+  }
 };
 </script>
- 
-<style lang='scss' scoped>
+
+<style lang="scss" scoped>
 .testimonials {
   margin: 50px 0;
   @extend %display-flex;
@@ -58,6 +64,9 @@ export default {
       color: $blue-dark;
       padding: 10px;
       text-transform: uppercase;
+    }
+    @media (min-width: 1000px) {
+      padding-left: 25%;
     }
   }
 

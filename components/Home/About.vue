@@ -83,6 +83,9 @@ export default {
       padding: 10px;
       text-transform: uppercase;
     }
+    @media (min-width: 1000px) {
+      padding-left: 25%;
+    }
   }
 
   .intro {
