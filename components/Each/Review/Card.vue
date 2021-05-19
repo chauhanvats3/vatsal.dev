@@ -1,8 +1,7 @@
 <template>
-  <div class="reviewCard" :style="cssProps">
+  <div class="reviewCard">
     <div class="imageGroup">
-      <div class="blobBack"></div>
-      <div class="image"></div>
+      <BlobImage :image="dataset.image" />
     </div>
     <div class="content">
       <div class="heading">
@@ -16,17 +15,7 @@
 
 <script>
 export default {
-  props: ["dataset"],
-  computed: {
-    cssProps() {
-      return {
-        "--bg-color": this.dataset.bgColor,
-        "--image": `url('${this.dataset.image}')`,
-        "--blob-back": `url('${this.dataset.blobBack}')`,
-        "--blob-front": `url('${this.dataset.blobFront}')`
-      };
-    }
-  }
+  props: ["dataset"]
 };
 </script>
 
@@ -42,32 +31,6 @@ export default {
     height: 150px;
     left: -20px;
     top: -35px;
-
-    .blobBack {
-      background: linear-gradient(
-        -115.08deg,
-        rgba(var(--bg-color), 1) 0%,
-        rgba(var(--bg-color), 0) 100%
-      );
-      mask: var(--blob-back) no-repeat center;
-      width: 120%;
-      height: 120%;
-      position: absolute;
-      top: -5px;
-      left: -5px;
-      display: none;
-    }
-
-    .image {
-      background: var(--image) no-repeat center;
-      background-size: 85%;
-      mask: var(--blob-front) no-repeat center;
-      width: 130%;
-      height: 130%;
-      position: absolute;
-      top: -5px;
-      left: -5px;
-    }
   }
 
   .content {

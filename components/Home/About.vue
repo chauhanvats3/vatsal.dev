@@ -1,12 +1,11 @@
 <template>
-  <div class="aboutMe" :style="cssProps">
+  <div class="aboutMe">
     <div class="heading">
       <h1>A Little Bit About Me</h1>
     </div>
     <div class="intro">
       <div class="imageGroup">
-        <div class="blobBack"></div>
-        <div class="image"></div>
+        <BlobImage image="/images/vatsal.jpg" />
       </div>
       <div class="content">
         <p>This Is Me,</p>
@@ -98,32 +97,6 @@ export default {
       height: 150px;
       left: -20px;
       top: -10px;
-
-      .blobBack {
-        background: linear-gradient(
-          90.08deg,
-          rgba(9, 82, 124, 0.281) 0%,
-          rgb(9, 81, 124, 1) 100%
-        );
-        mask: var(--rand1) no-repeat center;
-        width: 120%;
-        height: 120%;
-        position: absolute;
-        top: -5px;
-        left: -5px;
-        display: none;
-      }
-
-      .image {
-        background: url(/images/vatsal.jpg) no-repeat center;
-        background-size: 85%;
-        mask: var(--rand2) no-repeat center;
-        width: 130%;
-        height: 130%;
-        position: absolute;
-        top: -5px;
-        left: -5px;
-      }
     }
 
     .content {
