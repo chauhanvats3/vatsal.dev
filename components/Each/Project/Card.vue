@@ -37,9 +37,6 @@ export default {
     handleClick() {
       this.$router.push({ path: "/portfolio" });
     },
-    handleScroll() {
-      console.log(this.$refs.card);
-    },
     addParallax() {
       const anime = this.$anime;
       let parallax = anime({
@@ -50,35 +47,30 @@ export default {
         },
         elasticity: 200,
         easing: "easeInOutSine",
-        autoplay: false
+        autoplay: true
       });
     },
     scrolling(e) {
-      console.log("hi");
+      //Make Magic
     }
   },
   mounted() {
     this.addParallax();
-    document.querySelector("#main").onscroll = this.scrolling;
 
     let callback = (entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          /*  var viewportOffset = this.$refs.image.getBoundingClientRect();
-          // these are relative to the viewport, i.e. the window
-          var top = viewportOffset.top;
-          var left = viewportOffset.left;
- */
-          //console.log(top);
+          document
+            .querySelector("#body")
+            .addEventListener("scroll", this.scrolling);
         } else {
-          window.onscroll = () => {
-            console.log("Not Scrolling");
-          };
-          console.log("Image Not Intersecting");
+          document
+            .querySelector("#body")
+            .removeEventListener("scroll", this.scrolling);
         }
       });
     };
-    let observer = new IntersectionObserver(callback, { threshold: 0.5 });
+    let observer = new IntersectionObserver(callback, { threshold: 0.1 });
     observer.observe(this.$refs.image);
   }
 };
