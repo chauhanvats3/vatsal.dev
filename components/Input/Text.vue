@@ -91,6 +91,7 @@ export default {
   border-width: 2px;
   border-image: linear-gradient(90deg, $blue-metal, $green-light);
   border-image-slice: 1;
+  z-index: 100;
 }
 
 .form__field:focus::placeholder {
