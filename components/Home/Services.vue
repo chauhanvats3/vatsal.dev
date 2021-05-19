@@ -27,21 +27,23 @@
 </template>
 
 <script>
-import DevBase from "/static/images/services/dev-base.min.svg?inline";
-import DesignBase from "/static/images/services/design-base.min.svg?inline";
+import DevBase from "/static/images/services/dev-base.svg?inline";
+import DesignBase from "/static/images/services/design-base.svg?inline";
 
 export default {
   components: { DevBase, DesignBase },
   mounted() {
-    let tl = this.createAnimation();
+    let tlDesign = this.createAnimationDesign();
+    let tlDevelop = this.createAnimationDevelop();
 
     let callback = (entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          console.log(tl);
-          tl.play();
+          tlDesign.play();
+          tlDevelop.play();
         } else {
-          tl.pause();
+          tlDesign.pause();
+          tlDevelop.pause();
         }
       });
     };
@@ -49,7 +51,7 @@ export default {
     observer.observe(this.$refs.services);
   },
   methods: {
-    createAnimation() {
+    createAnimationDesign() {
       const anime = this.$anime;
       var tl = anime.timeline({
         easing: "easeInOutExpo",
@@ -67,7 +69,7 @@ export default {
       })
         .add(
           {
-            targets: ".design > .content >.cls-4",
+            targets: ".design > .content >.design-cls-4",
             translateX: -29,
             translateY: -51,
             translateZ: 0
@@ -75,7 +77,7 @@ export default {
           500
         )
         .add({
-          targets: ".design > .content >.cls-3",
+          targets: ".design > .content >.design-cls-3",
           translateX: -29,
           translateY: -51,
           translateZ: 0
@@ -90,14 +92,14 @@ export default {
           "-=1000"
         )
         .add({
-          targets: ".design > .content >.group>.cls-3",
+          targets: ".design > .content >.group>.design-cls-3",
           translateX: -47,
           translateY: 26,
           translateZ: 0
         })
         .add(
           {
-            targets: ".design > .content >.group>.cls-4",
+            targets: ".design > .content >.group>.design-cls-4",
             translateX: 75,
             translateY: -35,
             translateZ: 0
@@ -112,6 +114,26 @@ export default {
           duration: 200
         });
 
+      return tl;
+    },
+    createAnimationDevelop() {
+      const anime = this.$anime;
+
+      let tl = anime.timeline({
+        easing: "easeInOutSine",
+        duration: 700,
+        direction: "alternate",
+        loop: true,
+        delay: anime.stagger(700, { start: 500 }) // increase delay by 100ms for each elements.
+      });
+      tl.add({
+        targets: ".develop>.code>.line",
+        strokeDashoffset: [anime.setDashoffset, 0]
+      });
+      tl.add({
+        targets: ".bogus",
+        rotate: 69
+      });
       return tl;
     }
   }

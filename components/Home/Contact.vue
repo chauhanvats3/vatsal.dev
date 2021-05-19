@@ -66,6 +66,7 @@ export default {
 
       e.target.innerText = "Sending...";
       e.target.classList.add("sending");
+      e.target.classList.remove("error");
       this.api_send_c_form({
         name: this.dataset.name.val,
         email: this.dataset.email.val,
