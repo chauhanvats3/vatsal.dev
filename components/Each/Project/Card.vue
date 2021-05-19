@@ -39,7 +39,47 @@ export default {
     },
     handleScroll() {
       console.log(this.$refs.card);
+    },
+    addParallax() {
+      const anime = this.$anime;
+      let parallax = anime({
+        targets: this.$refs.image,
+        translateY: 70,
+        delay: function(el, i) {
+          return i * 100;
+        },
+        elasticity: 200,
+        easing: "easeInOutSine",
+        autoplay: false
+      });
+    },
+    scrolling(e) {
+      console.log("hi");
     }
+  },
+  mounted() {
+    this.addParallax();
+    document.querySelector("#main").onscroll = this.scrolling;
+
+    let callback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          /*  var viewportOffset = this.$refs.image.getBoundingClientRect();
+          // these are relative to the viewport, i.e. the window
+          var top = viewportOffset.top;
+          var left = viewportOffset.left;
+ */
+          //console.log(top);
+        } else {
+          window.onscroll = () => {
+            console.log("Not Scrolling");
+          };
+          console.log("Image Not Intersecting");
+        }
+      });
+    };
+    let observer = new IntersectionObserver(callback, { threshold: 0.5 });
+    observer.observe(this.$refs.image);
   }
 };
 </script>

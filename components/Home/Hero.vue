@@ -6,6 +6,7 @@
     </div>
     <div class="developer">
       <p class="info">And Bring Them To Life</p>
+      <p class="empty-info"></p>
 
       <a href="#contact" class="chat-link">
         <div class="btn btn-chat">
@@ -60,6 +61,10 @@ export default {
     background-position: center 62%;
     will-change: background-position;
 
+    .empty-info {
+      width: 100%;
+      height: 100%;
+    }
     p {
       font-size: 2.5rem;
       width: 100%;
@@ -74,10 +79,6 @@ export default {
     font-family: $bad-script;
     justify-content: space-between;
 
-    .empty-info {
-      width: 100%;
-      height: 100%;
-    }
     .info {
       background: rgba(156, 156, 156, 0.425);
     }
@@ -98,6 +99,7 @@ export default {
       display: flex;
       flex-flow: row nowrap;
       justify-content: center;
+      height: auto;
 
       .btn-chat {
         position: absolute;

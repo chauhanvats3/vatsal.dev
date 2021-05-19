@@ -10,6 +10,6 @@
   M25.9,-46C38.1,-37.9,55.4,-40,65.5,-34C75.6,-28,78.4,-14,79.2,0.5C80.1,14.9,78.8,29.9,71.4,40.4C63.9,50.9,50.2,57,37.2,57.4C24.3,57.9,12.1,52.7,2.2,49C-7.8,45.2,-15.6,42.9,-27.1,41.6C-38.6,40.3,-53.7,40,-60.9,33.3C-68.1,26.5,-67.2,13.3,-62.5,2.7C-57.9,-7.9,-49.4,-15.7,-45.8,-28.7C-42.2,-41.7,-43.6,-59.7,-36.8,-70.9C-29.9,-82.1,-15,-86.4,-4,-79.4C6.9,-72.4,13.8,-54.1,25.9,-46Z;" fill="freeze"
       calcMode="spline"
       keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
-      <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="25s" additive="sum" repeatCount="indefinite" />
+      <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="50s" additive="sum" repeatCount="indefinite" />
   </path>
 </svg>

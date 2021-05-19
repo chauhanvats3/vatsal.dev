@@ -55,6 +55,7 @@ export default {
       position: absolute;
       top: -5px;
       left: -5px;
+      display: none;
     }
 
     .image {

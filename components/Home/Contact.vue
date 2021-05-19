@@ -179,16 +179,44 @@ export default {
     margin: 30px;
     align-self: center;
     font-size: 2.5rem;
-    color: $blue-metal;
+    color: white;
+    background: linear-gradient(
+      103deg,
+      #005073 0%,
+      #005073 20%,
+      #107dac 20%,
+      #107dac 40%,
+      #189ad3 40%,
+      #189ad3 60%,
+      #1ebbd7 60%,
+      #1ebbd7 80%,
+      #71c7ec 80%,
+      #71c7ec 100%
+    );
+    background-size: 150%;
+    background-position: left;
+    animation: movingGradientBG 2.5s ease-in-out infinite alternate;
     will-change: background-position;
   }
 
   .btn.sending {
     cursor: wait;
-    background: linear-gradient(45deg, $blue-dark, $green-light);
-    background-size: 200%;
+    background: linear-gradient(
+      103deg,
+      $green-mid 0%,
+      $green-mid 20%,
+      $green-light 20%,
+      $green-light 40%,
+      $green-mid 40%,
+      $green-mid 60%,
+      $green-dark 60%,
+      $green-dark 80%,
+      $green-mid 80%,
+      $green-mid 100%
+    );
+    background-size: 150%;
     background-position: left;
-    animation: movingGradientBG 0.8s ease-in-out infinite alternate;
+    animation: movingGradientBG 2.5s ease-in-out infinite alternate;
     color: white;
   }
 
@@ -225,9 +253,24 @@ export default {
   }
 
   .btn.disable {
-    color: black;
+    color: white;
     cursor: not-allowed;
-    background: gray;
+    background: linear-gradient(
+      103deg,
+      #191919 0%,
+      #191919 20%,
+      #363636 20%,
+      #363636 40%,
+      #3a3a3a 40%,
+      #3a3a3a 60%,
+      #202020 60%,
+      #202020 80%,
+      #101010 80%,
+      #101010 100%
+    );
+    background-size: 150%;
+    background-position: left;
+    animation: movingGradientBG 2.5s ease-in-out infinite alternate;
   }
   .social {
     width: 100%;
