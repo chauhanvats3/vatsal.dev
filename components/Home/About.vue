@@ -1,7 +1,7 @@
 <template>
   <div class="aboutMe">
     <div class="heading">
-      <h1>Hi!</h1>
+      <h1>Hi, Hey there, Hello!</h1>
     </div>
     <AboutIntro />
   </div>
