@@ -41,20 +41,6 @@ export default {
 .portfolio {
   margin: 50px 0;
   @extend %display-flex;
-  .heading {
-    align-self: flex-start;
-
-    h1 {
-      font-weight: 100;
-      font-size: 5rem;
-      color: $blue-dark;
-      padding: 10px;
-      text-transform: uppercase;
-    }
-    @media (min-width: 1000px) {
-      padding-left: 25%;
-    }
-  }
 
   .cardWrapper {
     @extend %display-flex;

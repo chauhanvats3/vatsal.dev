@@ -20,6 +20,7 @@ export default {};
   @extend %display-flex;
   width: min(90%, 80ch);
   height: 170px;
+  margin: 40px 0;
 
   .imageGroup {
     position: absolute;

@@ -154,19 +154,6 @@ export default {
   @extend %display-flex;
   align-items: flex-start;
 
-  .heading {
-    h1 {
-      font-weight: 100;
-      font-size: 5rem;
-      color: $blue-dark;
-      padding: 10px;
-      text-transform: uppercase;
-    }
-    @media (min-width: 1000px) {
-      padding-left: 25%;
-    }
-  }
-
   p {
     font-size: 2.8rem;
     padding: 20px;

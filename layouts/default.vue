@@ -249,7 +249,7 @@ ul {
     text-transform: uppercase;
   }
   @media (min-width: 1000px) {
-    padding-left: 25%;
+    padding-left: 15%;
   }
 }
 </style>
