@@ -1,12 +1,12 @@
 <template>
   <div class="hero" ref="hero" id="hero">
     <div class="designer">
-      <p class="empty-info"></p>
+      <div class="empty-info"></div>
       <p class="info">I Design Elegant UI</p>
     </div>
     <div class="developer">
       <p class="info">And Bring Them To Life</p>
-      <p class="empty-info"></p>
+      <div class="empty-info"></div>
 
       <a href="#contact" class="chat-link">
         <div class="btn btn-chat">
@@ -60,6 +60,7 @@ export default {
     background-size: 60vh;
     background-position: center 62%;
     will-change: background-position;
+    font-family: $bad-script;
 
     .empty-info {
       width: 100%;
@@ -70,13 +71,16 @@ export default {
       width: 100%;
       text-align: center;
       padding: 20px 0;
+
+      @supports (backdrop-filter: blur()) {
+        backdrop-filter: blur(4px);
+      }
     }
   }
 
   .designer {
     background-image: url(/images/home/hero/designer.svg),
       url("/images/home/hero/base.svg");
-    font-family: $bad-script;
     justify-content: space-between;
 
     .info {

@@ -1,5 +1,5 @@
 <template>
-  <div class="testimonials" :style="cssProps">
+  <div class="testimonials">
     <div class="heading">
       <h1>Which Left Them Saying</h1>
     </div>
@@ -16,35 +16,21 @@
 <script>
 export default {
   data() {
-    var rand1 = this.getRandomNumber();
-    var rand2 = this.getRandomNumber();
     return {
       dataset: {
-        name: "Jonathan Doe",
-        company: "Imaginary Co.",
+        name: "Abhishek Chauhan",
+        company: "Shri Ganga View Guest House",
         review:
-          "  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti, excepturi aperiam? Unde, quis rerum, hic earum quisquam aspernatur doloremque quod quas quidem laboriosam accusantium, reiciendis molestiae eveniet animi dolores adipisci!",
-        bgColor: "113, 157, 168",
+          "Vatsal is a very talented designer/developer. He helped immensely in taking my business online and also designing the brand identity be it logo, business card or color palette. 10/10 Would recommend.",
+        bgColor: "18, 92, 110",
         image: "/images/projects/gangaview/review.jpg"
       }
     };
   },
-  computed: {
-    cssProps() {
-      var rand1 = this.getRandomNumber();
-      return {
-        "--bgColor": `${this.dataset.bgColor}`
-      };
-    }
-  },
+
   methods: {
     portfolioButtonClicked() {
-      this.$router.push({ path: "/portfolio" });
-    },
-    getRandomNumber() {
-      let res = Math.ceil(Math.random() * 100) % 12;
-      res = res < 1 ? this.getRandomNumber() : res;
-      return res;
+      this.$router.push({ path: "/testimonials" });
     }
   }
 };
@@ -55,20 +41,6 @@ export default {
   margin: 50px 0;
   @extend %display-flex;
   align-items: center;
-  .heading {
-    align-self: flex-start;
-
-    h1 {
-      font-weight: 100;
-      font-size: 5rem;
-      color: $blue-dark;
-      padding: 10px;
-      text-transform: uppercase;
-    }
-    @media (min-width: 1000px) {
-      padding-left: 25%;
-    }
-  }
 
   .cardWrapper {
     width: 100%;

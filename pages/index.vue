@@ -2,6 +2,7 @@
   <div>
     <HomeHero />
     <ScrollToTop />
+    <HomeAbout />
     <LazyHomeServices />
     <LazyHomePortfolio />
     <LazyHomeTestimonials />
