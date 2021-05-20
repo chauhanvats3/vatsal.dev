@@ -5,7 +5,6 @@
     <LazyHomeServices />
     <LazyHomePortfolio />
     <LazyHomeTestimonials />
-    <LazyHomeAbout />
     <LazyHomeContact />
   </div>
 </template>

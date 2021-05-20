@@ -185,27 +185,7 @@ export default {
   .btn {
     margin: 30px;
     align-self: center;
-    font-size: 2.5rem;
-    color: white;
-    background: linear-gradient(
-      103deg,
-      #005073 0%,
-      #005073 20%,
-      #107dac 20%,
-      #107dac 40%,
-      #189ad3 40%,
-      #189ad3 60%,
-      #1ebbd7 60%,
-      #1ebbd7 80%,
-      #71c7ec 80%,
-      #71c7ec 100%
-    );
-    background-size: 150%;
-    background-position: left;
-    animation: movingGradientBG 2.5s ease-in-out infinite alternate;
-    will-change: background-position;
   }
-
   .btn.sending {
     cursor: wait;
     background: linear-gradient(
@@ -302,16 +282,6 @@ export default {
       div {
         cursor: pointer;
       }
-    }
-  }
-
-  @keyframes movingGradientBG {
-    0% {
-      background-position: left;
-    }
-
-    100% {
-      background-position: right;
     }
   }
 }

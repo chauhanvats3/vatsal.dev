@@ -27,7 +27,7 @@ export default {
 .sidebar {
   width: 100%;
   min-height: 100%;
-  background: url(/images/low-poly-grid-sidebar-dark.svg);
+  background: $charcoal;
   background-size: 100%;
 
   ul {

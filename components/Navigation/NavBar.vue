@@ -14,7 +14,7 @@
 
     <div class="menu">
       <ul>
-        <li v-for="item in menu" :key="item.title">
+        <li v-for="item in menuItems" :key="item.title">
           <NuxtLink :to="item.link">
             <p class="menuItem">{{ item.title }}</p>
           </NuxtLink>
@@ -55,28 +55,10 @@
 
 <script>
 export default {
-  props: {},
+  props: ["menuItems"],
   data() {
     return {
-      description: "stuff",
-      menu: [
-        {
-          link: "/testimonials",
-          title: "Testimonials"
-        },
-        {
-          link: "/portfolio",
-          title: "Portfolio"
-        },
-        {
-          link: "/concepts",
-          title: "Concepts"
-        },
-        {
-          link: "/contact",
-          title: "Contact Me"
-        }
-      ]
+      description: "stuff"
     };
   },
   methods: {
@@ -167,7 +149,7 @@ export default {
     }
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1250px) {
     .menu {
       display: flex;
     }

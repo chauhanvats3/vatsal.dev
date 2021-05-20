@@ -1,7 +1,7 @@
 <template>
   <div class="wholeWrapper">
     <div class="body" id="body">
-      <NavBar @hamburgerClicked="toggleSidebar" />
+      <NavBar @hamburgerClicked="toggleSidebar" :menuItems="menuItems" />
       <div class="body-content" ref="bodyContent">
         <div class="main" ref="main" id="main">
           <Nuxt />
@@ -36,6 +36,14 @@ export default {
         {
           link: "/concepts",
           title: "Concepts"
+        },
+        {
+          link: "/about",
+          title: "About Me"
+        },
+        {
+          link: "/blog",
+          title: "Blog"
         },
         {
           link: "/contact",
@@ -84,16 +92,65 @@ select:-webkit-autofill:focus {
 
 .btn {
   font-family: $bad-script;
-  background: $black;
+  background: linear-gradient(
+    103deg,
+    #005073 0%,
+    #005073 20%,
+    #107dac 20%,
+    #107dac 40%,
+    #189ad3 40%,
+    #189ad3 60%,
+    #1ebbd7 60%,
+    #1ebbd7 80%,
+    #71c7ec 80%,
+    #71c7ec 100%
+  );
   padding: 10px 35px;
   border-radius: 1.3rem;
   cursor: pointer;
   width: fit-content;
 
+  background-size: 150%;
+  background-position: left;
+  animation: movingGradientBG 2.5s ease-in-out infinite alternate;
+  will-change: background-position;
+
   p {
-    color: $blue-metal;
+    color: white;
     padding: 0;
     font-size: 2.5rem;
+  }
+}
+
+.btn {
+  font-size: 2.5rem;
+  color: white;
+  background: linear-gradient(
+    103deg,
+    #005073 0%,
+    #005073 20%,
+    #107dac 20%,
+    #107dac 40%,
+    #189ad3 40%,
+    #189ad3 60%,
+    #1ebbd7 60%,
+    #1ebbd7 80%,
+    #71c7ec 80%,
+    #71c7ec 100%
+  );
+  background-size: 150%;
+  background-position: left;
+  animation: movingGradientBG 2.5s ease-in-out infinite alternate;
+  will-change: background-position;
+}
+
+@keyframes movingGradientBG {
+  0% {
+    background-position: left;
+  }
+
+  100% {
+    background-position: right;
   }
 }
 
@@ -158,6 +215,7 @@ ul {
     position: fixed;
     right: -75vw;
     transition: all 0.4s ease-in-out;
+    overflow: scroll;
   }
 }
 

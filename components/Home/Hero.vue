@@ -106,7 +106,6 @@ export default {
         bottom: -4%;
 
         p {
-          color: $blue-metal;
           padding: 0;
           font-size: 2.5rem;
         }
