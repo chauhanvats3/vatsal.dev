@@ -26,6 +26,7 @@ select:-webkit-autofill:focus {
 }
 
 .noscroll {
+  height: 100vh;
   overflow: hidden;
 }
 

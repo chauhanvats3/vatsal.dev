@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar">
+  <div class="sideMenu">
     <ul>
       <li v-for="item in menuItems" :key="item.title" @click="itemClicked">
         <NuxtLink :to="item.link">
@@ -16,7 +16,7 @@ export default {
   methods: {
     itemClicked() {
       document.querySelector(".hamburger").classList.toggle("active");
-      document.querySelector(".body-content").classList.toggle("showSidebar");
+      this.$emit("itemClicked");
     }
   },
   mounted() {}
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.sidebar {
+.sideMenu {
   width: 100%;
   min-height: 100%;
   background: $charcoal;

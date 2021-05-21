@@ -74,13 +74,9 @@ export default {
     let callback = (entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          document
-            .querySelector("#body")
-            .addEventListener("scroll", this.scrolling);
+          window.addEventListener("scroll", this.scrolling);
         } else {
-          document
-            .querySelector("#body")
-            .removeEventListener("scroll", this.scrolling);
+          window.removeEventListener("scroll", this.scrolling);
         }
       });
     };
