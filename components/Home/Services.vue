@@ -142,7 +142,6 @@ export default {
 
 <style lang="scss" scoped>
 .services {
-  margin: 50px 0;
   @extend %display-flex;
 
   .content {
@@ -165,11 +164,11 @@ export default {
       .text {
         width: 50%;
         h1 {
-          font-size: 4rem;
+          font-size: 2.2rem;
           font-weight: 100;
         }
         p {
-          font-size: 2rem;
+          font-size: 1rem;
         }
       }
     }
@@ -191,7 +190,7 @@ export default {
 
     @media (min-width: 1300px) {
       flex-flow: row wrap;
-      min-height: 50vh;
+      min-height: 30vh;
 
       .design,
       .develop {

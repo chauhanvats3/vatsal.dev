@@ -65,20 +65,6 @@ export default {
 .aboutMe {
   margin: 50px 0;
   @extend %display-flex;
-  .heading {
-    align-self: flex-start;
-
-    h1 {
-      font-weight: 100;
-      font-size: 5rem;
-      color: $blue-dark;
-      padding: 10px;
-      text-transform: uppercase;
-    }
-    @media (min-width: 1000px) {
-      padding-left: 25%;
-    }
-  }
 
   .story {
     @extend %display-flex;
@@ -87,7 +73,7 @@ export default {
     .subHeading {
       h1 {
         color: $blue-dark;
-        font-size: 3rem;
+        font-size: 1.5rem;
         font-weight: 100;
         text-transform: uppercase;
       }
@@ -97,12 +83,13 @@ export default {
       width: 100%;
       margin: 5px 0;
       p {
-        font-size: 2rem;
-        line-height: 3rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
         margin: 25px 0;
         span {
-          font-family: $bad-script;
+          font-family: $poiret;
           color: $green-mid;
+          font-weight: bold;
         }
       }
     }

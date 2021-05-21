@@ -1,13 +1,12 @@
 <template>
   <div class="form__group field">
     <input
-      type="input"
+      type="email"
       class="form__field noselect"
       :placeholder="metadata.placeholder"
       :inputname="metadata.inputname"
       :id="metadata.id"
       v-model="val"
-      required
       autocomplete="off"
       @input="emitVal"
       ref="field"
@@ -48,7 +47,7 @@ export default {
   border: 0;
   border-bottom: 2px solid $blue-metal;
   outline: 0;
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: $blue-dark;
   padding: 7px 0;
   background: transparent;
@@ -62,7 +61,7 @@ export default {
 }
 
 .form__field:placeholder-shown ~ .form__label {
-  font-size: 3rem;
+  font-size: 1.5rem;
   cursor: text;
   top: 20px;
 }
@@ -73,7 +72,7 @@ export default {
   left: 0;
   display: block;
   transition: 0.3s ease-in-out;
-  font-size: 2rem;
+  font-size: 1rem;
   color: $blue-metal;
   text-align: left;
   z-index: 10;
@@ -82,7 +81,7 @@ export default {
 .hint {
   display: none;
   color: $green-mid;
-  font-size: 1.7rem;
+  font-size: 0.8rem;
   text-align: right;
 }
 
@@ -103,7 +102,7 @@ export default {
   left: 0px;
   display: block;
   transition: 0.2s;
-  font-size: 2.2rem;
+  font-size: 1.1rem;
   color: $green-mid;
 }
 

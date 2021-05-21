@@ -110,13 +110,14 @@ export default {
     @extend %display-flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    font-size: 2rem;
-    font-family: $bad-script;
+    font-size: 1.2rem;
+    font-family: $poiret;
     padding: 10px 15px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(104, 104, 104, 0.3);
     border-top-left-radius: 21.5px;
     border-top-right-radius: 21.5px;
     z-index: 10;
+    color: white;
 
     @supports (backdrop-filter: blur()) {
       backdrop-filter: blur(4px);
@@ -134,7 +135,7 @@ export default {
 
       li {
         background: rgba(255, 255, 255, 0.3);
-        font-size: 1.2rem;
+        font-size: 0.7rem;
         font-weight: normal;
         margin: 5px;
         padding: 5px 10px;

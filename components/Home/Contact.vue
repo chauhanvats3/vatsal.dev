@@ -10,12 +10,12 @@
         :val.sync="dataset.name.val"
         @input:val="dataset.name.val = $event"
       />
-      <InputTextArea
+      <InputEmail
         :metadata="dataset.email"
         :val.sync="dataset.email.val"
         @input:val="dataset.email.val = $event"
       />
-      <InputEmail
+      <InputTextArea
         :metadata="dataset.message"
         :val.sync="dataset.message.val"
         @input:val="dataset.message.val = $event"
@@ -155,7 +155,7 @@ export default {
   align-items: flex-start;
 
   p {
-    font-size: 2.8rem;
+    font-size: 1.4rem;
     padding: 20px;
     padding-bottom: 0;
     color: $black;
@@ -181,16 +181,16 @@ export default {
       $green-mid 20%,
       $green-light 20%,
       $green-light 40%,
-      $green-mid 40%,
-      $green-mid 60%,
+      $green-dark 40%,
       $green-dark 60%,
-      $green-dark 80%,
+      $green-light 60%,
+      $green-light 80%,
       $green-mid 80%,
       $green-mid 100%
     );
     background-size: 150%;
     background-position: left;
-    animation: movingGradientBG 2.5s ease-in-out infinite alternate;
+    animation: movingGradientBG 2.5s ease-in-out infinite alternate-reverse;
     color: white;
   }
 
@@ -220,8 +220,7 @@ export default {
     );
 
     background-size: 150%;
-    background-position: left;
-    animation: movingGradientBG 2.5s ease-in-out infinite alternate;
+    background-position: center;
 
     color: white;
   }
@@ -243,13 +242,12 @@ export default {
       #101010 100%
     );
     background-size: 150%;
-    background-position: left;
-    animation: movingGradientBG 2.5s ease-in-out infinite alternate;
+    background-position: center;
   }
   .social {
     width: 100%;
     p {
-      font-size: 3rem;
+      font-size: 1.5rem;
       @media (min-width: 1000px) {
         padding-left: 25%;
       }

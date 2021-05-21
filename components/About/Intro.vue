@@ -5,7 +5,7 @@
     </div>
     <div class="content">
       <p>This Is Me,</p>
-      <h1>Vatsal Chauhan</h1>
+      <h1><strong>Vatsal</strong> Chauhan</h1>
     </div>
   </div>
 </template>
@@ -20,29 +20,41 @@ export default {};
   @extend %display-flex;
   width: min(90%, 80ch);
   height: 170px;
-  margin: 40px 0;
 
   .imageGroup {
     position: absolute;
-    width: 150px;
-    height: 150px;
-    left: -20px;
-    top: -10px;
+    width: 170px;
+    height: 170px;
+    left: -25px;
+    top: -25px;
+
+    @media (min-width: 1000px) {
+      width: 250px;
+      height: 250px;
+
+      left: -50px;
+      top: -70px;
+    }
   }
 
   .content {
     width: 100%;
     height: 100%;
-    padding-left: 150px;
+    padding-left: 180px;
     @extend %display-flex;
     align-items: flex-start;
     p {
-      font-size: 2.5rem;
+      font-size: 1.6rem;
     }
     h1 {
-      font-size: 3.5rem;
+      font-size: 2rem;
       font-weight: 100;
-      color: $green-mid;
+      color: $blue-dark;
+      font-family: $poiret;
+    }
+
+    @media (min-width: 1000px) {
+      padding-left: 280px;
     }
   }
 }

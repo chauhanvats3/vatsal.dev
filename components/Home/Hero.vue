@@ -45,7 +45,6 @@ export default {
 <style lang="scss" scoped>
 .hero {
   @extend %display-flex;
-  font-size: 3.5rem;
   width: 100%;
   height: fit-content;
   justify-items: flex-start;
@@ -66,11 +65,14 @@ export default {
       width: 100%;
       height: 100%;
     }
-    p {
-      font-size: 2.5rem;
+
+    .info {
+      font-size: 1.7rem;
       width: 100%;
       text-align: center;
       padding: 20px 0;
+      font-weight: normal;
+      font-family: $poiret;
 
       @supports (backdrop-filter: blur()) {
         backdrop-filter: blur(4px);
@@ -108,11 +110,6 @@ export default {
       .btn-chat {
         position: absolute;
         bottom: -4%;
-
-        p {
-          padding: 0;
-          font-size: 2.5rem;
-        }
       }
     }
   }

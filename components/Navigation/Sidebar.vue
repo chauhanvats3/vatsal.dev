@@ -39,9 +39,10 @@ export default {
     li {
       width: 100%;
       margin: 20px;
-      font-size: 4rem;
+      font-size: 2rem;
 
       p {
+        font-family: $poiret;
         color: white;
       }
     }

@@ -12,25 +12,8 @@ export default {};
 <style lang="scss" scoped>
 .footer {
   width: 100%;
-  height: 45px;
-  background: linear-gradient(
-    103deg,
-    #0e9594 0%,
-    #0e9594 20%,
-    #108585 20%,
-    #108585 40%,
-    #117d7d 40%,
-    #117d7d 60%,
-    #127979 60%,
-    #127979 80%,
-    #127475 80%,
-    #127475 10%
-  );
-
-  background-size: 150%;
-  background-position: left;
-  animation: movingGradientBG 2.5s ease-in-out infinite alternate;
-  will-change: background-position;
+  height: 55px;
+  background: $black;
   @extend %display-flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -38,7 +21,12 @@ export default {};
   a {
     @extend %display-flex;
     color: $white;
-    font-size: 2rem;
+    font-size: 1.2rem;
+    font-family: $poiret;
+
+    @media (min-width: 800px) {
+      font-size: 1.4rem;
+    }
   }
 }
 </style>

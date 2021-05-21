@@ -7,9 +7,6 @@ export default {
     height: "3px",
     continuous: true
   },
-  scrollBehavior: (to, from, savedPosition) => {
-    return { x: 0, y: 0 };
-  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -31,7 +28,7 @@ export default {
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css2?family=Bad+Script&family=Nunito:wght@200;300;400;600&display=swap"
+          "https://fonts.googleapis.com/css2?family=Poiret+One&family=Nunito:wght@200;300;400;600&display=swap"
       }
     ]
   },

@@ -5,7 +5,9 @@
     </div>
     <div class="content">
       <div class="cardHeading">
-        <div class="name">{{ dataset.name }}</div>
+        <div class="name">
+          <strong>{{ dataset.f_name }}</strong> {{ dataset.l_name }}
+        </div>
         <div class="company">{{ dataset.company }}</div>
       </div>
       <div class="review">{{ dataset.review }}</div>
@@ -61,20 +63,21 @@ export default {
       @extend %display-flex;
       align-items: flex-start;
       margin-left: 150px;
-      font-size: 2rem;
+      font-size: 1rem;
       min-height: 100px;
       margin-top: 10px;
 
       .name {
-        font-size: 2.5rem;
+        font-size: 1.2rem;
         text-transform: uppercase;
         margin: 5px 0;
-        font-weight: normal;
       }
 
       .company {
-        letter-spacing: 0.3rem;
-        color: rgb(78, 78, 78);
+        font-family: $poiret;
+        letter-spacing: 0.15rem;
+        color: rgb(87, 87, 87);
+        font-weight: 600;
       }
     }
     .review {
@@ -82,10 +85,10 @@ export default {
       margin-bottom: 25px;
       width: 100%;
       min-height: 100px;
-      font-size: 2rem;
-      letter-spacing: 0.15rem;
-      line-height: 3.2rem;
-      word-spacing: 0.4rem;
+      font-size: 1rem;
+      letter-spacing: 0.09rem;
+      line-height: 1.6rem;
+      word-spacing: 0.2rem;
       font-weight: 300;
     }
   }

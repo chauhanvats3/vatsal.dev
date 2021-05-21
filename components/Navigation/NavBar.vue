@@ -102,13 +102,14 @@ export default {
       @extend %display-flex;
       flex-flow: row wrap;
       li {
-        font-size: 2rem;
+        font-size: 1rem;
       }
 
       .menuItem {
         @extend %display-flex;
         height: $navbar-height;
         margin: 0 25px;
+        font-family: $poiret;
       }
 
       li:hover {
