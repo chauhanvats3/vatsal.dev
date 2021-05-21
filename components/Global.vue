@@ -26,7 +26,6 @@ select:-webkit-autofill:focus {
 }
 
 .noscroll {
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -41,9 +40,9 @@ select:-webkit-autofill:focus {
   width: fit-content;
   color: white;
 
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
-    0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11),
-    0 8px 16px rgba(0, 0, 0, 0.11);
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 25%), 0px 2px 2px rgb(0 0 0 / 20%),
+    0px 4px 4px rgb(0 0 0 / 15%), 0px 6px 8px rgb(0 0 0 / 10%),
+    0px 8px 16px rgb(0 0 0 / 5%);
 
   p {
     color: white;
@@ -74,6 +73,7 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   letter-spacing: 0.09rem;
+  overflow-x: hidden;
 }
 
 *,

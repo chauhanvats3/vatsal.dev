@@ -21,7 +21,7 @@ a {
   opacity: 1;
   transition: opacity 0.3s ease;
   border-radius: 25px;
-  z-index: 90;
+  z-index: 40;
   @supports (backdrop-filter: blur()) {
     backdrop-filter: blur(2px);
   }
