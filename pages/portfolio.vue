@@ -1,10 +1,6 @@
 <template>
   <div class="portfolio">
-    <div class="heading">
-      <h1>
-        The feathers in my cap
-      </h1>
-    </div>
+    <Heading heading="The feathers in my cap " />
     <div class="reviews">
       <EachProjectCard
         v-for="data in dataset"

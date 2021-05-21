@@ -1,8 +1,7 @@
 <template>
   <div class="portfolio">
-    <div class="heading">
-      <h1>Recently, I Worked For</h1>
-    </div>
+    <Heading heading="Recently, I Worked For" />
+
     <div class="cardWrapper">
       <EachProjectCard :dataset="this.dataset" />
     </div>

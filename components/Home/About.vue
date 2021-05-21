@@ -1,8 +1,6 @@
 <template>
   <div class="aboutMe">
-    <div class="heading">
-      <h1>Hi, Hey there, Hello!</h1>
-    </div>
+    <Heading heading="Hi, Hey There, Hello!" />
     <AboutIntro />
   </div>
 </template>

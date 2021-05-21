@@ -58,9 +58,6 @@ export default {
       });
     },
     scrolling(e) {
-      //Make Magic
-      //parallax.seek(animation.duration * (seekProgressEl.value / 100));
-
       let parallax = this.$data.parallax;
       let bounding = this.$refs.image.getBoundingClientRect();
       let decider =

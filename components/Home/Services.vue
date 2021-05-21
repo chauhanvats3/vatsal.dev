@@ -1,8 +1,6 @@
 <template>
   <div class="services" ref="services">
-    <div class="heading">
-      <h1>I Can</h1>
-    </div>
+    <Heading heading="I Can" />
     <div class="content">
       <div class="design">
         <div class="vector">

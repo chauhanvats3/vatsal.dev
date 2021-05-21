@@ -1,5 +1,5 @@
 <template>
-  <div class="intro">
+  <div class="intro" ref="intro">
     <div class="imageGroup">
       <BlobImage image="/images/vatsal.jpg" />
     </div>
@@ -11,7 +11,20 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    let callback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("arrive");
+          console.log(entry);
+        }
+      });
+    };
+    let observer = new IntersectionObserver(callback, { threshold: 0.3 });
+    observer.observe(this.$refs.intro);
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -21,6 +34,11 @@ export default {};
   width: min(90%, 60ch);
   height: 170px;
   margin: 30px 0;
+  will-change: transform, opacity;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.5s ease-in;
+  transition-delay: 0.5s;
   .imageGroup {
     position: absolute;
     width: 170px;
@@ -57,5 +75,9 @@ export default {};
       padding-left: 280px;
     }
   }
+}
+.arrive {
+  transform: scale(1);
+  opacity: 1;
 }
 </style>

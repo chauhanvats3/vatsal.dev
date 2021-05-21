@@ -1,10 +1,6 @@
 <template>
   <div class="testimonials">
-    <div class="heading">
-      <h1>
-        My clients give the best reviews
-      </h1>
-    </div>
+    <Heading heading="My clients give the best reviews " />
     <div class="reviews">
       <EachReviewCard v-for="data in dataset" :key="data.key" :dataset="data" />
     </div>

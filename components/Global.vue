@@ -103,20 +103,4 @@ ul {
     scrollbar-width: none;
   }
 }
-
-.heading {
-  align-self: flex-start;
-  margin: 50px 10px;
-
-  h1 {
-    font-weight: 100;
-    font-size: 3rem;
-    color: $blue-dark;
-    padding: 10px;
-    text-transform: uppercase;
-  }
-  @media (min-width: 1000px) {
-    padding-left: 15%;
-  }
-}
 </style>

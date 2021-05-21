@@ -1,8 +1,6 @@
 <template>
   <div class="testimonials">
-    <div class="heading">
-      <h1>Which Left Them Saying</h1>
-    </div>
+    <Heading heading="Which Left Them Saying " />
     <div class="cardWrapper">
       <EachReviewCard :dataset="this.dataset" />
     </div>
