@@ -1,11 +1,12 @@
 <template>
   <div class="defaultLayout" ref="defaultLayout">
     <Global />
-    <NavBar @hamburgerClicked="toggleSidebar" :menuItems="menuItems" />
     <div class="sideMenuWrapper" ref="sideMenu">
       <Sidemenu :menuItems="menuItems" @itemClicked="toggleSidebar" />
     </div>
     <div class="main" ref="main" id="main">
+      <NavBar @hamburgerClicked="toggleSidebar" :menuItems="menuItems" />
+
       <Nuxt />
       <Footer />
     </div>
@@ -72,8 +73,8 @@ export default {
   }
 }
 .sideMenuWrapper {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   margin-top: $navbar-height;
   position: fixed;
   transition: all 0.4s ease-in-out;

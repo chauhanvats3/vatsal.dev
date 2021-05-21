@@ -148,6 +148,7 @@ export default {
     @extend %display-flex;
     justify-content: flex-start;
     overflow: hidden;
+    border-radius: 21.5px;
 
     .image {
       position: absolute;

@@ -1,4 +1,4 @@
-<template> </template>
+<template> <div class="global-css"></div> </template>
 
 <script>
 export default {};
@@ -23,10 +23,6 @@ select:-webkit-autofill:focus {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.noscroll {
-  overflow: hidden;
 }
 
 .btn {
@@ -75,7 +71,9 @@ html {
   letter-spacing: 0.09rem;
   overflow-x: hidden;
 }
-
+body {
+  overflow-x: hidden;
+}
 *,
 *::before,
 *::after {
@@ -93,14 +91,5 @@ a {
 
 ul {
   list-style-type: none; /* Remove bullets */
-}
-@media (max-width: 800px) {
-  *::-webkit-scrollbar {
-    display: none;
-  }
-  * {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
 }
 </style>
