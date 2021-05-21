@@ -47,7 +47,7 @@ export default {
         }
       });
     };
-    let observer = new IntersectionObserver(callback, { threshold: 0.8 });
+    let observer = new IntersectionObserver(callback, { threshold: 0.7 });
     observer.observe(this.$refs.elementTransition);
   }
 };
@@ -63,6 +63,7 @@ export default {
   transition-delay: var(--delay);
   transform: translateY(5%);
   opacity: 0;
+  margin: 5px;
 }
 
 .elementTransition.fade {

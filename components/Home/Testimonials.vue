@@ -1,13 +1,20 @@
 <template>
   <div class="testimonials">
-    <Heading heading="Which Left Them Saying " />
+    <ElementTransition :options="{ delay: `0.2` }">
+      <Heading heading="Which Left Them Saying " />
+    </ElementTransition>
+
     <div class="cardWrapper">
-      <EachReviewCard :dataset="this.dataset" />
+      <ElementTransition :options="{ delay: `0.2` }">
+        <EachReviewCard :dataset="this.dataset" />
+      </ElementTransition>
     </div>
 
-    <div class="btn btn-testimonials" @click="portfolioButtonClicked">
-      <p>Testimonials</p>
-    </div>
+    <ElementTransition :options="{ delay: `0.3` }">
+      <div class="btn btn-testimonials" @click="portfolioButtonClicked">
+        <p>Testimonials</p>
+      </div>
+    </ElementTransition>
   </div>
 </template>
 

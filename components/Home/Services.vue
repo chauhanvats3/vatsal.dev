@@ -1,24 +1,36 @@
 <template>
   <div class="services" ref="services">
-    <Heading heading="I Can" />
+    <ElementTransition :options="{ delay: `0.1` }">
+      <Heading heading="I Can" />
+    </ElementTransition>
     <div class="content">
       <div class="design">
-        <div class="vector">
-          <DesignBase />
-        </div>
-        <div class="text">
-          <h1>Design.</h1>
-          <p>UI/UX/Logo</p>
-        </div>
+        <ElementTransition :options="{ delay: `0.2` }">
+          <div class="vector">
+            <DesignBase />
+          </div>
+        </ElementTransition>
+
+        <ElementTransition :options="{ delay: `0.4` }">
+          <div class="text">
+            <h1>Design.</h1>
+            <p>UI/UX/Logo</p>
+          </div>
+        </ElementTransition>
       </div>
       <div class="develop">
-        <div class="text">
-          <h1>Develop.</h1>
-          <p>Website/Extension</p>
-        </div>
-        <div class="vector">
-          <DevBase />
-        </div>
+        <ElementTransition :options="{ delay: `0.4` }">
+          <div class="text">
+            <h1>Develop.</h1>
+            <p>Website/Extension</p>
+          </div>
+        </ElementTransition>
+
+        <ElementTransition :options="{ delay: `0.2` }">
+          <div class="vector">
+            <DevBase />
+          </div>
+        </ElementTransition>
       </div>
     </div>
   </div>
@@ -152,7 +164,7 @@ export default {
       flex-flow: row nowrap;
       margin: 30px;
       .vector {
-        width: 50%;
+        width: 90%;
         height: 200px;
 
         img {
@@ -160,7 +172,7 @@ export default {
         }
       }
       .text {
-        width: 50%;
+        width: 100%;
         h1 {
           font-size: 2.2rem;
           font-weight: 100;
