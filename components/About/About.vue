@@ -89,7 +89,7 @@ export default {
         margin: 25px 0;
         span {
           font-family: $poiret;
-          color: $green-mid;
+          color: $blue-light;
           font-weight: bold;
         }
       }
