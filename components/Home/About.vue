@@ -3,9 +3,7 @@
     <ElementTransition>
       <Heading heading="Hi, Hey There, Hello!" />
     </ElementTransition>
-    <ElementTransition :options="{ delay: `0.3` }">
-      <AboutIntro />
-    </ElementTransition>
+    <AboutIntro />
   </div>
 </template>
 

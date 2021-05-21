@@ -1,26 +1,33 @@
 <template>
-  <div class="projectCard" :style="cssProps" @click="handleClick" ref="card">
-    <div class="title">
-      <p>{{ dataset.title }}</p>
-      <a :href="dataset.link" target="_blank" @click.stop rel="noreferrer"
-        ><img src="/icons/link.svg" alt=""
-      /></a>
+  <ElementTransition :options="{ delay: `0.2` }">
+    <div class="projectCard" :style="cssProps" @click="handleClick" ref="card">
+      <div class="title">
+        <p>{{ dataset.title }}</p>
+        <a :href="dataset.link" target="_blank" @click.stop rel="noreferrer"
+          ><img src="/icons/link.svg" alt=""
+        /></a>
+      </div>
+      <div class="images">
+        <img
+          class="image"
+          :src="dataset.whole"
+          alt=""
+          ref="image"
+          loading="eager"
+        />
+      </div>
+
+      <div class="pills">
+        <ul>
+          <li v-for="(pill, index) in dataset.pills" :key="pill">
+            <ElementTransition :options="{ delay: `0.${index * 3}` }">
+              <p>{{ pill }}</p>
+            </ElementTransition>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="images">
-      <img
-        class="image"
-        :src="dataset.whole"
-        alt=""
-        ref="image"
-        loading="eager"
-      />
-    </div>
-    <div class="pills">
-      <ul>
-        <li v-for="pill in dataset.pills" :key="pill">{{ pill }}</li>
-      </ul>
-    </div>
-  </div>
+  </ElementTransition>
 </template>
 
 <script>
@@ -126,7 +133,7 @@ export default {
       justify-content: flex-start;
       padding: 20px;
 
-      li {
+      li p {
         background: rgba(255, 255, 255, 0.3);
         font-size: 0.7rem;
         font-weight: normal;

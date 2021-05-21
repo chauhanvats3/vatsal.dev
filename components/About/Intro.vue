@@ -1,12 +1,17 @@
 <template>
   <div class="intro" ref="intro">
-    <div class="imageGroup">
-      <BlobImage image="/images/vatsal.jpg" />
-    </div>
-    <div class="content">
-      <p>This Is Me,</p>
-      <h1><strong>Vatsal</strong> Chauhan</h1>
-    </div>
+    <ElementTransition :options="{ delay: `0.2` }">
+      <div class="imageGroup">
+        <BlobImage image="/images/vatsal.jpg" />
+      </div>
+    </ElementTransition>
+
+    <ElementTransition :options="{ delay: `0.4` }">
+      <div class="content">
+        <p>This Is Me,</p>
+        <h1><strong>Vatsal</strong> Chauhan</h1>
+      </div>
+    </ElementTransition>
   </div>
 </template>
 

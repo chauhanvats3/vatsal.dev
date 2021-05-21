@@ -14,7 +14,7 @@
         />
       </ElementTransition>
 
-      <ElementTransition :options="{ delay: `0.3` }">
+      <ElementTransition :options="{ delay: `0.2` }">
         <InputEmail
           :metadata="dataset.email"
           :val.sync="dataset.email.val"
@@ -22,7 +22,7 @@
         />
       </ElementTransition>
 
-      <ElementTransition :options="{ delay: `0.4` }">
+      <ElementTransition :options="{ delay: `0.2` }">
         <InputTextArea
           :metadata="dataset.message"
           :val.sync="dataset.message.val"
@@ -31,7 +31,7 @@
       </ElementTransition>
     </form>
 
-    <ElementTransition :options="{ delay: `0.2` }">
+    <ElementTransition :options="{ delay: `0.3` }">
       <div class="btn" @click="submitForm($event)" ref="btn">
         Send
       </div></ElementTransition
