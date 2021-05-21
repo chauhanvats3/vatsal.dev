@@ -1,7 +1,9 @@
 <template>
-  <div class="heading" ref="heading">
-    <h1>{{ heading }}</h1>
-  </div>
+  <ElementTransition>
+    <div class="heading" ref="heading">
+      <h1>{{ heading }}</h1>
+    </div>
+  </ElementTransition>
 </template>
 
 <script>

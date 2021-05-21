@@ -1,8 +1,6 @@
 <template>
   <div class="aboutMe">
-    <ElementTransition>
-      <Heading heading="Hi, Hey There, Hello!" />
-    </ElementTransition>
+    <Heading heading="Hi, Hey There, Hello!" />
     <AboutIntro />
   </div>
 </template>

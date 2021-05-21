@@ -1,14 +1,10 @@
 <template>
   <div class="portfolio">
-    <ElementTransition>
-      <Heading heading="Recently, I Worked For" />
-    </ElementTransition>
+    <Heading heading="Recently, I Worked For" />
 
-    <ElementTransition :options="{ delay: `0.1` }">
-      <div class="cardWrapper">
-        <EachProjectCard :dataset="this.dataset" />
-      </div>
-    </ElementTransition>
+    <div class="cardWrapper">
+      <EachProjectCard :dataset="this.dataset" />
+    </div>
 
     <ElementTransition :options="{ delay: `0.1` }">
       <div class="btn btn-portfolio" @click="portfolioButtonClicked">

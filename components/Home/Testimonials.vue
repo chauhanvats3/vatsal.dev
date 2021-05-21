@@ -1,13 +1,9 @@
 <template>
   <div class="testimonials">
-    <ElementTransition :options="{ delay: `0.2` }">
-      <Heading heading="Which Left Them Saying " />
-    </ElementTransition>
+    <Heading heading="Which Left Them Saying " />
 
     <div class="cardWrapper">
-      <ElementTransition :options="{ delay: `0.2` }">
-        <EachReviewCard :dataset="this.dataset" />
-      </ElementTransition>
+      <EachReviewCard :dataset="this.dataset" />
     </div>
 
     <ElementTransition :options="{ delay: `0.3` }">

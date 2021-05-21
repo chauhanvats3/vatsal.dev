@@ -137,9 +137,10 @@ export default {
         background: rgba(255, 255, 255, 0.3);
         font-size: 0.7rem;
         font-weight: normal;
-        margin: 5px;
-        padding: 5px 10px;
-        border-radius: 5px;
+        margin: 2px;
+        padding: 10px 15px;
+        border-radius: 8px;
+        color: white;
 
         @supports (backdrop-filter: blur()) {
           backdrop-filter: blur(4px);

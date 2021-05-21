@@ -1,8 +1,6 @@
 <template>
   <div class="services" ref="services">
-    <ElementTransition :options="{ delay: `0.1` }">
-      <Heading heading="I Can" />
-    </ElementTransition>
+    <Heading heading="I Can" />
     <div class="content">
       <div class="design">
         <ElementTransition :options="{ delay: `0.2` }">
