@@ -1,9 +1,12 @@
 <template>
   <div class="aboutMe">
-    <div class="heading">
-      <h1>A Little Bit About Me</h1>
-    </div>
-    <AboutIntro />
+    <ElementTransition>
+      <Heading heading="A Little Bit About Me" />
+    </ElementTransition>
+
+    <ElementTransition :options="{ delay: `0.2` }">
+      <AboutIntro />
+    </ElementTransition>
 
     <div class="story">
       <div class="subHeading">
@@ -41,6 +44,17 @@
 
 <script>
 export default {
+  data() {
+    return {
+      arriveOptionsHeading: {
+        type: "fade"
+      },
+      arriveOptionsIntro: {
+        type: "fade",
+        delay: "0.5"
+      }
+    };
+  },
   computed: {
     cssProps() {
       var rand1 = this.getRandomNumber();
@@ -63,7 +77,6 @@ export default {
 
 <style lang="scss" scoped>
 .aboutMe {
-  margin: 50px 0;
   @extend %display-flex;
 
   .story {

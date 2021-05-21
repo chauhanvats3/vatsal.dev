@@ -16,7 +16,7 @@ export default {
         }
       });
     };
-    let observer = new IntersectionObserver(callback, { threshold: 0.3 });
+    let observer = new IntersectionObserver(callback, { threshold: 0.9 });
     observer.observe(this.$refs.heading);
   }
 };
@@ -26,11 +26,6 @@ export default {
 .heading {
   align-self: flex-start;
   margin: 50px 10px;
-
-  will-change: transform, opacity;
-  transform: translateY(5%);
-  opacity: 0;
-  transition: all 0.5s ease-in;
 
   h1 {
     font-weight: 100;
@@ -42,10 +37,5 @@ export default {
   @media (min-width: 1000px) {
     padding-left: 15%;
   }
-}
-
-.heading.arrive {
-  transform: translateY(0);
-  opacity: 1;
 }
 </style>
