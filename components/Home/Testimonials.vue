@@ -47,6 +47,7 @@ export default {
     width: 100%;
     height: 100%;
     @extend %display-flex;
+    margin: 0 0 35px 0;
   }
 }
 </style>

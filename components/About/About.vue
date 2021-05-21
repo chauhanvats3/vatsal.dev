@@ -69,7 +69,8 @@ export default {
   .story {
     @extend %display-flex;
     align-items: flex-start;
-    width: min(90%, 80ch);
+    width: min(90%, 60ch);
+    margin: 50px 0 0 0;
     .subHeading {
       h1 {
         color: $blue-dark;

@@ -15,7 +15,7 @@ a {
   right: 15px;
   height: 50px;
   width: 50px;
-  background-color: #04445d4f;
+  background-color: #0840674f;
   font-size: 5rem;
   @extend %display-flex;
   opacity: 1;

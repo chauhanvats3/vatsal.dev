@@ -17,7 +17,8 @@ export default {
     return {
       dataset: [
         {
-          name: "Abhishek Chauhan",
+          f_name: "Abhishek",
+          l_name: "Chauhan",
           company: "Shri Ganga View Guest House",
           review:
             "Vatsal is a very talented designer/developer. He helped immensely in taking my business online and also designing the brand identity be it logo, business card or color palette. 10/10 Would recommend.",

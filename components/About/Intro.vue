@@ -18,9 +18,9 @@ export default {};
 .intro {
   position: relative;
   @extend %display-flex;
-  width: min(90%, 80ch);
+  width: min(90%, 60ch);
   height: 170px;
-
+  margin: 30px 0;
   .imageGroup {
     position: absolute;
     width: 170px;

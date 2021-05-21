@@ -80,7 +80,7 @@ export default {
 
 .hint {
   display: none;
-  color: $green-mid;
+  color: $blue-mid;
   font-size: 0.8rem;
   text-align: right;
 }
@@ -88,7 +88,7 @@ export default {
 .form__field:focus {
   padding-bottom: 6px;
   border-width: 2px;
-  border-image: linear-gradient(90deg, $blue-metal, $green-light);
+  border-image: linear-gradient(90deg, $green-light, $blue-metal);
   border-image-slice: 1;
 }
 
@@ -103,7 +103,7 @@ export default {
   display: block;
   transition: 0.2s;
   font-size: 1.1rem;
-  color: $green-mid;
+  color: $blue-mid;
 }
 
 .form__field:focus ~ .form__label .hint {
