@@ -1,28 +1,41 @@
 <template>
   <div class="contact" id="contact">
-    <Heading heading="Need My Expertise?" />
+    <ElementTransition>
+      <Heading heading="Need My Expertise?" />
+      <p>Drop a message and I'll contact you right back</p>
+    </ElementTransition>
 
-    <p>Drop a message and I'll contact you right back</p>
     <form @click.stop.prevent class="form">
-      <InputText
-        :metadata="dataset.name"
-        :val.sync="dataset.name.val"
-        @input:val="dataset.name.val = $event"
-      />
-      <InputEmail
-        :metadata="dataset.email"
-        :val.sync="dataset.email.val"
-        @input:val="dataset.email.val = $event"
-      />
-      <InputTextArea
-        :metadata="dataset.message"
-        :val.sync="dataset.message.val"
-        @input:val="dataset.message.val = $event"
-      />
+      <ElementTransition :options="{ delay: `0.2` }">
+        <InputText
+          :metadata="dataset.name"
+          :val.sync="dataset.name.val"
+          @input:val="dataset.name.val = $event"
+        />
+      </ElementTransition>
+
+      <ElementTransition :options="{ delay: `0.3` }">
+        <InputEmail
+          :metadata="dataset.email"
+          :val.sync="dataset.email.val"
+          @input:val="dataset.email.val = $event"
+        />
+      </ElementTransition>
+
+      <ElementTransition :options="{ delay: `0.4` }">
+        <InputTextArea
+          :metadata="dataset.message"
+          :val.sync="dataset.message.val"
+          @input:val="dataset.message.val = $event"
+        />
+      </ElementTransition>
     </form>
-    <div class="btn" @click="submitForm($event)" ref="btn">
-      Send
-    </div>
+
+    <ElementTransition :options="{ delay: `0.2` }">
+      <div class="btn" @click="submitForm($event)" ref="btn">
+        Send
+      </div></ElementTransition
+    >
 
     <div class="social">
       <p>Or Connect With Me On</p>
@@ -155,9 +168,10 @@ export default {
 
   p {
     font-size: 1.4rem;
-    padding: 20px;
+    padding: 0 20px;
     padding-bottom: 0;
     color: $black;
+    align-self: flex-start;
 
     @media (min-width: 1000px) {
       padding-left: 25%;
@@ -166,7 +180,7 @@ export default {
 
   .form {
     align-self: center;
-    width: min(90%, 80ch);
+    width: min(90%, 60ch);
   }
   .btn {
     margin: 30px;
