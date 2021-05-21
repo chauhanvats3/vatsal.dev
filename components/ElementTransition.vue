@@ -33,21 +33,25 @@ export default {
         let tempOptions;
         if (!this.options) {
           tempOptions = {
-            type: "fade"
+            type: "fade",
+            repeat: false
           };
         } else {
           tempOptions = this.options;
         }
 
-        console.log(this.options);
         if (entry.isIntersecting) {
           this.$refs.elementTransition.classList.add(
+            tempOptions.type ? tempOptions.type : "fade"
+          );
+        } else if (!entry.isIntersecting && this.options.repeat) {
+          this.$refs.elementTransition.classList.remove(
             tempOptions.type ? tempOptions.type : "fade"
           );
         }
       });
     };
-    let observer = new IntersectionObserver(callback, { threshold: 0.7 });
+    let observer = new IntersectionObserver(callback, { threshold: 0.4 });
     observer.observe(this.$refs.elementTransition);
   }
 };

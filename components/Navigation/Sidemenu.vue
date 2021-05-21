@@ -1,9 +1,17 @@
 <template>
   <div class="sideMenu">
     <ul>
-      <li v-for="item in menuItems" :key="item.title" @click="itemClicked">
+      <li
+        v-for="(item, index) in menuItems"
+        :key="item.title"
+        @click="itemClicked"
+      >
         <NuxtLink :to="item.link">
-          <p class="menuItem">{{ item.title }}</p>
+          <ElementTransition
+            :options="{ delay: `${(index * 1.1) / 10}`, repeat: true }"
+          >
+            <p class="menuItem">{{ item.title }}</p>
+          </ElementTransition>
         </NuxtLink>
       </li>
     </ul>

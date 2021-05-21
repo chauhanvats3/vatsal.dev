@@ -92,4 +92,14 @@ a {
 ul {
   list-style-type: none; /* Remove bullets */
 }
+
+@media (max-width: 1250px) {
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
 </style>
