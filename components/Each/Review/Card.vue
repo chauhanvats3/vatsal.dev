@@ -1,21 +1,23 @@
 <template>
   <div class="reviewCard" :style="cssProps">
     <ElementTransition :options="{ delay: `0.2` }">
-      <div class="imageGroup">
-        <BlobImage :image="dataset.image" />
-      </div>
-    </ElementTransition>
-
-    <ElementTransition :options="{ delay: `0.4` }">
-      <div class="content">
-        <div class="cardHeading">
-          <div class="name">
-            <strong>{{ dataset.f_name }}</strong> {{ dataset.l_name }}
-          </div>
-          <div class="company">{{ dataset.company }}</div>
+      <ElementTransition :options="{ delay: `0.3` }">
+        <div class="imageGroup">
+          <BlobImage :image="dataset.image" />
         </div>
-        <div class="review">{{ dataset.review }}</div>
-      </div>
+      </ElementTransition>
+
+      <ElementTransition :options="{ delay: `0.4` }">
+        <div class="content">
+          <div class="cardHeading">
+            <div class="name">
+              <strong>{{ dataset.f_name }}</strong> {{ dataset.l_name }}
+            </div>
+            <div class="company">{{ dataset.company }}</div>
+          </div>
+          <div class="review">{{ dataset.review }}</div>
+        </div>
+      </ElementTransition>
     </ElementTransition>
   </div>
 </template>

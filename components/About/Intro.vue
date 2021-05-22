@@ -2,7 +2,7 @@
   <div class="intro" ref="intro">
     <ElementTransition :options="{ delay: `0.2` }">
       <div class="imageGroup">
-        <BlobImage image="/images/vatsal.jpg" />
+        <BlobImage image="/images/vatsal_2.jpg" />
       </div>
     </ElementTransition>
 
@@ -25,7 +25,7 @@ export default {};
   @extend %display-flex;
   width: min(90%, 60ch);
   height: 170px;
-  margin: 30px 0;
+  margin: 30px 0 50px 0;
   .imageGroup {
     position: absolute;
     width: 170px;
@@ -60,6 +60,14 @@ export default {};
 
     @media (min-width: 1000px) {
       padding-left: 280px;
+
+      p {
+        font-size: 2.2rem;
+      }
+
+      h1 {
+        font-size: 2.7rem;
+      }
     }
   }
 }

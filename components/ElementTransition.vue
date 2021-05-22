@@ -44,7 +44,7 @@ export default {
           this.$refs.elementTransition.classList.add(
             tempOptions.type ? tempOptions.type : "fade"
           );
-        } else if (!entry.isIntersecting && this.options.repeat) {
+        } else if (!entry.isIntersecting && tempOptions.repeat) {
           this.$refs.elementTransition.classList.remove(
             tempOptions.type ? tempOptions.type : "fade"
           );

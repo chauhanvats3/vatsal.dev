@@ -20,7 +20,9 @@
       <div class="pills">
         <ul>
           <li v-for="(pill, index) in dataset.pills" :key="pill">
-            <ElementTransition :options="{ delay: `0.${index * 3}` }">
+            <ElementTransition
+              :options="{ delay: `${((index + 2) * 2) / 10}` }"
+            >
               <p>{{ pill }}</p>
             </ElementTransition>
           </li>

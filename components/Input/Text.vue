@@ -1,7 +1,7 @@
 <template>
   <div class="form__group field">
     <input
-      type="email"
+      type="text"
       class="form__field noselect"
       :placeholder="metadata.placeholder"
       :inputname="metadata.inputname"

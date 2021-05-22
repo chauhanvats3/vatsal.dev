@@ -40,7 +40,7 @@
     <div class="social">
       <p>Or Connect With Me On</p>
       <div class="brands">
-        <a href="https://wa.me/919148220111" target="_blank" rel="noreferrer">
+        <!-- <a href="https://wa.me/919148220111" target="_blank" rel="noreferrer">
           <div v-html="require(`/static/icons/whatsapp.svg?raw`)" />
         </a>
         <a
@@ -56,7 +56,14 @@
           rel="noreferrer"
         >
           <div v-html="require(`/static/icons/linkedin.svg?raw`)" />
-        </a>
+        </a> -->
+        <div v-for="(social, index) in socials" :key="social.key">
+          <a :href="social.link" target="_blank" rel="noreferrer">
+            <ElementTransition :options="{ delay: `${(index * 1.5) / 10}` }">
+              <div v-html="require(`/static/icons/${social.key}.svg?raw`)" />
+            </ElementTransition>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -154,7 +161,30 @@ export default {
           hint: "Let it all out!",
           val: ""
         }
-      }
+      },
+      socials: [
+        {
+          link: "https://wa.me/919148220111",
+          icon: "/static/icons/whatsapp.svg?raw",
+          key: "whatsapp"
+        },
+        {
+          link: "https://instagram.com/dazed._.confused",
+          icon: "/static/icons/instagram.svg?raw",
+          key: "instagram"
+        },
+        {
+          link: "https://www.linkedin.com/in/chauhanvats3/",
+          icon: "/static/icons/linkedin.svg?raw",
+          key: "linkedin"
+        },
+
+        {
+          link: "https://github.com/chauhanvats3",
+          icon: "/static/icons/github.svg?raw",
+          key: "github"
+        }
+      ]
     };
   }
 };
