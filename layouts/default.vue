@@ -78,7 +78,7 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #083f671f;
+    background: #083f6711;
     z-index: -100;
   }
 }
