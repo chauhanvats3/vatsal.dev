@@ -109,7 +109,7 @@ export default {
 
       .btn-chat {
         position: absolute;
-        bottom: -4%;
+        bottom: -6.5%;
       }
     }
   }

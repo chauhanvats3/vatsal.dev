@@ -35,6 +35,7 @@ select:-webkit-autofill:focus {
   cursor: pointer;
   width: fit-content;
   color: white;
+  margin: 20px;
 
   box-shadow: 0px 1px 1px rgb(0 0 0 / 25%), 0px 2px 2px rgb(0 0 0 / 20%),
     0px 4px 4px rgb(0 0 0 / 15%), 0px 6px 8px rgb(0 0 0 / 10%),
