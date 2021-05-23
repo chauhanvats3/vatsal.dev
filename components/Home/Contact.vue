@@ -1,5 +1,5 @@
 <template>
-  <div class="contact section" id="contact">
+  <div class="contact" id="contact">
     <Heading heading="Need My Expertise?" />
     <ElementTransition>
       <p>Drop a message and I'll contact you right back</p>
