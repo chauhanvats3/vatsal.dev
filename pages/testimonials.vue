@@ -2,7 +2,11 @@
   <div class="testimonials">
     <Heading heading="My clients give the best reviews " />
     <div class="reviews">
-      <EachReviewCard v-for="data in dataset" :key="data.key" :dataset="data" />
+      <EachReviewCard
+        v-for="dataset in datasets"
+        :key="dataset.key"
+        :dataset="dataset"
+      />
     </div>
   </div>
 </template>
@@ -11,7 +15,7 @@
 export default {
   data() {
     return {
-      dataset: [
+      datasets: [
         {
           f_name: "Abhishek",
           l_name: "Chauhan",
@@ -19,7 +23,18 @@ export default {
           review:
             "Vatsal is a very talented designer/developer. He helped immensely in taking my business online and also designing the brand identity be it logo, business card or color palette. 10/10 Would recommend.",
           bgColor: "18, 92, 110",
-          image: "/images/projects/gangaview/review.jpg"
+          image: "/images/projects/gangaview/review.jpg",
+          key: "tst-sgvgh"
+        },
+        {
+          f_name: "Pritam",
+          l_name: "Rawat",
+          company: "Satvik Yogshala",
+          review:
+            "Thanks you bro for developing my website. Surely will work with you again when I need a redesign in the near future.",
+          bgColor: "255, 215, 0",
+          image: "/images/projects/satvikyogshala/review.jpg",
+          key: "tst-svkyg"
         }
       ]
     };
@@ -44,6 +59,11 @@ export default {
     height: 100%;
     @extend %display-flex;
     padding: 20px 0;
+    flex-flow: row wrap;
+  }
+
+  .reviews > div {
+    width: min(90%, 600px);
   }
 }
 </style>

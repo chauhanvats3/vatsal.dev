@@ -1,11 +1,11 @@
 <template>
   <div class="portfolio">
     <Heading heading="The feathers in my cap " />
-    <div class="reviews">
+    <div class="projects">
       <EachProjectCard
-        v-for="data in dataset"
-        :key="data.key"
-        :dataset="data"
+        :dataset="dataset"
+        v-for="dataset in datasets"
+        :key="dataset.key"
       />
     </div>
   </div>
@@ -15,16 +15,22 @@
 export default {
   data() {
     return {
-      dataset: [
+      datasets: [
         {
           title: "Shri Ganga View Guest House",
           pills: ["Web Design", "Web Development", "Chrome Extension", "Logo"],
           bgColor: "#125C6E",
-          bgImage: "/images/projects/gangaview/web-mobile/image.png",
-          bgShadow: "projects/gangaview/web-mobile/shadow",
-          bgBase: "projects/gangaview/web-mobile/base",
-          whole: "/images/projects/gangaview/web-mobile/whole.png",
-          link: "https://gangaview.com"
+          image: "/images/projects/gangaview/web-mobile/whole.png",
+          link: "https://gangaview.com",
+          key: "prt-sgvgh"
+        },
+        {
+          title: "Satvik Yogshala",
+          pills: ["Web Development"],
+          bgColor: "#FFD700",
+          image: "/images/projects/satvikyogshala/website/whole.png",
+          link: "https://satvikyogshala.com",
+          key: "prt-svkyg"
         }
       ]
     };
@@ -44,11 +50,16 @@ export default {
     margin: 30px 10px;
   }
 
-  .reviews {
-    width: 100%;
+  .projects {
+    width: min(115ch, 90%);
     height: 100%;
     @extend %display-flex;
     padding: 20px 0;
+    flex-flow: row wrap;
+  }
+
+  .projects > div {
+    width: min(90%, 450px);
   }
 }
 </style>

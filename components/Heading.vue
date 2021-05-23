@@ -8,18 +8,7 @@
 
 <script>
 export default {
-  props: ["heading"],
-  mounted() {
-    let callback = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("arrive");
-        }
-      });
-    };
-    let observer = new IntersectionObserver(callback, { threshold: 0.9 });
-    observer.observe(this.$refs.heading);
-  }
+  props: ["heading"]
 };
 </script>
 
