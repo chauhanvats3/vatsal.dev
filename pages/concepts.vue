@@ -13,9 +13,10 @@ export default {};
   @extend %display-flex;
   width: 100%;
   height: 100vh;
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
   font-family: $poiret;
   color: $blue-dark;
+  padding: 10px;
 }
 </style>
