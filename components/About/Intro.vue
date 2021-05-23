@@ -28,8 +28,8 @@ export default {};
   margin: 30px 0 50px 0;
   .imageGroup {
     position: absolute;
-    width: 210px;
-    height: 210px;
+    width: 190px;
+    height: 190px;
     left: -35px;
     top: -25px;
 
@@ -38,7 +38,7 @@ export default {};
       height: 250px;
 
       left: -50px;
-      top: -85px;
+      top: -75px;
     }
   }
 
@@ -49,11 +49,11 @@ export default {};
     @extend %display-flex;
     align-items: flex-start;
     p {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       margin: 10px;
     }
     h1 {
-      font-size: 2rem;
+      font-size: 1.7rem;
       font-weight: 100;
       color: $blue-light;
       font-family: $poiret;
@@ -65,11 +65,11 @@ export default {};
       padding-left: 280px;
 
       p {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
 
       h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
     }
   }

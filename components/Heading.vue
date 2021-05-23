@@ -23,6 +23,10 @@ export default {
     color: $blue-dark;
     padding: 10px;
     text-transform: uppercase;
+
+    @media (max-width: 1000px) {
+      font-size: 2.2rem;
+    }
   }
   @media (min-width: 1000px) {
     padding-left: 15%;
