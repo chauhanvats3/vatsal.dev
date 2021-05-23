@@ -1,5 +1,5 @@
 <template>
-  <div class="portfolio">
+  <div class="portfolio section">
     <Heading heading="Recently, I Worked For" />
 
     <div class="cardWrapper">
@@ -52,7 +52,6 @@ export default {
 
 <style lang="scss" scoped>
 .portfolio {
-  margin: 50px 0;
   @extend %display-flex;
   .cardWrapper {
     @extend %display-flex;

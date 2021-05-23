@@ -1,5 +1,5 @@
 <template>
-  <div class="contact" id="contact">
+  <div class="contact section" id="contact">
     <Heading heading="Need My Expertise?" />
     <ElementTransition>
       <p>Drop a message and I'll contact you right back</p>
@@ -192,7 +192,6 @@ export default {
 
 <style lang="scss" scoped>
 .contact {
-  margin: 50px 0;
   @extend %display-flex;
   align-items: flex-start;
 

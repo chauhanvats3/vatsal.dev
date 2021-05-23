@@ -1,5 +1,5 @@
 <template>
-  <div class="testimonials">
+  <div class="testimonials section">
     <Heading heading="Which Left Them Saying " />
 
     <div class="cardWrapper">
@@ -57,7 +57,6 @@ export default {
 
 <style lang="scss" scoped>
 .testimonials {
-  margin: 50px 0;
   @extend %display-flex;
   align-items: center;
 

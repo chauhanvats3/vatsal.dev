@@ -15,7 +15,7 @@ export default {
 <style lang="scss" scoped>
 .heading {
   align-self: flex-start;
-  margin: 120px 10px 40px 10px;
+  margin: 10px;
 
   h1 {
     font-weight: 100;

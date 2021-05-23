@@ -58,6 +58,14 @@ select:-webkit-autofill:focus {
   }
 }
 
+.section {
+  margin: 120px 0;
+
+  @media (max-width: 800px) {
+    margin: 60px 0;
+  }
+}
+
 html {
   font-family: "Nunito", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

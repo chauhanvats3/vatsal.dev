@@ -1,5 +1,5 @@
 <template>
-  <div class="services" ref="services">
+  <div class="services section" ref="services">
     <Heading heading="I Am Pretty Good At" />
     <div class="content">
       <div class="design">

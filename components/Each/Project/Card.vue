@@ -140,14 +140,14 @@ export default {
       @extend %display-flex;
       flex-flow: row wrap;
       justify-content: flex-start;
-      padding: 20px;
+      padding: 10px;
 
       li p {
         background: rgba(49, 49, 49, 0.527);
         font-size: 0.7rem;
         font-weight: normal;
         margin: 2px;
-        padding: 10px 15px;
+        padding: 10px 10px;
         border-radius: 8px;
         color: white;
 

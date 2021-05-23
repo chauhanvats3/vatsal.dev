@@ -1,5 +1,5 @@
 <template>
-  <div class="aboutMe">
+  <div class="aboutMe section">
     <Heading heading="Hi, Hey There, Hello!" />
     <AboutIntro />
   </div>
@@ -22,7 +22,6 @@ export default {
 
 <style lang="scss" scoped>
 .aboutMe {
-  margin-top: 80px;
   @extend %display-flex;
 }
 </style>
