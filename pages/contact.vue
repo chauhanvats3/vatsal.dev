@@ -1,6 +1,7 @@
 <template>
   <div>
     <HomeContact />
+    <ScrollToTop />
   </div>
 </template>
 
@@ -8,8 +9,4 @@
 export default {};
 </script>
 
-<style lang="scss" scoped>
-div {
-  margin-top: -70px;
-}
-</style>
+<style lang="scss" scoped></style>

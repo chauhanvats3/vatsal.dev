@@ -1,5 +1,7 @@
 <template>
   <div class="portfolio">
+    <ScrollToTop />
+
     <Heading heading="The feathers in my cap " />
     <div class="projects">
       <EachProjectCard

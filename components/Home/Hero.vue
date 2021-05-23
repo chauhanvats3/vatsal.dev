@@ -77,6 +77,14 @@ export default {
       @supports (backdrop-filter: blur()) {
         backdrop-filter: blur(4px);
       }
+
+      @media (min-width: 650px) {
+        font-size: 2.1rem;
+      }
+
+      @media (min-width: 1000px) {
+        font-size: 2.5rem;
+      }
     }
   }
 

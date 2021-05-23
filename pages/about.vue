@@ -1,5 +1,8 @@
 <template>
-  <div class="section"><About /></div>
+  <div>
+    <About />
+    <ScrollToTop />
+  </div>
 </template>
 
 <script>

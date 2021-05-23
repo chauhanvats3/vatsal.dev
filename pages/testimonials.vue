@@ -1,5 +1,7 @@
 <template>
   <div class="testimonials">
+    <ScrollToTop />
+
     <Heading heading="My clients give the best reviews " />
     <div class="reviews">
       <EachReviewCard
