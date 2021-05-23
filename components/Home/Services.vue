@@ -4,7 +4,7 @@
     <div class="content">
       <div class="design">
         <ElementTransition :options="{ delay: `0.2` }">
-          <div class="vector">
+          <div class="vector drop-shadow">
             <DesignBase />
           </div>
         </ElementTransition>
@@ -25,7 +25,7 @@
         </ElementTransition>
 
         <ElementTransition :options="{ delay: `0.2` }">
-          <div class="vector">
+          <div class="vector drop-shadow">
             <DevBase />
           </div>
         </ElementTransition>

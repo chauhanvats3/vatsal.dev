@@ -111,4 +111,27 @@ ul {
     scrollbar-width: none;
   }
 }
+
+.drop-shadow {
+  -moz-filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25))
+    drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))
+    drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15))
+    drop-shadow(0 6px 8px rgba(0, 0, 0, 0.1))
+    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.05));
+  -ms-filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25))
+    drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))
+    drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15))
+    drop-shadow(0 6px 8px rgba(0, 0, 0, 0.1))
+    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.05));
+  -o-filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25))
+    drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))
+    drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15))
+    drop-shadow(0 6px 8px rgba(0, 0, 0, 0.1))
+    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.05));
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25))
+    drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))
+    drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15))
+    drop-shadow(0 6px 8px rgba(0, 0, 0, 0.1))
+    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.05));
+}
 </style>

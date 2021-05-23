@@ -3,6 +3,7 @@
     <NuxtLink to="/">
       <div class="logo">
         <img
+          class=" drop-shadow"
           srcset="/logo/logo-full-280w.png 280w, /logo/logo-full.svg 2000w"
           sizes="(max-width: 600px) 280px,
             2000px"
