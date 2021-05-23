@@ -204,7 +204,8 @@ export default {
     align-self: flex-start;
 
     @media (min-width: 1000px) {
-      padding-left: 25%;
+      padding-left: 16%;
+      margin: 0 15px;
     }
   }
 

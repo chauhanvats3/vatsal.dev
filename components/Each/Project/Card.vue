@@ -10,7 +10,7 @@
       <div class="images">
         <img
           class="image"
-          :src="dataset.whole"
+          :src="dataset.image"
           alt=""
           ref="image"
           loading="eager"
@@ -97,29 +97,35 @@ export default {
   @extend %display-flex;
   background: var(--bg-color);
   border-radius: 20px;
-  width: min(90%, 400px);
-  min-height: 500px;
+  width: min(90%, 375px);
+  height: 550px;
   justify-content: space-between;
   margin: 30px;
   position: relative;
   cursor: pointer;
-
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 0 2px rgba(0, 0, 0, 0.2),
     0 0 4px rgba(0, 0, 0, 0.2), 0 0 8px rgba(0, 0, 0, 0.2),
     0 0 16px rgba(0, 0, 0, 0.2), 0 0 32px rgba(0, 0, 0, 0.2);
+
   .title {
     width: 100%;
+    height: 80px;
     @extend %display-flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    align-items: center;
     font-size: 1.2rem;
     font-family: $poiret;
     padding: 10px 15px;
-    background: rgba(104, 104, 104, 0.3);
+    background: rgba(49, 49, 49, 0.527);
     border-top-left-radius: 21.5px;
     border-top-right-radius: 21.5px;
     z-index: 10;
     color: white;
+
+    a {
+      height: auto;
+    }
 
     @supports (backdrop-filter: blur()) {
       backdrop-filter: blur(4px);
@@ -128,6 +134,7 @@ export default {
 
   .pills {
     z-index: 10;
+    width: 100%;
 
     ul {
       @extend %display-flex;
@@ -136,7 +143,7 @@ export default {
       padding: 20px;
 
       li p {
-        background: rgba(255, 255, 255, 0.3);
+        background: rgba(49, 49, 49, 0.527);
         font-size: 0.7rem;
         font-weight: normal;
         margin: 2px;
@@ -156,14 +163,12 @@ export default {
     height: 100%;
     position: absolute;
     @extend %display-flex;
-    justify-content: flex-start;
+    justify-content: center;
     overflow: hidden;
     border-radius: 21.5px;
 
     .image {
       position: absolute;
-      top: -10%;
-      left: 8%;
     }
   }
 }

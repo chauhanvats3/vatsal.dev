@@ -40,12 +40,11 @@ export default {
 
   ul {
     @extend %display-flex;
-    align-items: flex-start;
+    align-items: center;
     padding: 30px;
     width: 100%;
 
     li {
-      width: 100%;
       margin: 20px;
       font-size: 2rem;
 

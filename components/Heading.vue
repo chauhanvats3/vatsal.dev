@@ -14,7 +14,6 @@ export default {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("arrive");
-          console.log(entry);
         }
       });
     };

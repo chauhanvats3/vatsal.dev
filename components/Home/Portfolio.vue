@@ -3,7 +3,11 @@
     <Heading heading="Recently, I Worked For" />
 
     <div class="cardWrapper">
-      <EachProjectCard :dataset="this.dataset" />
+      <EachProjectCard
+        :dataset="dataset"
+        v-for="dataset in datasets"
+        :key="dataset.key"
+      />
     </div>
 
     <ElementTransition :options="{ delay: `0.1` }">
@@ -18,16 +22,24 @@
 export default {
   data() {
     return {
-      dataset: {
-        title: "Shri Ganga View Guest House",
-        pills: ["Web Design", "Web Development", "Chrome Extension", "Logo"],
-        bgColor: "#125C6E",
-        bgImage: "/images/projects/gangaview/web-mobile/image.png",
-        bgShadow: "projects/gangaview/web-mobile/shadow",
-        bgBase: "projects/gangaview/web-mobile/base",
-        whole: "/images/projects/gangaview/web-mobile/whole.png",
-        link: "https://gangaview.com"
-      }
+      datasets: [
+        {
+          title: "Shri Ganga View Guest House",
+          pills: ["Web Design", "Web Development", "Chrome Extension", "Logo"],
+          bgColor: "#125C6E",
+          image: "/images/projects/gangaview/web-mobile/whole.png",
+          link: "https://gangaview.com",
+          key: "prt-sgvgh"
+        },
+        {
+          title: "Satvik Yogshala",
+          pills: ["Web Development"],
+          bgColor: "#FFD700",
+          image: "/images/projects/satvikyogshala/website/whole.png",
+          link: "https://satvikyogshala.com",
+          key: "prt-svkyg"
+        }
+      ]
     };
   },
   methods: {
@@ -42,11 +54,15 @@ export default {
 .portfolio {
   margin: 50px 0;
   @extend %display-flex;
-
   .cardWrapper {
     @extend %display-flex;
-
-    width: 100%;
+    flex-flow: row wrap;
+    width: min(115ch, 90%);
+    max-height: 630px;
+    overflow-y: hidden;
+  }
+  .cardWrapper > div {
+    width: min(90%, 450px);
   }
 }
 </style>

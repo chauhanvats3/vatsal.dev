@@ -38,10 +38,10 @@ export default {
 <style lang="scss" scoped>
 .reviewCard {
   width: min(90%, 550px);
-  min-height: 400px;
+  min-height: 350px;
   position: relative;
   @extend %display-flex;
-
+  margin: 15px 45px;
   .imageGroup {
     position: absolute;
     width: 150px;
@@ -56,8 +56,8 @@ export default {
       rgba(var(--bg-color), 0) 0%,
       rgba(var(--bg-color), 0.15) 100%
     );
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    min-height: 350px;
     @extend %display-flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -98,6 +98,10 @@ export default {
       word-spacing: 0.2rem;
       font-weight: 300;
     }
+  }
+
+  @media (max-width: 800px) {
+    margin: 10px;
   }
 }
 </style>
