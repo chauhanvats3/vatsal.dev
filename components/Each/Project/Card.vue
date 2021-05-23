@@ -100,7 +100,7 @@ export default {
   width: min(90%, 375px);
   height: 550px;
   justify-content: space-between;
-  margin: 30px;
+  margin: 30px 10px;
   position: relative;
   cursor: pointer;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 0 2px rgba(0, 0, 0, 0.2),

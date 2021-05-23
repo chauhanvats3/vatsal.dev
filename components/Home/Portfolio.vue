@@ -57,7 +57,7 @@ export default {
   .cardWrapper {
     @extend %display-flex;
     flex-flow: row wrap;
-    width: min(115ch, 90%);
+    width: min(115ch, 98%);
     max-height: 630px;
     overflow-y: hidden;
   }
