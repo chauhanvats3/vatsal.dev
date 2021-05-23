@@ -3,8 +3,8 @@ export default {
   target: "static",
   devtools: true,
   loading: {
-    color: "#04445d",
-    height: "3px",
+    color: "#338b99",
+    height: "4px",
     continuous: true
   },
 
