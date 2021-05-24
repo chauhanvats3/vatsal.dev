@@ -3,10 +3,10 @@
     <HomeHero />
     <ScrollToTop />
     <HomeAbout />
-    <LazyHomeServices />
-    <LazyHomePortfolio />
-    <LazyHomeTestimonials />
-    <LazyHomeContact />
+    <HomeServices />
+    <HomePortfolio />
+    <HomeTestimonials />
+    <HomeContact />
     <IntersectionObserver />
   </div>
 </template>

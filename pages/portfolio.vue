@@ -1,7 +1,5 @@
 <template>
   <div class="portfolio">
-    <ScrollToTop />
-
     <Heading heading="The feathers in my cap " />
     <div class="projects">
       <EachProjectCard
@@ -10,6 +8,8 @@
         :key="dataset.key"
       />
     </div>
+    <ScrollToTop />
+    <IntersectionObserver />
   </div>
 </template>
 

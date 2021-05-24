@@ -31,8 +31,10 @@ export default {
           this.$refs.hero.classList.add("animate");
           document.querySelector("#scrollToTop").classList.add("hide");
         } else {
-          this.$refs.hero.classList.remove("animate");
-          document.querySelector("#scrollToTop").classList.remove("hide");
+          if (this.$refs.hero) {
+            this.$refs.hero.classList.remove("animate");
+            document.querySelector("#scrollToTop").classList.remove("hide");
+          }
         }
       });
     };

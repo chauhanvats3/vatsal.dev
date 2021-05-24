@@ -2,6 +2,7 @@
   <div>
     <HomeContact />
     <ScrollToTop />
+    <IntersectionObserver />
   </div>
 </template>
 
