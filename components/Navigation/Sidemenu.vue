@@ -7,11 +7,7 @@
         @click="itemClicked"
       >
         <NuxtLink :to="item.link">
-          <ElementTransition
-            :options="{ delay: `${(index * 1.1) / 10}`, repeat: true }"
-          >
-            <p class="menuItem">{{ item.title }}</p>
-          </ElementTransition>
+          <p class="menuItem">{{ item.title }}</p>
         </NuxtLink>
       </li>
     </ul>

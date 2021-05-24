@@ -3,32 +3,24 @@
     <Heading heading="I Am Pretty Good At" />
     <div class="content">
       <div class="design">
-        <ElementTransition :options="{ delay: `0.2` }">
-          <div class="vector drop-shadow">
-            <DesignBase />
-          </div>
-        </ElementTransition>
+        <div class="vector drop-shadow">
+          <DesignBase />
+        </div>
 
-        <ElementTransition :options="{ delay: `0.4` }">
-          <div class="text">
-            <h1>Design.</h1>
-            <p>UI/UX/Logo</p>
-          </div>
-        </ElementTransition>
+        <div class="text">
+          <h1>Design.</h1>
+          <p>UI/UX/Logo</p>
+        </div>
       </div>
       <div class="develop">
-        <ElementTransition :options="{ delay: `0.4` }">
-          <div class="text">
-            <h1>Develop.</h1>
-            <p>Website/Extension</p>
-          </div>
-        </ElementTransition>
+        <div class="text">
+          <h1>Develop.</h1>
+          <p>Website/Extension</p>
+        </div>
 
-        <ElementTransition :options="{ delay: `0.2` }">
-          <div class="vector drop-shadow">
-            <DevBase />
-          </div>
-        </ElementTransition>
+        <div class="vector drop-shadow">
+          <DevBase />
+        </div>
       </div>
     </div>
   </div>

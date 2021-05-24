@@ -4,7 +4,7 @@ export default {
   devtools: true,
   loading: {
     color: "#338b99",
-    height: "4px",
+    height: "3px",
     continuous: true
   },
 
@@ -34,27 +34,22 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["@/assets/css/jarallax.css"],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: "~/plugins/jarallax.js", ssr: false }],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: {
-    dirs: ["~/components", "~/components/Navigation"]
+    dirs: ["~/components", "~/components/Navigation", "~/components/Utils"]
   },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/eslint
-    "nuxt-animejs"
-  ],
+  buildModules: ["nuxt-animejs"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
-    // https://go.nuxtjs.dev/content
     "@nuxt/content",
     "@nuxtjs/style-resources",
     "@nuxtjs/svg"

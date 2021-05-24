@@ -7,6 +7,7 @@
     <LazyHomePortfolio />
     <LazyHomeTestimonials />
     <LazyHomeContact />
+    <IntersectionObserver />
   </div>
 </template>
 

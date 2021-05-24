@@ -10,11 +10,9 @@
       />
     </div>
 
-    <ElementTransition :options="{ delay: `0.3` }">
-      <div class="btn btn-testimonials" @click="portfolioButtonClicked">
-        <p>Testimonials</p>
-      </div>
-    </ElementTransition>
+    <div class="btn btn-testimonials" @click="portfolioButtonClicked">
+      <p>Testimonials</p>
+    </div>
   </div>
 </template>
 
@@ -66,9 +64,6 @@ export default {
     @extend %display-flex;
     margin: 0 0 35px 0;
     flex-flow: row wrap;
-  }
-  .cardWrapper > div {
-    width: min(90%, 600px);
   }
 
   @media (max-width: 1035px) {

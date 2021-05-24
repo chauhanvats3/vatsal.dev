@@ -1,35 +1,29 @@
 <template>
-  <ElementTransition :options="{ delay: `0.2` }">
-    <div class="projectCard" :style="cssProps" @click="handleClick" ref="card">
-      <div class="title">
-        <p>{{ dataset.title }}</p>
-        <a :href="dataset.link" target="_blank" @click.stop rel="noreferrer"
-          ><img src="/icons/link.svg" alt=""
-        /></a>
-      </div>
-      <div class="images">
-        <img
-          class="image"
-          :src="dataset.image"
-          alt=""
-          ref="image"
-          loading="eager"
-        />
-      </div>
-
-      <div class="pills">
-        <ul>
-          <li v-for="(pill, index) in dataset.pills" :key="pill">
-            <ElementTransition
-              :options="{ delay: `${((index + 2) * 2) / 10}` }"
-            >
-              <p>{{ pill }}</p>
-            </ElementTransition>
-          </li>
-        </ul>
-      </div>
+  <div class="projectCard" :style="cssProps" @click="handleClick" ref="card">
+    <div class="title">
+      <p>{{ dataset.title }}</p>
+      <a :href="dataset.link" target="_blank" @click.stop rel="noreferrer"
+        ><img src="/icons/link.svg" alt=""
+      /></a>
     </div>
-  </ElementTransition>
+    <div class="images">
+      <img
+        class="image"
+        :src="dataset.image"
+        alt=""
+        ref="image"
+        loading="eager"
+      />
+    </div>
+
+    <div class="pills">
+      <ul>
+        <li v-for="pill in dataset.pills" :key="pill">
+          <p>{{ pill }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -43,7 +37,8 @@ export default {
   computed: {
     cssProps() {
       return {
-        "--bg-color": this.dataset.bgColor
+        "--bg-color": this.dataset.bgColor,
+        "--delay": "0.2s"
       };
     }
   },

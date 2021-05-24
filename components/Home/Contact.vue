@@ -1,53 +1,41 @@
 <template>
   <div class="contact" id="contact">
     <Heading heading="Need My Expertise?" />
-    <ElementTransition>
-      <p>Drop a message and I'll contact you right back</p>
-    </ElementTransition>
+    <p>Drop a message and I'll contact you right back</p>
 
     <form @click.stop.prevent class="form">
-      <ElementTransition :options="{ delay: `0.2` }">
-        <InputText
-          :metadata="dataset.name"
-          :val.sync="dataset.name.val"
-          @input:val="dataset.name.val = $event"
-        />
-      </ElementTransition>
+      <InputText
+        :metadata="dataset.name"
+        :val.sync="dataset.name.val"
+        @input:val="dataset.name.val = $event"
+      />
 
-      <ElementTransition :options="{ delay: `0.2` }">
-        <InputEmail
-          :metadata="dataset.email"
-          :val.sync="dataset.email.val"
-          @input:val="dataset.email.val = $event"
-        />
-      </ElementTransition>
+      <InputEmail
+        :metadata="dataset.email"
+        :val.sync="dataset.email.val"
+        @input:val="dataset.email.val = $event"
+      />
 
-      <ElementTransition :options="{ delay: `0.2` }">
-        <InputTextArea
-          :metadata="dataset.message"
-          :val.sync="dataset.message.val"
-          @input:val="dataset.message.val = $event"
-        />
-      </ElementTransition>
+      <InputTextArea
+        :metadata="dataset.message"
+        :val.sync="dataset.message.val"
+        @input:val="dataset.message.val = $event"
+      />
     </form>
 
-    <ElementTransition :options="{ delay: `0.3` }">
-      <div class="btn" @click="submitForm($event)" ref="btn">
-        Send
-      </div></ElementTransition
-    >
+    <div class="btn" @click="submitForm($event)" ref="btn">
+      Send
+    </div>
 
     <div class="social">
       <p>Or Connect With Me On</p>
       <div class="brands">
-        <div v-for="(social, index) in socials" :key="social.key">
+        <div v-for="social in socials" :key="social.key">
           <a :href="social.link" target="_blank" rel="noreferrer">
-            <ElementTransition :options="{ delay: `${(index * 1.5) / 10}` }">
-              <div
-                v-html="require(`/static/icons/${social.key}.svg?raw`)"
-                class="drop-shadow"
-              />
-            </ElementTransition>
+            <div
+              v-html="require(`/static/icons/${social.key}.svg?raw`)"
+              class="drop-shadow"
+            />
           </a>
         </div>
       </div>

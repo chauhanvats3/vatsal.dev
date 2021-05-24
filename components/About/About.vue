@@ -1,12 +1,7 @@
 <template>
   <div class="aboutMe">
-    <ElementTransition>
-      <Heading heading="A Little Bit About Me" />
-    </ElementTransition>
-
-    <ElementTransition :options="{ delay: `0.2` }">
-      <AboutIntro />
-    </ElementTransition>
+    <Heading heading="A Little Bit About Me" />
+    <AboutIntro />
 
     <div class="story">
       <div class="subHeading">

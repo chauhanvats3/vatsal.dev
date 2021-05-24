@@ -1,17 +1,13 @@
 <template>
   <div class="intro" ref="intro">
-    <ElementTransition :options="{ delay: `0.2` }">
-      <div class="imageGroup">
-        <BlobImage image="/images/vatsal_2.jpg" />
-      </div>
-    </ElementTransition>
+    <div class="imageGroup">
+      <BlobImage image="/images/vatsal_2.jpg" />
+    </div>
 
-    <ElementTransition :options="{ delay: `0.4` }">
-      <div class="content">
-        <p>This is me,</p>
-        <h1><strong>Vatsal</strong> Chauhan</h1>
-      </div>
-    </ElementTransition>
+    <div class="content">
+      <p>This is me,</p>
+      <h1><strong>Vatsal</strong> Chauhan</h1>
+    </div>
   </div>
 </template>
 
@@ -26,6 +22,7 @@ export default {};
   width: min(90%, 70ch);
   height: 170px;
   margin: 30px 0 50px 0;
+
   .imageGroup {
     position: absolute;
     width: 190px;
