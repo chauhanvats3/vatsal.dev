@@ -17,7 +17,7 @@ export default {
     let options = this.fadeOptions;
 
     let fadeElements = document.querySelectorAll(".onShowEffect");
-    console.log(fadeElements);
+    // console.log(fadeElements);
 
     let fadeObserver = new IntersectionObserver(handler, options);
 
@@ -39,7 +39,7 @@ export default {
           target.classList.remove("intersecting");
         } else {
           target.classList.add("enable");
-          console.log("Not Intersecting");
+          //console.log("Not Intersecting");
         }
       });
     }

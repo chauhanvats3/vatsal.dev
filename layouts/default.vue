@@ -7,7 +7,7 @@
     <div class="main" ref="main" id="main">
       <NavBar @hamburgerClicked="toggleSidebar" :menuItems="menuItems" />
 
-      <Nuxt />
+      <Nuxt class="nuxt" />
       <Footer />
     </div>
 
