@@ -13,42 +13,35 @@ export default {
   },
 
   mounted() {
-    document.addEventListener("DOMContentLoaded", () => {
-      console.log("DOM CONTENT LOADED");
-    });
-
-    /* let handler = this.handleIntersection;
+    let handler = this.handleIntersection;
     let options = this.fadeOptions;
-    console.log("mounted");
+
+    let fadeElements = document.querySelectorAll(".onShowEffect");
     console.log(fadeElements);
 
-    let fn = () => {
-      let fadeElements = document.querySelectorAll(".onShowEffect");
-      let fadeObserver = new IntersectionObserver(handler, options);
+    let fadeObserver = new IntersectionObserver(handler, options);
 
-      fadeElements.forEach(ele => {
-        fadeObserver.observe(ele);
-      });
-    }; */
+    fadeElements.forEach(ele => {
+      ele.classList.add("enable");
+      fadeObserver.observe(ele);
+    });
   },
   methods: {
     handleIntersection(entries, observer) {
       entries.forEach(entry => {
         let target = entry.target;
-        console.log(target);
 
         if (entry.isIntersecting) {
+          target.classList.remove("enable");
           target.classList.add("intersecting");
         } else if (!entry.isIntersecting && target.dataset.repeat === "true") {
+          target.classList.add("enable");
           target.classList.remove("intersecting");
         } else {
+          target.classList.add("enable");
           console.log("Not Intersecting");
         }
       });
-    },
-    addObserver(handler, options) {},
-    docReady(fn) {
-      // see if DOM is already available
     }
   }
 };

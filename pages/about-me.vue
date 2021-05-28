@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div>
     <About />
     <ScrollToTop />
     <IntersectionObserver />
@@ -14,9 +14,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.about {
-  width: 100%;
-  min-height: 100vh;
-}
-</style>
+<style lang="scss" scoped></style>

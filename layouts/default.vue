@@ -26,28 +26,24 @@ export default {
           title: "Home"
         },
         {
-          link: "/testimonials",
-          title: "Testimonials"
-        },
-        {
           link: "/portfolio",
           title: "Portfolio"
         },
         {
-          link: "/concepts",
-          title: "Concepts"
-        },
-        {
-          link: "/about",
-          title: "About Me"
+          link: "/testimonials",
+          title: "Testimonials"
         },
         {
           link: "/blog",
           title: "Blog"
         },
         {
+          link: "/about",
+          title: "About Me"
+        },
+        {
           link: "/contact",
-          title: "Contact Me"
+          title: "Contact"
         }
       ]
     };
@@ -78,7 +74,7 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #083f6711;
+    background: #ffffff;
     z-index: -100;
   }
 }

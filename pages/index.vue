@@ -1,13 +1,6 @@
 <template>
   <div>
     <HomeHero />
-    <ScrollToTop />
-    <HomeAbout />
-    <HomeServices />
-    <HomePortfolio />
-    <HomeTestimonials />
-    <HomeContact />
-    <IntersectionObserver />
   </div>
 </template>
 

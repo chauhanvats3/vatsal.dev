@@ -1,19 +1,19 @@
 <template>
   <div class="hero" ref="hero" id="hero">
-    <div class="designer">
-      <div class="empty-info"></div>
-      <p class="info">I Design Elegant UI</p>
+    <div class="overlay">
+      <p>I</p>
+      <p>Design</p>
+      <p>Elegant</p>
+      <p>UI</p>
     </div>
-    <div class="developer">
-      <p class="info">And Bring Them To Life</p>
-      <div class="empty-info"></div>
-
-      <a href="#contact" class="chat-link">
-        <div class="btn btn-chat">
-          <p>Let's Talk</p>
-        </div>
-      </a>
-    </div>
+    <div class="designer"></div>
+    <div class="developer"></div>
+    <!-- 
+    <a href="#contact" class="chat-link">
+      <div class="btn btn-chat">
+        <p>Let's Talk</p>
+      </div>
+    </a> -->
   </div>
 </template>
 
@@ -51,6 +51,30 @@ export default {
   height: fit-content;
   justify-items: flex-start;
 
+  .overlay {
+    position: fixed;
+    width: 100%;
+    height: calc(100vh - #{$navbar-height});
+    top: $navbar-height;
+    z-index: -5;
+    background: rgba(209, 209, 209, 0.384);
+    padding: 15px;
+    transition: all 1s ease;
+
+    @supports (backdrop-filter: blur()) {
+      backdrop-filter: blur(4px);
+    }
+
+    p {
+      font-family: $poiret;
+      font-size: 6rem;
+      font-weight: 100;
+      color: $black;
+      letter-spacing: 0.9rem;
+      line-height: 10rem;
+    }
+  }
+
   .designer,
   .developer {
     @extend %display-flex;
@@ -61,67 +85,19 @@ export default {
     background-size: 60vh;
     background-position: center 62%;
     will-change: background-position;
-    font-family: $bad-script;
-
-    .empty-info {
-      width: 100%;
-      height: 100%;
-    }
-
-    .info {
-      font-size: 1.7rem;
-      width: 100%;
-      text-align: center;
-      padding: 20px 0;
-      font-weight: normal;
-      font-family: $poiret;
-
-      @supports (backdrop-filter: blur()) {
-        backdrop-filter: blur(4px);
-      }
-
-      @media (min-width: 650px) {
-        font-size: 2.1rem;
-      }
-
-      @media (min-width: 1000px) {
-        font-size: 2.5rem;
-      }
-    }
+    font-family: $poiret;
+    position: relative;
+    z-index: -6;
   }
 
   .designer {
     background-image: url(/images/home/hero/designer.svg),
       url("/images/home/hero/base.svg");
-    justify-content: space-between;
-
-    .info {
-      background: rgba(156, 156, 156, 0.425);
-    }
   }
 
   .developer {
     background-image: url(/images/home/hero/developer.png),
       url("/images/home/hero/base.svg");
-    justify-content: space-between;
-    color: white;
-    position: relative;
-
-    .info {
-      background: rgba(58, 58, 58, 0.425);
-    }
-
-    .chat-link {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: center;
-      height: auto;
-
-      .btn-chat {
-        position: absolute;
-        bottom: -6.5%;
-      }
-    }
   }
 }
 
