@@ -68,13 +68,13 @@ export default {
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.493);
-    padding: 15px;
+    padding: 45px;
     transition: all 0.3s ease;
     font-family: $poiret;
-    font-size: 4.7rem;
+    font-size: 3.5rem;
     font-weight: 100;
     color: #252525;
-    letter-spacing: 1.3rem;
+    letter-spacing: 1.5rem;
     line-height: 10rem;
 
     @supports (backdrop-filter: blur()) {
