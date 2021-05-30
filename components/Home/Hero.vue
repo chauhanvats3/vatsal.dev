@@ -1,20 +1,21 @@
 <template>
   <div class="hero" ref="hero" id="hero">
-    <div class="hero-overlay overlay-front">
-      <div>I</div>
-      <div>Design</div>
-      <div>Elegant</div>
-      <div>UI</div>
+    <div class="designer" ref="designer">
+      <div class="hero-overlay ">
+        <div>I</div>
+        <div>Design</div>
+        <div>Elegant</div>
+        <div>UI</div>
+      </div>
     </div>
-    <div class="hero-overlay overlay-back">
-      <div>I</div>
-      <div>Design</div>
-      <div>Elegant</div>
-      <div>UI</div>
+    <div class="developer" ref="developer">
+      <div class="hero-overlay ">
+        <div>And</div>
+        <div>Bring</div>
+        <div>Them</div>
+        <div>Alive</div>
+      </div>
     </div>
-
-    <div class="designer" ref="designer"></div>
-    <div class="developer" ref="developer"></div>
     <!-- 
     <a href="#contact" class="chat-link">
       <div class="btn btn-chat">
@@ -33,9 +34,6 @@ export default {
   },
   mounted() {
     this.addHeroObserver();
-    this.addDesignerObserver();
-    this.addDeveloperObserver();
-    this.addScrollDetect();
   },
   methods: {
     addHeroObserver() {
@@ -54,67 +52,6 @@ export default {
       };
       let heroObserver = new IntersectionObserver(heroCallback, {});
       heroObserver.observe(this.$refs.hero);
-    },
-    addDesignerObserver() {
-      let overlayCallback = (entries, observer) => {
-        entries.forEach(entry => {
-          let ratio = entry.intersectionRatio;
-
-          if (entry.isIntersecting) {
-            //console.log("Designer Intersecting " + ratio);
-            this.$refs.hero.classList.remove("hide-overlay");
-          } else {
-            //console.log("Designer Not Intersecting " + ratio);
-            this.$refs.hero.classList.add("hide-overlay");
-          }
-        });
-      };
-      let overlayObserver = new IntersectionObserver(overlayCallback, {
-        threshold: [0.85]
-      });
-      overlayObserver.observe(this.$refs.designer);
-    },
-    addDeveloperObserver() {
-      let overlayCallback = (entries, observer) => {
-        entries.forEach(entry => {
-          let ratio = entry.intersectionRatio;
-          let direction = "";
-
-          var st = window.pageYOffset || document.documentElement.scrollTop;
-          if (st > window.lastScroll) {
-            direction = "down";
-            this.changeOverlayText("And Bring Them Alive");
-            this.$refs.hero.classList.remove("hide-overlay");
-          } else {
-            direction = "up";
-            this.changeOverlayText("I Design Elegant UI");
-            this.$refs.hero.classList.add("hide-overlay");
-          }
-          window.lastScroll = st <= 0 ? 0 : st;
-
-          if (entry.isIntersecting) {
-            console.log(`Dveloper Intersecting  ${ratio} ${direction}`);
-          } else {
-            console.log(`Dveloper Not Intersecting  ${ratio} ${direction}`);
-          }
-        });
-      };
-      let overlayObserver = new IntersectionObserver(overlayCallback, {
-        threshold: [0.95]
-      });
-      overlayObserver.observe(this.$refs.developer);
-    },
-    addScrollDetect() {
-      window["lastScroll"] = window.pageYOffset;
-    },
-    changeOverlayText(text) {
-      let textArr = text.split(" ");
-
-      document.querySelectorAll(".hero-overlay").forEach(divs => {
-        divs.children.forEach((div, index) => {
-          div.innerText = textArr[index];
-        });
-      });
     }
   }
 };
@@ -128,33 +65,22 @@ export default {
   justify-items: flex-start;
 
   .hero-overlay {
-    position: fixed;
     width: 100%;
-    //height: calc(100vh - #{$navbar-height});
-    height: calc((100vh - #{$navbar-height}));
-    z-index: -11;
-    background: rgba(209, 209, 209, 0.24);
+    height: 100%;
+    background: rgba(255, 255, 255, 0.493);
     padding: 15px;
     transition: all 0.3s ease;
-    top: $navbar-height;
     font-family: $poiret;
-    font-size: 5rem;
+    font-size: 4.7rem;
     font-weight: 100;
-    color: $black;
+    color: #252525;
     letter-spacing: 1.3rem;
     line-height: 10rem;
-    will-change: opacity;
-  }
 
-  .overlay-front {
-    z-index: -9;
     @supports (backdrop-filter: blur()) {
+      background: rgba(255, 255, 255, 0.267);
       backdrop-filter: blur(4px);
     }
-  }
-
-  .overlay-back {
-    opacity: 0;
   }
 
   .designer,
@@ -164,8 +90,8 @@ export default {
     width: 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: 60vh;
-    background-position: center 62%;
+    background-size: 60vh, 60vh, 190%;
+    background-position: center 62%, center 62%, bottom center;
     will-change: background-position;
     font-family: $poiret;
     position: relative;
@@ -174,22 +100,12 @@ export default {
 
   .designer {
     background-image: url("/images/home/hero/designer.svg"),
-      url("/images/home/hero/base.svg");
+      url("/images/home/hero/base.svg"), url("/bg/hero-bg.svg");
   }
 
   .developer {
     background-image: url("/images/home/hero/developer.png"),
-      url("/images/home/hero/base.svg");
-  }
-}
-
-.hide-overlay {
-  .overlay-front {
-    opacity: 0;
-  }
-  .overlay-back {
-    opacity: 1;
-    color: rgba(87, 87, 87, 0.76);
+      url("/images/home/hero/base.svg"), url("/bg/hero-bg.svg");
   }
 }
 
@@ -202,11 +118,11 @@ export default {
 
 @keyframes animatedBackground {
   0% {
-    background-position: center 55%, center 50%;
+    background-position: center 55%, center 50%, center;
   }
 
   100% {
-    background-position: center 65%, center 70%;
+    background-position: center 65%, center 70%, center;
   }
 }
 </style>
