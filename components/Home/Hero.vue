@@ -70,7 +70,7 @@ export default {
         });
       };
       let overlayObserver = new IntersectionObserver(overlayCallback, {
-        threshold: [0.95]
+        threshold: [0.85]
       });
       overlayObserver.observe(this.$refs.designer);
     },
@@ -83,8 +83,12 @@ export default {
           var st = window.pageYOffset || document.documentElement.scrollTop;
           if (st > window.lastScroll) {
             direction = "down";
+            this.changeOverlayText("And Bring Them Alive");
+            this.$refs.hero.classList.remove("hide-overlay");
           } else {
             direction = "up";
+            this.changeOverlayText("I Design Elegant UI");
+            this.$refs.hero.classList.add("hide-overlay");
           }
           window.lastScroll = st <= 0 ? 0 : st;
 
@@ -102,6 +106,15 @@ export default {
     },
     addScrollDetect() {
       window["lastScroll"] = window.pageYOffset;
+    },
+    changeOverlayText(text) {
+      let textArr = text.split(" ");
+
+      document.querySelectorAll(".hero-overlay").forEach(divs => {
+        divs.children.forEach((div, index) => {
+          div.innerText = textArr[index];
+        });
+      });
     }
   }
 };
