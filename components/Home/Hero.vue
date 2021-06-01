@@ -1,27 +1,13 @@
 <template>
   <div class="hero" ref="hero" id="hero">
-    <div class="designer" ref="designer">
-      <div class="hero-overlay ">
-        <div>I</div>
-        <div>Design</div>
-        <div>Elegant</div>
-        <div>UI</div>
-      </div>
+    <div class="desktop-overlay">
+      <div>I</div>
+      <div>Design</div>
+      <div>Elegant</div>
+      <div>UI</div>
     </div>
-    <div class="developer" ref="developer">
-      <div class="hero-overlay ">
-        <div>And</div>
-        <div>Bring</div>
-        <div>Them</div>
-        <div>Alive</div>
-      </div>
-    </div>
-    <!-- 
-    <a href="#contact" class="chat-link">
-      <div class="btn btn-chat">
-        <p>Let's Talk</p>
-      </div>
-    </a> -->
+    <div class="designer" ref="designer"></div>
+    <div class="developer" ref="developer"></div>
   </div>
 </template>
 
@@ -34,6 +20,8 @@ export default {
   },
   mounted() {
     this.addHeroObserver();
+    this.addScrollDetect();
+    this.addDeveloperObserver();
   },
   methods: {
     addHeroObserver() {
@@ -52,6 +40,49 @@ export default {
       };
       let heroObserver = new IntersectionObserver(heroCallback, {});
       heroObserver.observe(this.$refs.hero);
+    },
+
+    addDeveloperObserver() {
+      let overlayCallback = (entries, observer) => {
+        entries.forEach(entry => {
+          let ratio = entry.intersectionRatio;
+          let direction = "";
+          var st = window.pageYOffset || document.documentElement.scrollTop;
+          if (st > window.lastScroll) {
+            direction = "down";
+          } else {
+            direction = "up";
+          }
+          window.lastScroll = st <= 0 ? 0 : st;
+          if (entry.isIntersecting) {
+            console.log(`Dveloper Intersecting  ${ratio} ${direction}`);
+            if (direction == "down")
+              this.changeOverlayText(["And", "Bring", "Them", "Alive"]);
+          } else {
+            console.log(`Dveloper Not Intersecting  ${ratio} ${direction}`);
+            if (direction == "up")
+              this.changeOverlayText(["I", "Design", "Elegant", "UI"]);
+          }
+        });
+      };
+      let overlayObserver = new IntersectionObserver(overlayCallback, {
+        threshold: [0.5]
+      });
+      overlayObserver.observe(this.$refs.developer);
+    },
+    addScrollDetect() {
+      window["lastScroll"] = window.pageYOffset;
+    },
+    changeOverlayText(text) {
+      document
+        .querySelector(".desktop-overlay")
+        .children.forEach((div, index) => {
+          div.classList.toggle("flip");
+          setTimeout(() => {
+            div.innerText = text[index];
+            div.classList.toggle("flip");
+          }, 400);
+        });
     }
   }
 };
@@ -63,23 +94,50 @@ export default {
   width: 100%;
   height: fit-content;
   justify-items: flex-start;
+  position: relative;
 
-  .hero-overlay {
+  .desktop-overlay {
+    @extend %display-flex;
     width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.493);
+    height: calc(100vh - #{$navbar-height});
+    background: rgba(212, 212, 212, 0.39);
     padding: 45px;
     transition: all 0.3s ease;
     font-family: $poiret;
     font-size: 3.5rem;
     font-weight: 100;
     color: #252525;
-    letter-spacing: 1.5rem;
+    letter-spacing: 1rem;
     line-height: 10rem;
+    position: fixed;
+    top: $navbar-height;
+    left: 0;
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+    z-index: -5;
 
     @supports (backdrop-filter: blur()) {
-      background: rgba(255, 255, 255, 0.267);
       backdrop-filter: blur(4px);
+    }
+    @media (min-width: 800px) {
+      flex-flow: row wrap;
+      width: 60%;
+      line-height: 6rem;
+      align-content: center;
+    }
+
+    div {
+      width: 100%;
+      padding: 0 10px;
+      transition: all 0.4s ease;
+
+      @media (min-width: 800px) {
+        width: auto;
+      }
+    }
+
+    .flip {
+      transform: rotateX(90deg);
     }
   }
 
@@ -90,12 +148,16 @@ export default {
     width: 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: 60vh, 60vh, 190%;
+    background-size: 60vh, 60vh, 120%;
     background-position: center 62%, center 62%, bottom center;
     will-change: background-position;
     font-family: $poiret;
     position: relative;
     z-index: -10;
+
+    @media (min-width: 800px) {
+      background-size: 60vh, 60vh, 100%;
+    }
   }
 
   .designer {
@@ -113,6 +175,10 @@ export default {
   .designer,
   .developer {
     animation: animatedBackground 1.5s ease infinite alternate;
+
+    @media (min-width: 800px) {
+      animation: desktopAnimatedBackground 1.5s ease infinite alternate;
+    }
   }
 }
 
@@ -123,6 +189,16 @@ export default {
 
   100% {
     background-position: center 65%, center 70%, center;
+  }
+}
+
+@keyframes desktopAnimatedBackground {
+  0% {
+    background-position: right 85%, right 80%, center;
+  }
+
+  100% {
+    background-position: right 95%, right 100%, center;
   }
 }
 </style>
