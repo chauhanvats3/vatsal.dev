@@ -16,6 +16,7 @@ export default {};
   @extend %display-flex;
   flex-flow: row wrap;
   background: rgba(255, 255, 255, 0);
+  transition: all 0.5s ease-in-out;
 
   @media (min-width: 800px) {
     position: fixed;

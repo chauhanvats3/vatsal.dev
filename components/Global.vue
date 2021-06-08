@@ -67,6 +67,10 @@ html {
   @media (min-width: 800px) {
     font-size: 125%;
   }
+
+  @media (min-width: 2000px) {
+    font-size: 150%;
+  }
 }
 
 body {
@@ -76,10 +80,6 @@ body {
   line-height: 1.75;
   color: #000000;
   overflow-x: hidden;
-}
-
-p {
-  margin-bottom: 1rem;
 }
 
 h1,

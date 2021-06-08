@@ -2,9 +2,6 @@
   <div class="projectCard" :style="cssProps" @click="handleClick" ref="card">
     <div class="title">
       <p>{{ dataset.title }}</p>
-      <a :href="dataset.link" target="_blank" @click.stop rel="noreferrer"
-        ><img src="/icons/link.svg" alt=""
-      /></a>
     </div>
     <div class="images">
       <img
@@ -15,7 +12,11 @@
         loading="eager"
       />
     </div>
-
+    <div class="description">
+      <p>
+        {{ dataset.description }}
+      </p>
+    </div>
     <div class="pills">
       <ul>
         <li v-for="pill in dataset.pills" :key="pill">
@@ -38,7 +39,8 @@ export default {
     cssProps() {
       return {
         "--bg-color": this.dataset.bgColor,
-        "--delay": "0.2s"
+        "--delay": "0.2s",
+        "--desc-color": this.dataset.descColor
       };
     }
   },
@@ -50,9 +52,8 @@ export default {
       const anime = this.$anime;
       this.$data.parallax = anime({
         targets: this.$refs.image,
-        translateY: -70,
+        translateY: -100,
         translateZ: 0,
-        translateX: 15,
         delay: function(el, i) {
           return i * 100;
         },
@@ -102,6 +103,10 @@ export default {
     0 0 4px rgba(0, 0, 0, 0.2), 0 0 8px rgba(0, 0, 0, 0.2),
     0 0 16px rgba(0, 0, 0, 0.2), 0 0 32px rgba(0, 0, 0, 0.2);
 
+  @media (min-width: 800px) {
+    width: min(90%, 800px);
+  }
+
   .title {
     width: 100%;
     height: 80px;
@@ -109,7 +114,7 @@ export default {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-family: $poiret;
     padding: 10px 15px;
     background: rgba(49, 49, 49, 0.527);
@@ -118,13 +123,37 @@ export default {
     z-index: 10;
     color: white;
 
-    a {
-      height: auto;
-    }
-
     @supports (backdrop-filter: blur()) {
       backdrop-filter: blur(4px);
     }
+  }
+
+  .images {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    @extend %display-flex;
+    overflow: hidden;
+    border-radius: 21.5px;
+
+    @media (min-width: 800px) {
+      justify-content: flex-end;
+    }
+
+    .image {
+      position: absolute;
+      right: 5%;
+    }
+  }
+
+  .description {
+    @media (max-width: 800px) {
+      display: none;
+    }
+    width: 45%;
+    align-self: flex-start;
+    margin: 30px;
+    color: var(--desc-color);
   }
 
   .pills {
@@ -139,10 +168,10 @@ export default {
 
       li p {
         background: rgba(49, 49, 49, 0.527);
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         font-weight: normal;
-        margin: 2px;
-        padding: 10px 10px;
+        margin: 5px;
+        padding: 5px 15px;
         border-radius: 8px;
         color: white;
 
@@ -150,20 +179,6 @@ export default {
           backdrop-filter: blur(4px);
         }
       }
-    }
-  }
-
-  .images {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    @extend %display-flex;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 21.5px;
-
-    .image {
-      position: absolute;
     }
   }
 }

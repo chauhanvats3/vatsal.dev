@@ -23,16 +23,21 @@ export default {
       datasets: [
         {
           title: "Shri Ganga View Guest House",
+          description:
+            "Branding, Website Design / Development for a local business in my area.",
           pills: ["Web Design", "Web Development", "Chrome Extension", "Logo"],
           bgColor: "#125C6E",
+          descColor: "#ffffff",
           image: "/images/projects/gangaview/web-mobile/whole.png",
           link: "https://gangaview.com",
           key: "prt-sgvgh"
         },
         {
           title: "Satvik Yogshala",
+          description: "Website for a friend of mine.",
           pills: ["Web Development"],
           bgColor: "#FFD700",
+          descColor: "#000000",
           image: "/images/projects/satvikyogshala/website/whole.png",
           link: "https://satvikyogshala.com",
           key: "prt-svkyg"
