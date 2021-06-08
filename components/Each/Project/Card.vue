@@ -1,5 +1,5 @@
 <template>
-  <div class="projectCard" :style="cssProps" @click="handleClick" ref="card">
+  <div class="projectCard" :style="cssProps" ref="card">
     <div class="title">
       <p>{{ dataset.title }}</p>
     </div>
@@ -45,9 +45,6 @@ export default {
     }
   },
   methods: {
-    handleClick() {
-      this.$router.push({ path: "/portfolio" });
-    },
     addParallax() {
       const anime = this.$anime;
       this.$data.parallax = anime({
@@ -143,6 +140,7 @@ export default {
     .image {
       position: absolute;
       right: 5%;
+      will-change: transform;
     }
   }
 
