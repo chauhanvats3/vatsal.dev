@@ -30,7 +30,7 @@ select:-webkit-autofill:focus {
 
   font-family: $poiret;
   background: $blue-dark;
-  padding: 1rem 1.25rem;
+  padding: 0.5rem 1.25rem;
   border-radius: 0.5rem;
   cursor: pointer;
   width: fit-content;
@@ -41,10 +41,13 @@ select:-webkit-autofill:focus {
     0px 4px 4px rgb(0 0 0 / 15%), 0px 6px 8px rgb(0 0 0 / 10%),
     0px 8px 16px rgb(0 0 0 / 5%);
 
-  p {
+  p,
+  a {
     color: white;
     padding: 0;
     font-size: 1.5rem;
+    margin: 0;
+    letter-spacing: 0.2rem;
   }
 }
 
@@ -58,29 +61,72 @@ select:-webkit-autofill:focus {
   }
 }
 
-.section {
-  margin: 120px 0;
+html {
+  font-size: 100%;
 
-  @media (max-width: 800px) {
-    margin: 60px 0;
+  @media (min-width: 800px) {
+    font-size: 125%;
   }
+}
+
+body {
+  background: white;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #000000;
+  overflow-x: hidden;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 4.209rem;
+}
+
+h2 {
+  font-size: 3.157rem;
+}
+
+h3 {
+  font-size: 2.369rem;
+}
+
+h4 {
+  font-size: 1.777rem;
+}
+
+h5 {
+  font-size: 1.333rem;
+}
+
+small,
+.text_small {
+  font-size: 0.75rem;
 }
 
 html {
   font-family: "Nunito", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 20px;
-  font-weight: 100;
-  word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  letter-spacing: 0.09rem;
-  overflow-x: hidden;
-}
-body {
   overflow-x: hidden;
 }
 *,
@@ -100,16 +146,6 @@ a {
 
 ul {
   list-style-type: none; /* Remove bullets */
-}
-
-@media (max-width: 1250px) {
-  *::-webkit-scrollbar {
-    display: none;
-  }
-  * {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
 }
 
 .drop-shadow {

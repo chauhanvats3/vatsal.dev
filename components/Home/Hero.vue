@@ -1,6 +1,6 @@
 <template>
   <div class="hero" ref="hero" id="hero">
-    <div class="desktop-overlay">
+    <div class="overlay">
       <div>I</div>
       <div>Design</div>
       <div>Elegant</div>
@@ -74,15 +74,13 @@ export default {
       window["lastScroll"] = window.pageYOffset;
     },
     changeOverlayText(text) {
-      document
-        .querySelector(".desktop-overlay")
-        .children.forEach((div, index) => {
+      document.querySelector(".overlay").children.forEach((div, index) => {
+        div.classList.toggle("flip");
+        setTimeout(() => {
+          div.innerText = text[index];
           div.classList.toggle("flip");
-          setTimeout(() => {
-            div.innerText = text[index];
-            div.classList.toggle("flip");
-          }, 400);
-        });
+        }, 400);
+      });
     }
   }
 };
@@ -96,8 +94,10 @@ export default {
   justify-items: flex-start;
   position: relative;
 
-  .desktop-overlay {
+  .overlay {
     @extend %display-flex;
+    justify-content: flex-start;
+
     width: 100%;
     height: calc(100vh - #{$navbar-height});
     background: rgba(212, 212, 212, 0.39);
@@ -117,7 +117,7 @@ export default {
     z-index: -5;
 
     @supports (backdrop-filter: blur()) {
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(2px);
     }
     @media (min-width: 800px) {
       flex-flow: row wrap;
@@ -128,6 +128,7 @@ export default {
 
     div {
       width: 100%;
+      margin: 0 10px;
       padding: 0 10px;
       transition: all 0.4s ease;
 
@@ -148,7 +149,7 @@ export default {
     width: 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: 60vh, 60vh, 120%;
+    background-size: 60vh, 60vh, 200%;
     background-position: center 62%, center 62%, bottom center;
     will-change: background-position;
     font-family: $poiret;
@@ -184,11 +185,11 @@ export default {
 
 @keyframes animatedBackground {
   0% {
-    background-position: center 55%, center 50%, center;
+    background-position: center 55%, center 50%, right;
   }
 
   100% {
-    background-position: center 65%, center 70%, center;
+    background-position: center 65%, center 70%, right;
   }
 }
 

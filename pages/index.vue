@@ -2,6 +2,8 @@
   <div>
     <HomeHero />
     <ScrollToTop />
+    <HomeCTA />
+    <HomeProjects />
   </div>
 </template>
 

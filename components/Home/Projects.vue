@@ -1,5 +1,5 @@
 <template>
-  <div class="portfolio section">
+  <div class="projects">
     <Heading heading="Recently, I Worked For" />
 
     <div class="cardWrapper">
@@ -10,7 +10,7 @@
       />
     </div>
 
-    <div class="btn btn-portfolio" @click="portfolioButtonClicked">
+    <div class="btn btn-projects" @click="projectsButtonClicked">
       <p>Portfolio</p>
     </div>
   </div>
@@ -41,16 +41,23 @@ export default {
     };
   },
   methods: {
-    portfolioButtonClicked() {
-      this.$router.push({ path: "/portfolio" });
+    projectsButtonClicked() {
+      this.$router.push({ path: "/projects" });
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.portfolio {
+.projects {
   @extend %display-flex;
+  background: white;
+  padding: 100px 0 50px 0;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  position: relative;
+  z-index: 1;
+
   .cardWrapper {
     @extend %display-flex;
     flex-flow: row wrap;
