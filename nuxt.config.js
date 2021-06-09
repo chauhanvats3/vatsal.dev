@@ -28,7 +28,7 @@ export default {
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css2?family=Poiret+One&family=Nunito:wght@200;300;400;600&display=swap"
+          "https://fonts.googleapis.com/css2?family=Poiret+One&family=Nunito:wght@100;200;300;400;600&display=swap"
       }
     ]
   },

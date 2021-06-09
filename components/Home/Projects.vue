@@ -34,7 +34,8 @@ export default {
         },
         {
           title: "Satvik Yogshala",
-          description: "Website for a friend of mine.",
+          description:
+            "Website for One of the best yoga school in Rishikesh Area.",
           pills: ["Web Development"],
           bgColor: "#FFD700",
           descColor: "#000000",

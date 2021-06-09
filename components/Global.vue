@@ -138,10 +138,15 @@ html {
   scroll-behavior: smooth;
 }
 
+p {
+  font-weight: 100;
+}
+
 a {
   height: 100%;
   text-decoration: none;
   color: inherit;
+  font-weight: 100;
 }
 
 ul {

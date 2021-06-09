@@ -1,7 +1,11 @@
 <template>
-  <div class="projectCard" :style="cssProps" ref="card">
+  <div class="projectCard" :style="cssProps" ref="card" @click="toggleInfo">
     <div class="title">
       <p>{{ dataset.title }}</p>
+      <div class="cta">
+        <a href="#">Details</a>
+        <a :href="dataset.link">Website</a>
+      </div>
     </div>
     <div class="images">
       <img
@@ -45,12 +49,15 @@ export default {
     }
   },
   methods: {
+    toggleInfo() {
+      this.$refs.card.classList.toggle("projectCard__info");
+    },
     addParallax() {
       const anime = this.$anime;
       this.$data.parallax = anime({
         targets: this.$refs.image,
-        translateY: -100,
-        translateZ: 0,
+        translateY: -70,
+        translateZ: 1,
         delay: function(el, i) {
           return i * 100;
         },
@@ -95,13 +102,40 @@ export default {
   justify-content: space-between;
   margin: 30px 10px;
   position: relative;
-  cursor: pointer;
+  overflow: hidden;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 0 2px rgba(0, 0, 0, 0.2),
     0 0 4px rgba(0, 0, 0, 0.2), 0 0 8px rgba(0, 0, 0, 0.2),
     0 0 16px rgba(0, 0, 0, 0.2), 0 0 32px rgba(0, 0, 0, 0.2);
 
   @media (min-width: 800px) {
     width: min(90%, 800px);
+  }
+
+  @media (max-width: 800px) {
+    &__info {
+      .title {
+        .cta {
+          transform: translateY(0px) !important;
+          opacity: 1 !important;
+        }
+      }
+
+      .description {
+        transform: translateY(0px) !important;
+        opacity: 1 !important;
+        z-index: 1 !important;
+      }
+
+      .images,
+      .pills {
+        transform: translateY(-75px);
+        opacity: 0;
+      }
+
+      .pills {
+        z-index: -1 !important;
+      }
+    }
   }
 
   .title {
@@ -112,6 +146,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     font-size: 1.5rem;
+    letter-spacing: 0.1rem;
     font-family: $poiret;
     padding: 10px 15px;
     background: rgba(49, 49, 49, 0.527);
@@ -120,8 +155,51 @@ export default {
     z-index: 10;
     color: white;
 
+    @media (max-width: 800px) {
+      font-size: 1.3rem;
+      justify-content: center;
+    }
+
     @supports (backdrop-filter: blur()) {
       backdrop-filter: blur(4px);
+    }
+
+    .cta {
+      @extend %display-flex;
+      flex-flow: row nowrap;
+
+      a {
+        font-family: $nunito;
+        margin: 0 8px;
+        padding: 0 12px;
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+        font-weight: 100;
+        background: rgba(255, 255, 255, 0.486);
+        border-radius: 7px;
+        @supports (backdrop-filter: blur()) {
+          backdrop-filter: blur(4px);
+        }
+      }
+      @media (max-width: 800px) {
+        position: absolute;
+        top: 400px;
+        width: 100%;
+        left: 0;
+        flex-flow: column nowrap;
+        opacity: 0;
+        transform: translateY(15px);
+        transition: all 0.5s ease-in-out;
+        z-index: -1;
+
+        a {
+          font-size: 1.7rem;
+          margin: 10px;
+          width: 50%;
+          text-align: center;
+          background: rgba(43, 42, 42, 0.548);
+        }
+      }
     }
   }
 
@@ -132,6 +210,7 @@ export default {
     @extend %display-flex;
     overflow: hidden;
     border-radius: 21.5px;
+    transition: all 0.5s ease-in-out;
 
     @media (min-width: 800px) {
       justify-content: flex-end;
@@ -146,17 +225,26 @@ export default {
 
   .description {
     @media (max-width: 800px) {
-      display: none;
+      opacity: 0;
+      transform: translateY(15px);
+      font-size: 1.3rem;
+      width: 100%;
+      margin: 0;
+      padding: 15px;
+      z-index: -1;
     }
     width: 45%;
     align-self: flex-start;
     margin: 30px;
     color: var(--desc-color);
+    letter-spacing: 0.05rem;
+    transition: all 0.5s ease-in-out;
   }
 
   .pills {
     z-index: 10;
     width: 100%;
+    transition: all 0.5s ease-in-out;
 
     ul {
       @extend %display-flex;
