@@ -8,6 +8,8 @@
     </div>
     <div class="designer" ref="designer"></div>
     <div class="developer" ref="developer"></div>
+
+    <div class="scroll" v-html="require(`/static/bg/scroll.svg?raw`)" />
   </div>
 </template>
 
@@ -169,6 +171,12 @@ export default {
   .developer {
     background-image: url("/images/home/hero/developer.png"),
       url("/images/home/hero/base.svg"), url("/bg/hero-bg.svg");
+  }
+
+  .scroll {
+    position: fixed;
+    right: 50px;
+    bottom: -70px;
   }
 }
 
