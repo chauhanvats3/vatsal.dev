@@ -9,7 +9,11 @@
     <div class="designer" ref="designer"></div>
     <div class="developer" ref="developer"></div>
 
-    <div class="scroll" v-html="require(`/static/bg/scroll.svg?raw`)" />
+    <div
+      class="scroll"
+      v-html="require(`/static/bg/scroll.svg?raw`)"
+      ref="scroll"
+    />
   </div>
 </template>
 
@@ -32,10 +36,12 @@ export default {
           if (entry.isIntersecting) {
             this.$refs.hero.classList.add("animate");
             document.querySelector("#scrollToTop").classList.add("hide");
+            this.$refs.scroll.style.opacity = 1;
           } else {
             if (this.$refs.hero) {
               this.$refs.hero.classList.remove("animate");
               document.querySelector("#scrollToTop").classList.remove("hide");
+              this.$refs.scroll.style.opacity = 0;
             }
           }
         });
@@ -175,8 +181,8 @@ export default {
 
   .scroll {
     position: fixed;
-    right: 50px;
-    bottom: -70px;
+    right: 40px;
+    bottom: -15px;
   }
 }
 
