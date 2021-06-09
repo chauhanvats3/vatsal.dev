@@ -24,7 +24,7 @@ export default {
         {
           title: "Shri Ganga View Guest House",
           description:
-            "Branding, Website Design / Development for a local business in my area.",
+            "Branding, Website Design / Development for a local Guest House in Rishikesh.",
           pills: ["Web Design", "Web Development", "Chrome Extension", "Logo"],
           bgColor: "#125C6E",
           descColor: "#ffffff",

@@ -195,7 +195,7 @@ export default {
         a {
           font-size: 1.7rem;
           margin: 10px;
-          width: 50%;
+          width: 40%;
           text-align: center;
           background: rgba(43, 42, 42, 0.548);
         }

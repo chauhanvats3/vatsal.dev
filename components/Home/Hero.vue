@@ -112,8 +112,6 @@ export default {
     position: fixed;
     top: $navbar-height;
     left: 0;
-    border-top-right-radius: 35px;
-    border-bottom-right-radius: 35px;
     z-index: -5;
 
     @supports (backdrop-filter: blur()) {
@@ -124,6 +122,8 @@ export default {
       width: 60%;
       line-height: 6rem;
       align-content: center;
+      border-top-right-radius: 35px;
+      border-bottom-right-radius: 35px;
     }
 
     div {
