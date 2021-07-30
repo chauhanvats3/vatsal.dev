@@ -3,8 +3,8 @@
     <div class="title">
       <p>{{ dataset.title }}</p>
       <div class="cta">
-        <a href="#">Details</a>
-        <a :href="dataset.link">Website</a>
+        <a>Details</a>
+        <a :href="dataset.link" target="_blank" rel="noreferrer">Website</a>
       </div>
     </div>
     <div class="images">
