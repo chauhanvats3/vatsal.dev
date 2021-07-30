@@ -3,14 +3,12 @@
     <Heading heading="Recently, I Worked For" />
 
     <div class="carouselWrapper">
-      <VueSlickCarousel :arrows="true" :dots="true" v-if="datasets.length">
-        <EachProjectCard
-          :dataset="dataset"
-          v-for="dataset in datasets"
-          :key="dataset.key"
-        />
-        <div></div>
-      </VueSlickCarousel>
+      <EachProjectCard
+        :dataset="dataset"
+        v-for="dataset in datasets"
+        :key="dataset.key"
+      />
+      <div></div>
     </div>
 
     <div class="btn btn-projects" @click="projectsButtonClicked">
@@ -20,15 +18,7 @@
 </template>
 
 <script>
-import VueSlickCarousel from "vue-slick-carousel";
-// optional style for arrows & dots
-import "vue-slick-carousel/dist/vue-slick-carousel.css";
-
-import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
-
 export default {
-  components: { VueSlickCarousel },
-
   data() {
     return {
       datasets: [
