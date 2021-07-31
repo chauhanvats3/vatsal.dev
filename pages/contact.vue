@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="contactPage">
     <HomeContact />
     <ScrollToTop />
     <IntersectionObserver />
@@ -10,4 +10,8 @@
 export default {};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.contactPage {
+  min-height: 100vh;
+}
+</style>

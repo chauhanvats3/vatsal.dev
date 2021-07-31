@@ -1,17 +1,18 @@
 <template>
   <div class="reviewCard" :style="cssProps">
-    <div class="imageGroup">
-      <BlobImage :image="dataset.image" />
+    <div class="intro">
+      <img :src="dataset.image" alt="" srcset="" />
+      <div class="name">
+        <p>
+          <strong>{{ dataset.f_name }}</strong> <br />
+          {{ dataset.l_name }}
+        </p>
+      </div>
+      <div class="company">{{ dataset.company }}</div>
     </div>
 
-    <div class="content">
-      <div class="cardHeading">
-        <div class="name">
-          <strong>{{ dataset.f_name }}</strong> {{ dataset.l_name }}
-        </div>
-        <div class="company">{{ dataset.company }}</div>
-      </div>
-      <div class="review">{{ dataset.review }}</div>
+    <div class="review">
+      <p>{{ dataset.review }}</p>
     </div>
   </div>
 </template>
@@ -22,7 +23,9 @@ export default {
   computed: {
     cssProps() {
       return {
-        "--bg-color": `${this.dataset.bgColor}`
+        "--bg-color": `${this.dataset.bgColor}`,
+        "--font-color": `${this.dataset.fontColor}`,
+        "--bg-image": `url(${this.dataset.bgImage})`
       };
     }
   }
@@ -31,71 +34,85 @@ export default {
 
 <style lang="scss" scoped>
 .reviewCard {
-  width: min(90%, 550px);
-  min-height: 350px;
+  width: 750px;
+  height: 400px;
   position: relative;
   @extend %display-flex;
+  flex-flow: row nowrap;
   margin: 15px 45px;
-  .imageGroup {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    left: -20px;
-    top: -35px;
+  color: var(--font-color);
+  .intro,
+  .review {
+    height: 100%;
+    padding: 25px;
+    border-radius: 15px;
   }
 
-  .content {
-    background: linear-gradient(
-      115.08deg,
-      rgba(var(--bg-color), 0) 0%,
-      rgba(var(--bg-color), 0.15) 100%
-    );
-    width: 100%;
-    min-height: 350px;
+  .intro {
+    width: 55%;
     @extend %display-flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    background-image: var(--bg-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    img {
+      border-radius: 15px;
+      width: 125px;
+      height: 125px;
+      margin: 15px;
+    }
 
-    border-radius: 20px;
-
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1), 6px 6px 8px rgba(0, 0, 0, 0.05);
-
-    .cardHeading {
-      @extend %display-flex;
-      align-items: flex-start;
-      margin-left: 150px;
-      font-size: 1rem;
-      min-height: 100px;
-      margin-top: 10px;
-
-      .name {
-        font-size: 1.2rem;
+    .name {
+      p {
+        font-size: 1.7rem;
         text-transform: uppercase;
-        margin: 5px 0;
-      }
-
-      .company {
-        font-family: $poiret;
+        line-height: 2rem;
+        margin: 15px;
         letter-spacing: 0.15rem;
-        color: rgb(87, 87, 87);
-        font-weight: 600;
       }
     }
-    .review {
-      padding: 25px 15px 0 35px;
-      margin-bottom: 25px;
-      width: 100%;
-      min-height: 100px;
+
+    .company {
+      font-family: $poiret;
+      font-weight: normal;
+      letter-spacing: 0.2rem;
       font-size: 1rem;
-      letter-spacing: 0.09rem;
-      line-height: 1.6rem;
-      word-spacing: 0.2rem;
-      font-weight: 300;
+      text-align: center;
     }
+  }
+
+  .review {
+    width: 50%;
+    background: rgb(var(--bg-color));
+    margin-left: -25px;
+    @extend %display-flex;
+    font-weight: normal;
+    letter-spacing: 0.1rem;
   }
 
   @media (max-width: 800px) {
     margin: 10px;
+    flex-flow: row wrap;
+    height: fit-content;
+    width: min(95%, 400px);
+
+    .intro,
+    .review {
+      width: 100%;
+      padding: 25px;
+      border-radius: 15px;
+    }
+
+    .intro {
+      flex-flow: row wrap;
+      padding-bottom: 35px;
+    }
+
+    .review {
+      margin-left: 0px;
+      margin-top: -25px;
+      padding: 25px;
+    }
   }
 }
 </style>

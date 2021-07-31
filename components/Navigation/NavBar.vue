@@ -111,6 +111,7 @@ export default {
         height: $navbar-height;
         margin: 0 25px;
         font-family: $poiret;
+        letter-spacing: 0.2rem;
       }
 
       li:hover {

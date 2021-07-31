@@ -47,6 +47,7 @@ export default {
       p {
         font-family: $poiret;
         color: white;
+        letter-spacing: 0.2rem;
       }
     }
   }

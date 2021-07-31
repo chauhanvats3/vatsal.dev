@@ -41,6 +41,8 @@ select:-webkit-autofill:focus {
     0px 4px 4px rgb(0 0 0 / 15%), 0px 6px 8px rgb(0 0 0 / 10%),
     0px 8px 16px rgb(0 0 0 / 5%);
 
+  letter-spacing: 0.2rem;
+
   p,
   a {
     color: white;

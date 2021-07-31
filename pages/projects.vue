@@ -57,11 +57,7 @@ export default {
     height: 100%;
     @extend %display-flex;
     padding: 20px 0;
-    flex-flow: row wrap;
-  }
-
-  .projects > div {
-    width: min(90%, 450px);
+    flex-flow: column wrap;
   }
 }
 </style>

@@ -4,6 +4,7 @@
     <ScrollToTop />
     <HomeCTA />
     <HomeProjects />
+    <HomeTestimonials />
   </div>
 </template>
 

@@ -23,27 +23,19 @@ export default {
       menuItems: [
         {
           link: "/",
-          title: "Home"
+          title: "HOME"
         },
         {
-          link: "/portfolio",
-          title: "Portfolio"
-        },
-        {
-          link: "/testimonials",
-          title: "Testimonials"
+          link: "/projects",
+          title: "PORTFOLIO"
         },
         {
           link: "/blog",
-          title: "Blog"
-        },
-        {
-          link: "/about",
-          title: "About Me"
+          title: "BLOG"
         },
         {
           link: "/contact",
-          title: "Contact"
+          title: "CONTACT"
         }
       ]
     };

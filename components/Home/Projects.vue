@@ -32,17 +32,6 @@ export default {
           image: "/images/projects/gangaview/web-mobile/whole.png",
           link: "https://gangaview.com",
           key: "prt-sgvgh"
-        },
-        {
-          title: "Satvik Yogshala",
-          description:
-            "Website for One of the best yoga school in Rishikesh Area.",
-          pills: ["Web Development"],
-          bgColor: "#FFD700",
-          descColor: "#000000",
-          image: "/images/projects/satvikyogshala/website/whole.png",
-          link: "https://satvikyogshala.com",
-          key: "prt-svkyg"
         }
       ]
     };
@@ -53,13 +42,26 @@ export default {
     }
   }
 };
+
+/* ,
+        {
+          title: "Satvik Yogshala",
+          description:
+            "Website for One of the best yoga school in Rishikesh Area.",
+          pills: ["Web Development"],
+          bgColor: "#FFD700",
+          descColor: "#000000",
+          image: "/images/projects/satvikyogshala/website/whole.png",
+          link: "https://satvikyogshala.com",
+          key: "prt-svkyg"
+        } */
 </script>
 
 <style lang="scss" scoped>
 .projects {
   @extend %display-flex;
   background: white;
-  padding: 100px 0 50px 0;
+  padding: 100px 0 100px 0;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   position: relative;
@@ -67,6 +69,7 @@ export default {
 
   .carouselWrapper {
     width: 100%;
+    @extend %display-flex;
   }
 }
 </style>
