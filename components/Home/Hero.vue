@@ -34,12 +34,14 @@ export default {
       let heroCallback = (entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            //this.$refs.hero.classList.add("animate");
+            this.$refs.hero.classList.remove("hideHero");
+
             document.querySelector("#scrollToTop").classList.add("hide");
             this.$refs.scroll.style.opacity = 1;
           } else {
             if (this.$refs.hero) {
-              //this.$refs.hero.classList.remove("animate");
+              this.$refs.hero.classList.add("hideHero");
+
               document.querySelector("#scrollToTop").classList.remove("hide");
               this.$refs.scroll.style.opacity = 0;
             }
@@ -194,6 +196,13 @@ export default {
     @media (min-width: 800px) {
       animation: desktopAnimatedBackground 1.5s ease infinite alternate;
     }
+  }
+}
+
+.hero.hideHero {
+  .designer,
+  .developer {
+    background-image: none;
   }
 }
 
