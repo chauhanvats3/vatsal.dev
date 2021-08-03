@@ -5,6 +5,8 @@
     <HomeCTA />
     <HomeProjects />
     <HomeTestimonials />
+
+    <InputNewText />
   </div>
 </template>
 
