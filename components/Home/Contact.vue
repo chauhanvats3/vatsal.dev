@@ -130,7 +130,7 @@ export default {
         },
         message: {
           inputname: "Message",
-          placeholder: "So, I was out drinking with this dude...",
+          placeholder: "Hey Vatsal!",
           id: "message",
           hint: "Let it all out!",
           val: ""
@@ -167,7 +167,14 @@ export default {
 <style lang="scss" scoped>
 .contact {
   @extend %display-flex;
-  align-items: flex-start;
+  align-items: center;
+  background: #f3f3f3;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 100px 0 100px 0;
+  z-index: 2;
+  margin-top: -20px;
+  position: relative;
 
   p {
     font-size: 1.4rem;
@@ -263,6 +270,7 @@ export default {
   }
   .social {
     width: 100%;
+    margin-top: 70px;
     p {
       font-size: 1.5rem;
       @media (min-width: 1000px) {

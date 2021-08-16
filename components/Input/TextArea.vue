@@ -12,8 +12,7 @@
       ref="field"
     />
     <label for="metadata.id" class="form__label noselect" @click="labelClicked">
-      {{ metadata.inputname
-      }}<span class="hint">{{ metadata.hint }}</span></label
+      <span>{{ metadata.inputname }}</span></label
     >
   </div>
 </template>
@@ -76,6 +75,7 @@ export default {
   color: $blue-metal;
   text-align: left;
   z-index: 10;
+  height: 0;
 }
 
 .hint {
@@ -88,7 +88,7 @@ export default {
 .form__field:focus {
   padding-bottom: 6px;
   border-width: 2px;
-  border-image: linear-gradient(90deg, $green-light, $blue-metal);
+  border-image: linear-gradient(90deg, #28d223, #0fc9e6);
   border-image-slice: 1;
 }
 
@@ -98,7 +98,7 @@ export default {
 
 .form__field:focus ~ .form__label {
   position: absolute;
-  top: -30px;
+  top: -1rem;
   left: 0px;
   display: block;
   transition: 0.2s;
