@@ -158,7 +158,7 @@ export default {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: 60vh, 60vh, 200%;
-    background-position: center right;
+    background-position: center;
     will-change: background-position;
     font-family: $poiret;
     position: relative;
@@ -166,6 +166,7 @@ export default {
 
     @media (min-width: 800px) {
       background-size: 60vh, 60vh, 100%;
+      background-position: right center, right center, center;
     }
   }
 
