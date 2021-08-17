@@ -57,8 +57,8 @@ export default {
     background-size: cover;
     img {
       border-radius: 15px;
-      width: 125px;
-      height: 125px;
+      width: 7rem;
+      height: 7rem;
       margin: 15px;
     }
 
@@ -78,6 +78,8 @@ export default {
       letter-spacing: 0.2rem;
       font-size: 1rem;
       text-align: center;
+      max-width: 15ch;
+      text-transform: uppercase;
     }
   }
 

@@ -29,7 +29,7 @@ export default {
           pills: ["Web Design", "Web Development", "Chrome Extension", "Logo"],
           bgColor: "#125C6E",
           descColor: "#ffffff",
-          image: "/images/projects/gangaview/web-mobile/whole.png",
+          image: "/images/projects/gangaview/web-mobile/whole-min.png",
           link: "https://gangaview.com",
           key: "prt-sgvgh"
         }
