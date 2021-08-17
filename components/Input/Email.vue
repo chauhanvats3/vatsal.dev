@@ -67,7 +67,7 @@ export default {
 
 .form__label {
   position: absolute;
-  top: 0;
+  top: -1rem;
   left: 0;
   display: block;
   transition: 0.3s ease-in-out;

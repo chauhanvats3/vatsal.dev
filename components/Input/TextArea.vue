@@ -67,7 +67,7 @@ export default {
 
 .form__label {
   position: absolute;
-  top: 0;
+  top: -1rem;
   left: 0;
   display: block;
   transition: 0.3s ease-in-out;
@@ -105,10 +105,6 @@ export default {
   transition: 0.2s;
   font-size: 1.1rem;
   color: $blue-mid;
-}
-
-.form__field:focus ~ .form__label .hint {
-  display: block;
 }
 
 /* reset input */
