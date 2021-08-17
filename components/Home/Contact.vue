@@ -1,7 +1,7 @@
 <template>
   <div class="contact" id="contact">
     <Heading heading="Need My Expertise?" />
-    <p>Drop a message and I'll contact you right back</p>
+    <p>Drop a message and I'll contact you right away.</p>
 
     <form @click.stop.prevent class="form">
       <InputText

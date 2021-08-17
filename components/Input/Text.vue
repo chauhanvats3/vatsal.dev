@@ -74,15 +74,9 @@ export default {
   font-size: 1rem;
   color: $blue-metal;
   text-align: left;
-  z-index: 10;
+  z-index: -1;
+  width: 0;
   height: 0;
-}
-
-.hint {
-  display: none;
-  color: $blue-mid;
-  font-size: 0.8rem;
-  text-align: right;
 }
 
 .form__field:focus {
