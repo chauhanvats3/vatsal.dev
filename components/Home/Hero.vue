@@ -63,12 +63,12 @@ export default {
           }
           window.lastScroll = st <= 0 ? 0 : st;
           if (entry.isIntersecting) {
-            console.log(`Dveloper Intersecting  ${ratio} ${direction}`);
+            //console.log(`Dveloper Intersecting  ${ratio} ${direction}`);
             if (direction == "down")
               this.changeOverlayText(["And", "Bring", "Them", "Alive"]);
           } else {
-            console.log(`Dveloper Not Intersecting  ${ratio} ${direction}`);
-            if (direction == "up")
+            //console.log(`Dveloper Not Intersecting  ${ratio} ${direction}`);
+            if (direction == "up" && ratio != 0)
               this.changeOverlayText(["I ❤️ To", "Design", "Elegant", "UI/UX"]);
           }
         });
@@ -83,11 +83,13 @@ export default {
     },
     changeOverlayText(text) {
       document.querySelector(".overlay").children.forEach((div, index) => {
-        div.classList.toggle("flip");
         setTimeout(() => {
-          div.innerText = text[index];
           div.classList.toggle("flip");
-        }, 400);
+          setTimeout(() => {
+            div.innerText = text[index];
+            div.classList.toggle("flip");
+          }, 650);
+        }, index * 150);
       });
     }
   }
