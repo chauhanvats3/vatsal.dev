@@ -3,9 +3,9 @@
     <Heading heading="The feathers in my cap " />
     <div class="projects">
       <EachProjectCard
-        :dataset="dataset"
-        v-for="dataset in datasets"
-        :key="dataset.key"
+        :dataset="project"
+        v-for="project in projects"
+        :key="project.key"
       />
     </div>
     <ScrollToTop />
@@ -15,27 +15,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      datasets: [
-        {
-          title: "Shri Ganga View Guest House",
-          pills: ["Web Design", "Web Development", "Chrome Extension", "Logo"],
-          bgColor: "#125C6E",
-          image: "/images/projects/gangaview/web-mobile/whole.png",
-          link: "https://gangaview.com",
-          key: "prt-sgvgh"
-        },
-        {
-          title: "Satvik Yogshala",
-          pills: ["Web Development"],
-          bgColor: "#FFD700",
-          image: "/images/projects/satvikyogshala/website/whole.png",
-          link: "https://satvikyogshala.com",
-          key: "prt-svkyg"
-        }
-      ]
-    };
+  computed: {
+    projects() {
+      return this.$store.state.projects;
+    }
   }
 };
 </script>

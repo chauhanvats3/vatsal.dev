@@ -74,7 +74,7 @@ export default {
 
     .company {
       font-family: $poiret;
-      font-weight: normal;
+      font-weight: bold;
       letter-spacing: 0.2rem;
       font-size: 1rem;
       text-align: center;

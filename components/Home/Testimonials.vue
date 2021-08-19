@@ -4,9 +4,9 @@
 
     <div class="cardWrapper">
       <EachReviewCard
-        v-for="dataset in datasets"
-        :key="dataset.key"
-        :dataset="dataset"
+        v-for="project in projects"
+        :key="project.review.key"
+        :dataset="project.review"
       />
     </div>
 
@@ -18,23 +18,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      datasets: [
-        {
-          f_name: "Abhishek",
-          l_name: "Chauhan",
-          company: "Shri Ganga View Guest House",
-          review:
-            "Vatsal is a very talented designer/developer. He helped immensely in taking my business online and also designing the brand identity be it logo, business card or color palette. 10/10 Would recommend.",
-          bgColor: "18, 92, 110",
-          bgImage: "/images/projects/gangaview/bg.svg",
-          fontColor: "white",
-          image: "/images/projects/gangaview/review.jpg",
-          key: "tst-sgvgh"
-        }
-      ]
-    };
+  computed: {
+    projects() {
+      return this.$store.state.projects;
+    }
   },
 
   methods: {
@@ -43,21 +30,6 @@ export default {
     }
   }
 };
-
-/* ,
-        {
-          f_name: "Pritam",
-          l_name: "Rawat",
-          company: "Satvik Yogshala",
-          review:
-            "Thanks you bro for developing my website. Surely will work with you again when I need a redesign in the near future.",
-          bgColor: "255, 215, 0",
-          fontColor: "black",
-          image: "/images/projects/satvikyogshala/review.jpg",
-          bgImage: "/images/projects/satvikyogshala/bg.svg",
-
-          key: "tst-svkyg"
-        } */
 </script>
 
 <style lang="scss" scoped>

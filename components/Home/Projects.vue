@@ -4,9 +4,9 @@
 
     <div class="carouselWrapper">
       <EachProjectCard
-        :dataset="dataset"
-        v-for="dataset in datasets"
-        :key="dataset.key"
+        :dataset="project"
+        v-for="project in projects"
+        :key="project.key"
       />
       <div></div>
     </div>
@@ -19,22 +19,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      datasets: [
-        {
-          title: "Shri Ganga View Guest House",
-          description:
-            "Branding, Website Design / Development for a local Guest House in Rishikesh.",
-          pills: ["Web Design", "Web Development", "Chrome Extension", "Logo"],
-          bgColor: "#125C6E",
-          descColor: "#ffffff",
-          image: "/images/projects/gangaview/web-mobile/whole-min.png",
-          link: "https://gangaview.com",
-          key: "prt-sgvgh"
-        }
-      ]
-    };
+  computed: {
+    projects() {
+      return this.$store.state.projects;
+    }
   },
   methods: {
     projectsButtonClicked() {
@@ -42,19 +30,6 @@ export default {
     }
   }
 };
-
-/* ,
-        {
-          title: "Satvik Yogshala",
-          description:
-            "Website for One of the best yoga school in Rishikesh Area.",
-          pills: ["Web Development"],
-          bgColor: "#FFD700",
-          descColor: "#000000",
-          image: "/images/projects/satvikyogshala/website/whole.png",
-          link: "https://satvikyogshala.com",
-          key: "prt-svkyg"
-        } */
 </script>
 
 <style lang="scss" scoped>
@@ -70,6 +45,12 @@ export default {
   .carouselWrapper {
     width: 100%;
     @extend %display-flex;
+  }
+
+  @media (max-width: 1035px) {
+    .carouselWrapper > :not(div:first-child) {
+      display: none;
+    }
   }
 }
 </style>

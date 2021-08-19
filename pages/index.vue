@@ -6,6 +6,8 @@
     <HomeProjects />
     <HomeTestimonials />
     <HomeContact />
+
+    <IntersectionObserver />
   </div>
 </template>
 
