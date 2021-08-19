@@ -1,10 +1,10 @@
 <template>
   <div class="hero" ref="hero" id="hero">
     <div class="overlay">
-      <div>I</div>
+      <div>I ❤️ To</div>
       <div>Design</div>
       <div>Elegant</div>
-      <div>UI</div>
+      <div>UI/UX</div>
     </div>
     <div class="designer" ref="designer"></div>
     <div class="developer" ref="developer"></div>
@@ -69,7 +69,7 @@ export default {
           } else {
             console.log(`Dveloper Not Intersecting  ${ratio} ${direction}`);
             if (direction == "up")
-              this.changeOverlayText(["I", "Design", "Elegant", "UI"]);
+              this.changeOverlayText(["I ❤️ To", "Design", "Elegant", "UI/UX"]);
           }
         });
       };
@@ -113,7 +113,7 @@ export default {
     transition: all 0.3s ease;
     font-family: $poiret;
     font-size: 3.5rem;
-    font-weight: 100;
+    font-weight: bold;
     color: #252525;
     letter-spacing: 1rem;
     line-height: 10rem;
@@ -121,6 +121,7 @@ export default {
     top: $navbar-height;
     left: 0;
     z-index: -5;
+    text-transform: uppercase;
 
     @supports (backdrop-filter: blur()) {
       backdrop-filter: blur(2px);
