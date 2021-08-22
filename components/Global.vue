@@ -43,6 +43,12 @@ select:-webkit-autofill:focus {
 
   letter-spacing: 0.2rem;
 
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   p,
   a {
     color: white;
@@ -50,13 +56,6 @@ select:-webkit-autofill:focus {
     font-size: 1.5rem;
     margin: 0;
     letter-spacing: 0.2rem;
-
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
   }
 }
 
