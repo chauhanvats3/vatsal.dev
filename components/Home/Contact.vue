@@ -4,7 +4,7 @@
     <p>Drop a message and I'll contact you right away.</p>
 
     <form @click.stop.prevent class="form">
-      <InputText
+      <!--    <InputText
         :metadata="dataset.name"
         :val.sync="dataset.name.val"
         @input:val="dataset.name.val = $event"
@@ -17,6 +17,22 @@
       />
 
       <InputTextArea
+        :metadata="dataset.message"
+        :val.sync="dataset.message.val"
+        @input:val="dataset.message.val = $event"
+      /> -->
+
+      <InputNewText
+        :metadata="dataset.name"
+        :val.sync="dataset.name.val"
+        @input:val="dataset.name.val = $event"
+      />
+      <InputNewText
+        :metadata="dataset.email"
+        :val.sync="dataset.email.val"
+        @input:val="dataset.email.val = $event"
+      />
+      <InputNewText
         :metadata="dataset.message"
         :val.sync="dataset.message.val"
         @input:val="dataset.message.val = $event"
