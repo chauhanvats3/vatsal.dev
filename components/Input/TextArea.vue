@@ -52,6 +52,7 @@ export default {
     padding: 5px 0px 0;
     font-family: $nunito;
     background: transparent;
+    resize: none;
   }
 
   textarea::placeholder {
