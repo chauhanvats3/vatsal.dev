@@ -4,35 +4,22 @@
     <p>Drop a message and I'll contact you right away.</p>
 
     <form @click.stop.prevent class="form">
-      <!--    <InputText
+      <InputText
         :metadata="dataset.name"
         :val.sync="dataset.name.val"
         @input:val="dataset.name.val = $event"
       />
-
-      <InputEmail
+      <InputText
         :metadata="dataset.email"
         :val.sync="dataset.email.val"
         @input:val="dataset.email.val = $event"
       />
-
-      <InputTextArea
+      <!-- <InputText
         :metadata="dataset.message"
         :val.sync="dataset.message.val"
         @input:val="dataset.message.val = $event"
       /> -->
-
-      <InputNewText
-        :metadata="dataset.name"
-        :val.sync="dataset.name.val"
-        @input:val="dataset.name.val = $event"
-      />
-      <InputNewText
-        :metadata="dataset.email"
-        :val.sync="dataset.email.val"
-        @input:val="dataset.email.val = $event"
-      />
-      <InputNewText
+      <InputTextArea
         :metadata="dataset.message"
         :val.sync="dataset.message.val"
         @input:val="dataset.message.val = $event"
@@ -86,7 +73,10 @@ export default {
     async api_send_c_form({ name, email, message }) {
       let mailStatus;
       try {
-        const mailURL = `/api/sendMail?name=${name}&email=${email}&message=${message}`;
+        console.log(message);
+        const mailURL = `/api/sendMail?name=${name}&email=${email}&message=${encodeURIComponent(
+          message
+        )}`;
         const mailResponse = await fetch(mailURL);
         const mailData = await mailResponse;
 

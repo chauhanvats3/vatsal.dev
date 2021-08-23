@@ -1,19 +1,28 @@
 <template>
-  <div class="form__group field">
-    <input
+  <div class="field">
+    <!-- <input
       type="text"
-      class="form__field noselect"
-      :placeholder="metadata.placeholder"
+      :name="metadata.inputname"
+      :placeholder="metadata.inputname"
       :inputname="metadata.inputname"
       :id="metadata.id"
       v-model="val"
-      autocomplete="off"
       @input="emitVal"
       ref="field"
-    />
-    <label for="metadata.id" class="form__label noselect" @click="labelClicked">
-      <span>{{ metadata.inputname }}</span></label
-    >
+    /> -->
+    <textarea
+      :name="metadata.inputname"
+      :placeholder="metadata.inputname"
+      :inputname="metadata.inputname"
+      :id="metadata.id"
+      v-model="val"
+      @input="emitVal"
+      ref="field"
+      rows="3"
+    ></textarea>
+
+    <label for="metadata.id">{{ metadata.inputname }}</label>
+    <div class="line"></div>
   </div>
 </template>
 
@@ -23,93 +32,74 @@ export default {
   methods: {
     emitVal() {
       this.$emit("input:val", this.$props.val);
-    },
-    labelClicked() {
-      this.$refs.field.focus();
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.form__group {
-  position: relative;
-  padding: 15px 0 0;
-  margin-top: 40px;
-  width: 95%;
-  flex-flow: column nowrap;
-}
-
-.form__field {
-  font-family: inherit;
+.field {
+  @extend %display-flex;
   width: 100%;
-  border: 0;
-  border-bottom: 2px solid $blue-metal;
-  outline: 0;
-  font-size: 1.5rem;
-  color: $blue-dark;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.5s ease-in;
-}
+  margin: 2.5rem 5px 5px;
+  position: relative;
 
-.form__field::placeholder {
-  transition: all 0.3s ease-in-out;
-  color: transparent;
-  left: 35px;
-}
+  textarea {
+    width: 95%;
+    font-size: 2rem;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 0px 0;
+    font-family: $nunito;
+    background: transparent;
+  }
 
-.form__field:placeholder-shown ~ .form__label {
-  font-size: 1.5rem;
-  cursor: text;
-  top: 20px;
-}
+  textarea::placeholder {
+    color: $blue-metal;
+  }
 
-.form__label {
-  position: absolute;
-  top: -1rem;
-  left: 0;
-  display: block;
-  transition: 0.3s ease-in-out;
-  font-size: 1rem;
-  color: $blue-metal;
-  text-align: left;
-  z-index: -1;
-  width: 0;
-  height: 0;
-}
+  label {
+    font-size: 1.3rem;
+    position: absolute;
+    left: 2.65%;
+    top: 0;
+    z-index: -2;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    color: $blue-dark;
+  }
 
-.hint {
-  display: none;
-  color: $blue-mid;
-  font-size: 0.8rem;
-  text-align: right;
-}
+  .line {
+    width: 95%;
+    height: 2px;
+    background: $blue-mid;
+    border-radius: 1px;
+  }
 
-.form__field:focus {
-  padding-bottom: 6px;
-  border-width: 2px;
-  border-image: linear-gradient(90deg, #28d223, #0fc9e6);
-  border-image-slice: 1;
-}
+  .line::after {
+    content: "";
+    display: block;
+    width: 0;
+    background: $green-light;
+    height: 2px;
+    transition: all 0.5s ease-in;
+  }
 
-.form__field:focus::placeholder {
-  color: #bbbbbb;
-}
+  textarea:focus {
+    outline: none;
+  }
 
-.form__field:focus ~ .form__label {
-  position: absolute;
-  top: -1rem;
-  left: 0px;
-  display: block;
-  transition: 0.2s;
-  font-size: 1.1rem;
-  color: $blue-mid;
-}
+  textarea:focus::placeholder {
+    color: $green-light;
+  }
 
-/* reset input */
-.form__field:required,
-.form__field:invalid {
-  box-shadow: none;
+  textarea:focus ~ .line::after {
+    width: 100%;
+  }
+
+  textarea:not(:placeholder-shown) ~ label {
+    top: -1.7rem;
+    opacity: 1;
+  }
 }
 </style>
