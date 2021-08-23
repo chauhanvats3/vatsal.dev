@@ -1,1 +1,29 @@
-<svg id="visual" viewBox="0 0 1440 1024" width="1440" height="1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect width="1440" height="1024" fill="#ffffff"></rect><g><g transform="translate(922 281)"><path d="M0 -180.3L156.2 -90.2L156.2 90.2L0 180.3L-156.2 90.2L-156.2 -90.2Z" fill="none" stroke="#0066FF" stroke-width="3"></path></g><g transform="translate(530 713)"><path d="M0 -81L70.1 -40.5L70.1 40.5L0 81L-70.1 40.5L-70.1 -40.5Z" stroke="#0066FF" fill="none" stroke-width="3"></path></g><g transform="translate(1164 696)"><path d="M0 -153L132.5 -76.5L132.5 76.5L0 153L-132.5 76.5L-132.5 -76.5Z" stroke="#0066FF" fill="none" stroke-width="3"></path></g><g transform="translate(551 206)"><path d="M0 -67L58 -33.5L58 33.5L0 67L-58 33.5L-58 -33.5Z" stroke="#0066FF" fill="none" stroke-width="3"></path></g><g transform="translate(200 507)"><path d="M0 -132L114.3 -66L114.3 66L0 132L-114.3 66L-114.3 -66Z" stroke="#0066FF" fill="none" stroke-width="3"></path></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 1440 1024" xmlns="http://www.w3.org/2000/svg">
+<rect width="1440" height="1024" fill="#fff"/>
+<g transform="translate(922 281)">
+<path d="m0-180.3 156.2 90.1v180.4l-156.2 90.1-156.2-90.1v-180.4z" fill="none" stroke="#06f" stroke-width="3">
+<animateTransform attributeName="transform" attributeType="XML" dur="40s" from="0 0 0" repeatCount="indefinite" to="360 0 0" type="rotate"/>
+</path>
+</g>
+<g transform="translate(530 713)">
+<path d="m0-81 70.1 40.5v81l-70.1 40.5-70.1-40.5v-81z" fill="none" stroke="#06f" stroke-width="3">
+<animateTransform attributeName="transform" attributeType="XML" dur="26s" from="0 0 0" repeatCount="indefinite" to="-360 0 0" type="rotate"/>
+</path>
+</g>
+<g transform="translate(1164 696)">
+<path d="m0-153 132.5 76.5v153l-132.5 76.5-132.5-76.5v-153z" fill="none" stroke="#06f" stroke-width="3">
+<animateTransform attributeName="transform" attributeType="XML" dur="32s" from="0 0 0" repeatCount="indefinite" to="-360 0 0" type="rotate"/>
+</path>
+</g>
+<g transform="translate(551 206)">
+<path d="m0-67 58 33.5v67l-58 33.5-58-33.5v-67z" fill="none" stroke="#06f" stroke-width="3">
+<animateTransform attributeName="transform" attributeType="XML" dur="62s" from="0 0 0" repeatCount="indefinite" to="360 0 0" type="rotate"/>
+</path>
+</g>
+<g transform="translate(200 507)">
+<path d="m0-132 114.3 66v132l-114.3 66-114.3-66v-132z" fill="none" stroke="#06f" stroke-width="3">
+<animateTransform attributeName="transform" attributeType="XML" dur="55s" from="0 0 0" repeatCount="indefinite" to="360 0 0" type="rotate"/>
+</path>
+</g>
+</svg>
