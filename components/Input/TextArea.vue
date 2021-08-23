@@ -1,15 +1,5 @@
 <template>
   <div class="field">
-    <!-- <input
-      type="text"
-      :name="metadata.inputname"
-      :placeholder="metadata.inputname"
-      :inputname="metadata.inputname"
-      :id="metadata.id"
-      v-model="val"
-      @input="emitVal"
-      ref="field"
-    /> -->
     <textarea
       :name="metadata.inputname"
       :placeholder="metadata.inputname"

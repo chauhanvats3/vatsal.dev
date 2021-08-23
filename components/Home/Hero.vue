@@ -1,6 +1,6 @@
 <template>
   <div class="hero" ref="hero" id="hero">
-    <div class="overlay">
+    <div class="overlay" ref="overlay">
       <div>I ❤️ To</div>
       <div>Design</div>
       <div>Elegant</div>
@@ -35,11 +35,14 @@ export default {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             this.$refs.hero.classList.remove("hide");
+            this.$refs.overlay.classList.remove("hide");
             document.querySelector("#scrollToTop").classList.add("hide");
             this.$refs.scroll.style.opacity = 1;
           } else {
             if (this.$refs.hero) {
               this.$refs.hero.classList.add("hide");
+              this.$refs.overlay.classList.add("hide");
+
               document.querySelector("#scrollToTop").classList.remove("hide");
               this.$refs.scroll.style.opacity = 0;
             }
@@ -151,6 +154,10 @@ export default {
     .flip {
       transform: rotateX(90deg);
     }
+  }
+
+  .overlay.hide {
+    display: none;
   }
 
   .designer,
