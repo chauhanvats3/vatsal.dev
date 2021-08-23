@@ -56,7 +56,7 @@ export default {
       const anime = this.$anime;
       this.$data.parallax = anime({
         targets: this.$refs.image,
-        translateY: -70,
+        translateY: -150,
         translateZ: 1,
         delay: function(el, i) {
           return i * 100;
