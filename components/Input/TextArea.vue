@@ -72,8 +72,8 @@ export default {
 
   .line {
     width: 95%;
-    height: 2px;
-    background: $blue-mid;
+    height: 3px;
+    background: #aaaaaa;
     border-radius: 1px;
   }
 
@@ -82,8 +82,8 @@ export default {
     display: block;
     width: 0;
     background: $green-light;
-    height: 2px;
-    transition: all 0.5s ease-in;
+    height: 3px;
+    transition: all 0.5s ease;
   }
 
   textarea:focus {
