@@ -183,4 +183,7 @@ ul {
     drop-shadow(0 6px 8px rgba(0, 0, 0, 0.1))
     drop-shadow(0 8px 16px rgba(0, 0, 0, 0.05));
 }
+
+svg {
+}
 </style>

@@ -19,6 +19,7 @@ export const state = () => ({
       bgImage: "/images/projects/gangaview/bg.svg",
       fontColor: "white",
       image: "/images/projects/gangaview/review.jpg",
+      projectname: "gangaview",
       key: "tst-sgvgh"
     }
   },
@@ -41,7 +42,7 @@ export const state = () => ({
       fontColor: "black",
       image: "/images/projects/satvikyogshala/review.jpg",
       bgImage: "/images/projects/satvikyogshala/bg.svg",
-
+      projectname: "satvikyogshala",
       key: "tst-svkyg"
     }
   }

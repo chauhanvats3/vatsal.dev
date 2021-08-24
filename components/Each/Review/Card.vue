@@ -1,6 +1,13 @@
 <template>
   <div class="reviewCard" :style="cssProps">
     <div class="intro">
+      <div
+        v-html="
+          require(`/static/images/projects/${dataset.projectname}/bg.svg?raw`)
+        "
+        class="bg"
+      />
+
       <img :src="dataset.image" alt="" srcset="" />
       <div class="name">
         <p>
@@ -27,6 +34,9 @@ export default {
         "--font-color": `${this.dataset.fontColor}`,
         "--bg-image": `url(${this.dataset.bgImage})`
       };
+    },
+    bgImage() {
+      return `require('/static${this.dataset.bgImage}?raw')`;
     }
   }
 };
@@ -51,10 +61,20 @@ export default {
   .intro {
     width: 55%;
     @extend %display-flex;
-    background-image: var(--bg-image);
+    overflow: hidden;
+    position: relative; /* 
+    background: var(--bg-image) repeat-x;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+ */
+    .bg {
+      position: absolute;
+      z-index: -1;
+      height: 100%;
+      min-width: 100%;
+    }
+
     img {
       border-radius: 15px;
       width: 7rem;
