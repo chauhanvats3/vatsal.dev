@@ -17,6 +17,7 @@ export const state = () => ({
         "Vatsal is a very talented designer/developer. He helped immensely in taking my business online and also designing the brand identity be it logo, business card or color palette. 10/10 Would recommend.",
       bgColor: "18, 92, 110",
       bgImage: "/images/projects/gangaview/bg.svg",
+      bgWave: "/images/projects/gangaview/wave.svg",
       fontColor: "white",
       image: "/images/projects/gangaview/review.jpg",
       projectname: "gangaview",

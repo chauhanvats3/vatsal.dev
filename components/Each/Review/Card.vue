@@ -1,13 +1,15 @@
 <template>
   <div class="reviewCard" :style="cssProps">
     <div class="intro">
-      <div
+      <!--   <div
         v-html="
           require(`/static/images/projects/${dataset.projectname}/bg.svg?raw`)
         "
         class="bg"
-      />
-
+      /> -->
+      <div class="waves">
+        <div class="wave"></div>
+      </div>
       <img :src="dataset.image" alt="" srcset="" />
       <div class="name">
         <p>
@@ -32,7 +34,8 @@ export default {
       return {
         "--bg-color": `${this.dataset.bgColor}`,
         "--font-color": `${this.dataset.fontColor}`,
-        "--bg-image": `url(${this.dataset.bgImage})`
+        "--bg-image": `url(${this.dataset.bgImage})`,
+        "--bg-wave": `url(${this.dataset.bgWave})`
       };
     },
     bgImage() {
@@ -62,19 +65,34 @@ export default {
     width: 55%;
     @extend %display-flex;
     overflow: hidden;
-    position: relative; /* 
-    background: var(--bg-image) repeat-x;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
- */
-    .bg {
+    position: relative;
+
+    .waves {
+      width: 100%;
+      height: 100%;
       position: absolute;
       z-index: -1;
-      height: 100%;
-      min-width: 100%;
-    }
+      overflow: hidden;
 
+      .wave {
+        background: var(--bg-wave) repeat-x;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding-top: 12%;
+        left: 0;
+        background-size: 200%;
+        animation: wave 8s linear infinite;
+      }
+      @keyframes wave {
+        0% {
+          background-position-x: 0;
+        }
+        100% {
+          background-position-x: 200%;
+        }
+      }
+    }
     img {
       border-radius: 15px;
       width: 7rem;
