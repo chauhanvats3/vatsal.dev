@@ -43,6 +43,7 @@ export const state = () => ({
       fontColor: "black",
       image: "/images/projects/satvikyogshala/review.jpg",
       bgImage: "/images/projects/satvikyogshala/bg.svg",
+      bgWave: "/images/projects/satvikyogshala/wave/",
       projectname: "satvikyogshala",
       key: "tst-svkyg"
     }
