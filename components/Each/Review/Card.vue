@@ -9,6 +9,9 @@
       /> -->
       <div class="waves">
         <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
       </div>
       <img :src="dataset.image" alt="" srcset="" />
       <div class="name">
@@ -35,7 +38,10 @@ export default {
         "--bg-color": `${this.dataset.bgColor}`,
         "--font-color": `${this.dataset.fontColor}`,
         "--bg-image": `url(${this.dataset.bgImage})`,
-        "--bg-wave": `url(${this.dataset.bgWave})`
+        "--bg-wave-1": `url(${this.dataset.bgWave}/1.svg)`,
+        "--bg-wave-2": `url(${this.dataset.bgWave}/2.svg)`,
+        "--bg-wave-3": `url(${this.dataset.bgWave}/3.svg)`,
+        "--bg-wave-4": `url(${this.dataset.bgWave}/4.svg)`
       };
     },
     bgImage() {
@@ -75,14 +81,43 @@ export default {
       overflow: hidden;
 
       .wave {
-        background: var(--bg-wave) repeat-x;
         position: absolute;
-        width: 100%;
         height: 100%;
         padding-top: 12%;
         left: 0;
-        background-size: 200%;
         animation: wave 8s linear infinite;
+      }
+      .wave:nth-of-type(1) {
+        width: 100%;
+        background: var(--bg-wave-1) repeat-x;
+        background-size: 200%;
+        background-position-y: 100%;
+        animation-delay: -1.25s;
+        animation-duration: 15s;
+      }
+      .wave:nth-of-type(2) {
+        width: 200%;
+        background: var(--bg-wave-2) repeat-x;
+        background-size: 50%;
+        background-position-y: 100%;
+        animation-delay: -0.25s;
+        animation-duration: 21s;
+      }
+      .wave:nth-of-type(3) {
+        width: 300%;
+        background: var(--bg-wave-3) repeat-x;
+        background-size: 25%;
+        background-position-y: 100%;
+        animation-delay: +0.55s;
+        animation-duration: 25s;
+      }
+      .wave:nth-of-type(4) {
+        width: 200%;
+        background: var(--bg-wave-4) repeat-x;
+        background-size: 50%;
+        background-position-y: 100%;
+        animation-delay: +1.75s;
+        animation-duration: 17s;
       }
       @keyframes wave {
         0% {
