@@ -27,7 +27,7 @@ export default {};
     bottom: 20%;
   }
 
-  @media (min-width: 1100px) {
+  @media (min-width: 1400px) {
     bottom: 30%;
   }
 

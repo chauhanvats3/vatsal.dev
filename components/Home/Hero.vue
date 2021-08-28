@@ -140,14 +140,21 @@ export default {
       border-bottom-right-radius: 35px;
     }
 
+    @media (max-width: 450px) {
+      font-size: 2rem;
+      line-height: 7rem;
+    }
+
     div {
       width: 100%;
       margin: 0 10px;
       padding: 0 10px;
       transition: all 0.4s ease;
+      text-align: center;
 
       @media (min-width: 800px) {
         width: auto;
+        text-align: left;
       }
     }
 
