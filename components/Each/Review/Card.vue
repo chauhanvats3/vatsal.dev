@@ -1,12 +1,6 @@
 <template>
   <div class="reviewCard" :style="cssProps">
     <div class="intro">
-      <!--   <div
-        v-html="
-          require(`/static/images/projects/${dataset.projectname}/bg.svg?raw`)
-        "
-        class="bg"
-      /> -->
       <div class="waves">
         <div class="wave"></div>
         <div class="wave"></div>
@@ -85,39 +79,43 @@ export default {
         height: 100%;
         padding-top: 12%;
         left: 0;
-        animation: wave 8s linear infinite;
+        will-change: background-position;
+        animation: wave linear infinite;
       }
       .wave:nth-of-type(1) {
         width: 100%;
-        background: var(--bg-wave-1) repeat-x;
-        background-size: 200%;
-        background-position-y: 100%;
+        background: 0% 100% / 200% repeat-x border-box var(--bg-wave-1);
+        /*  background-size: 200%;
+        background-position-y: 100%; */
         animation-delay: -1.25s;
         animation-duration: 15s;
       }
       .wave:nth-of-type(2) {
         width: 200%;
-        background: var(--bg-wave-2) repeat-x;
-        background-size: 50%;
-        background-position-y: 100%;
+        background: 0% 100% / 50% repeat-x border-box var(--bg-wave-2);
+        /*  background-size: 50%;
+        background-position-y: 100%; */
+        animation: wave 8s linear infinite, tide 5s ease infinite;
         animation-delay: -0.25s;
-        animation-duration: 21s;
+        animation-duration: 21s, 10s;
       }
       .wave:nth-of-type(3) {
         width: 300%;
-        background: var(--bg-wave-3) repeat-x;
-        background-size: 25%;
-        background-position-y: 100%;
+        background: 0% 100% / 25% repeat-x border-box var(--bg-wave-3);
+        /*    background-size: 25%;
+        background-position-y: 100%; */
         animation-delay: +0.55s;
         animation-duration: 25s;
       }
       .wave:nth-of-type(4) {
         width: 200%;
-        background: var(--bg-wave-4) repeat-x;
-        background-size: 50%;
-        background-position-y: 100%;
+        background: 0% 100% / 50% repeat-x border-box var(--bg-wave-4);
+        /*     background-size: 50%;
+        background-position-y: 100%; */
+        animation: wave 8s linear infinite, tide 5s ease infinite;
+
         animation-delay: +1.75s;
-        animation-duration: 17s;
+        animation-duration: 17s, 7s;
       }
       @keyframes wave {
         0% {
@@ -125,6 +123,16 @@ export default {
         }
         100% {
           background-position-x: 200%;
+        }
+      }
+
+      @keyframes tide {
+        0%,
+        100% {
+          transform: translate3d(0, 0, 0);
+        }
+        50% {
+          transform: translate3d(0, 20px, 0);
         }
       }
     }
@@ -142,6 +150,7 @@ export default {
         line-height: 2rem;
         margin: 15px;
         letter-spacing: 0.15rem;
+        color: rgb(var(--bg-color));
       }
     }
 

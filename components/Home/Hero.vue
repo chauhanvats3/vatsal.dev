@@ -204,41 +204,10 @@ export default {
   }
 }
 
-.hero.animate {
-  .designer,
-  .developer {
-    animation: animatedBackground 1.5s ease infinite alternate;
-
-    @media (min-width: 800px) {
-      animation: desktopAnimatedBackground 1.5s ease infinite alternate;
-    }
-  }
-}
-
 .hero.hide {
   .designer,
   .developer {
     background-image: none;
-  }
-}
-
-@keyframes animatedBackground {
-  0% {
-    background-position: center 55%, center 50%, right;
-  }
-
-  100% {
-    background-position: center 65%, center 70%, right;
-  }
-}
-
-@keyframes desktopAnimatedBackground {
-  0% {
-    background-position: right 85%, right 80%, center;
-  }
-
-  100% {
-    background-position: right 95%, right 100%, center;
   }
 }
 </style>
