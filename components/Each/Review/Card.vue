@@ -1,7 +1,7 @@
 <template>
   <div class="reviewCard" :style="cssProps">
     <div class="intro">
-      <div class="waves">
+      <div class="waves" ref="waves">
         <div class="wave"></div>
         <div class="wave"></div>
         <div class="wave"></div>
@@ -41,6 +41,30 @@ export default {
     bgImage() {
       return `require('/static${this.dataset.bgImage}?raw')`;
     }
+  },
+  methods: {
+    addWavesObserver() {
+      let wavesCallback = (entries, observer) => {
+        entries.forEach(entry => {
+          console.log(entry);
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+          } else {
+            if (this.$refs.waves) {
+              entry.target.classList.remove("animate");
+            }
+          }
+        });
+      };
+      let wavesObserver = new IntersectionObserver(wavesCallback, {});
+      this.$refs.waves.querySelectorAll(".wave").forEach(ele => {
+        wavesObserver.observe(ele);
+      });
+      //
+    }
+  },
+  mounted() {
+    this.addWavesObserver();
   }
 };
 </script>
@@ -80,43 +104,45 @@ export default {
         padding-top: 12%;
         left: 0;
         will-change: background-position;
-        animation: wave linear infinite;
       }
-      .wave:nth-of-type(1) {
-        width: 100%;
-        background: 0% 100% / 200% repeat-x border-box var(--bg-wave-1);
-        /*  background-size: 200%;
-        background-position-y: 100%; */
-        animation-delay: -1.25s;
-        animation-duration: 15s;
-      }
-      .wave:nth-of-type(2) {
-        width: 200%;
-        background: 0% 100% / 50% repeat-x border-box var(--bg-wave-2);
-        /*  background-size: 50%;
-        background-position-y: 100%; */
-        animation: wave 8s linear infinite, tide 5s ease infinite;
-        animation-delay: -0.25s;
-        animation-duration: 21s, 10s;
-      }
-      .wave:nth-of-type(3) {
-        width: 300%;
-        background: 0% 100% / 25% repeat-x border-box var(--bg-wave-3);
-        /*    background-size: 25%;
-        background-position-y: 100%; */
-        animation-delay: +0.55s;
-        animation-duration: 25s;
-      }
-      .wave:nth-of-type(4) {
-        width: 200%;
-        background: 0% 100% / 50% repeat-x border-box var(--bg-wave-4);
-        /*     background-size: 50%;
-        background-position-y: 100%; */
-        animation: wave 8s linear infinite, tide 5s ease infinite;
 
-        animation-delay: +1.75s;
-        animation-duration: 17s, 7s;
+      .wave:nth-of-type(1) {
+        background: 0% 100% / 200% repeat-x border-box var(--bg-wave-1);
       }
+
+      .wave.animate:nth-of-type(1) {
+        width: 100%;
+        animation: wave 15s linear infinite;
+        animation-delay: -1.25s;
+      }
+
+      .wave:nth-of-type(2) {
+        background: 0% 100% / 50% repeat-x border-box var(--bg-wave-2);
+      }
+      .wave.animate:nth-of-type(2) {
+        width: 200%;
+        animation: wave 21s linear infinite, tide 10s ease infinite;
+        animation-delay: -0.25s;
+      }
+
+      .wave:nth-of-type(3) {
+        background: 0% 100% / 25% repeat-x border-box var(--bg-wave-3);
+      }
+      .wave.animate:nth-of-type(3) {
+        width: 300%;
+        animation: wave 25s linear infinite;
+        animation-delay: +0.55s;
+      }
+
+      .wave:nth-of-type(4) {
+        background: 0% 100% / 50% repeat-x border-box var(--bg-wave-4);
+      }
+      .wave.animate:nth-of-type(4) {
+        width: 200%;
+        animation: wave 17s linear infinite, tide 7s ease infinite;
+        animation-delay: +1.75s;
+      }
+
       @keyframes wave {
         0% {
           background-position-x: 0;
@@ -136,6 +162,7 @@ export default {
         }
       }
     }
+
     img {
       border-radius: 15px;
       width: 7rem;
