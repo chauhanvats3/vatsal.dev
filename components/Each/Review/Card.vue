@@ -189,6 +189,7 @@ export default {
       text-align: center;
       max-width: 15ch;
       text-transform: uppercase;
+      color: rgb(var(--bg-color));
     }
   }
 

@@ -87,5 +87,6 @@ export default {
 }
 .main {
   padding-top: $navbar-height;
+  min-height: 100vh;
 }
 </style>
