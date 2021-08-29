@@ -78,6 +78,8 @@ export default {
   flex-flow: row nowrap;
   margin: 15px 45px;
   color: var(--font-color);
+  border-radius: 15px;
+
   .intro,
   .review {
     height: 100%;

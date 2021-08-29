@@ -2,14 +2,13 @@
   <div class="testimonials section">
     <Heading heading="Which Was Well Received" />
 
-    <div class="cardWrapper">
+    <CardCarousel>
       <EachReviewCard
         v-for="project in projects"
         :key="project.review.key"
         :dataset="project.review"
       />
-    </div>
-
+    </CardCarousel>
     <div class="btn btn-testimonials" @click="portfolioButtonClicked">
       <p>Testimonials</p>
     </div>
