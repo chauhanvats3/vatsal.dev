@@ -208,8 +208,7 @@ export default {
     margin: 10px;
     flex-flow: row wrap;
     height: fit-content;
-    width: min(95%, 400px);
-
+    width: 90vw;
     .intro,
     .review {
       width: 100%;
