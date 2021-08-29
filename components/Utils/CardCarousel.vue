@@ -77,7 +77,7 @@ export default {
         });
 
         scrollToElement.classList.add("active");
-      }, 400);
+      }, 100);
     }
   }
 };
