@@ -2,16 +2,13 @@
   <div class="projects">
     <Heading heading="Recently, I Worked For" />
 
-    <div class="test">
-      <CardCarousel>
-        <EachProjectCard
-          :dataset="project"
-          v-for="project in projects"
-          :key="project.key"
-        />
-      </CardCarousel>
-    </div>
-
+    <CardCarousel>
+      <EachProjectCard
+        :dataset="project"
+        v-for="project in projects"
+        :key="project.key"
+      />
+    </CardCarousel>
     <div class="btn btn-projects" @click="projectsButtonClicked">
       <p>Portfolio</p>
     </div>
@@ -42,11 +39,5 @@ export default {
   border-top-right-radius: 25px;
   position: relative;
   z-index: 1;
-
-  .test {
-    width: 100%;
-    min-height: 100vh;
-    @extend %display-flex;
-  }
 }
 </style>

@@ -7,6 +7,34 @@
         :key="project.key"
       />
     </CardCarousel>
+    <CardCarousel>
+      <EachProjectCard
+        :dataset="project"
+        v-for="project in projects"
+        :key="project.key"
+      />
+    </CardCarousel>
+    <CardCarousel>
+      <EachProjectCard
+        :dataset="project"
+        v-for="project in projects"
+        :key="project.key"
+      />
+    </CardCarousel>
+    <CardCarousel>
+      <EachProjectCard
+        :dataset="project"
+        v-for="project in projects"
+        :key="project.key"
+      />
+    </CardCarousel>
+    <CardCarousel>
+      <EachProjectCard
+        :dataset="project"
+        v-for="project in projects"
+        :key="project.key"
+      />
+    </CardCarousel>
   </div>
 </template>
 
