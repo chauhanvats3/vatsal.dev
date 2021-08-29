@@ -205,10 +205,10 @@ export default {
   }
 
   @media (max-width: 800px) {
-    margin: 10px;
+    margin: 25px 100%;
     flex-flow: row wrap;
     height: fit-content;
-    width: 90vw;
+    width: min(500px, 90vw);
     .intro,
     .review {
       width: 100%;
