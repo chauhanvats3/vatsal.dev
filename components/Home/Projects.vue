@@ -2,13 +2,14 @@
   <div class="projects">
     <Heading heading="Recently, I Worked For" />
 
-    <div class="carouselWrapper">
-      <EachProjectCard
-        :dataset="project"
-        v-for="project in projects"
-        :key="project.key"
-      />
-      <div></div>
+    <div class="test">
+      <CardCarousel>
+        <EachProjectCard
+          :dataset="project"
+          v-for="project in projects"
+          :key="project.key"
+        />
+      </CardCarousel>
     </div>
 
     <div class="btn btn-projects" @click="projectsButtonClicked">
@@ -42,15 +43,10 @@ export default {
   position: relative;
   z-index: 1;
 
-  .carouselWrapper {
+  .test {
     width: 100%;
+    min-height: 100vh;
     @extend %display-flex;
-  }
-
-  @media (max-width: 1035px) {
-    .carouselWrapper > :not(div:first-child) {
-      display: none;
-    }
   }
 }
 </style>

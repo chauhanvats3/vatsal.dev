@@ -1,11 +1,23 @@
 <template>
   <div class="test">
-    <CardCarousel />
+    <CardCarousel>
+      <EachProjectCard
+        :dataset="project"
+        v-for="project in projects"
+        :key="project.key"
+      />
+    </CardCarousel>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    projects() {
+      return this.$store.state.projects;
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

@@ -97,7 +97,7 @@ export default {
   @extend %display-flex;
   background: var(--bg-color);
   border-radius: 20px;
-  width: min(90%, 375px);
+  width: min(90vw, 375px);
   height: 550px;
   justify-content: space-between;
   margin: 30px 10px;
@@ -108,7 +108,7 @@ export default {
     0 0 16px rgba(0, 0, 0, 0.2), 0 0 32px rgba(0, 0, 0, 0.2);
 
   @media (min-width: 800px) {
-    width: min(90%, 800px);
+    width: 790px;
   }
 
   @media (max-width: 800px) {
@@ -158,6 +158,7 @@ export default {
     @media (max-width: 800px) {
       font-size: 1.3rem;
       justify-content: center;
+      text-align: center;
     }
 
     @supports (backdrop-filter: blur()) {

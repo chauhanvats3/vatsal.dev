@@ -1,21 +1,25 @@
 <template>
   <div class="carousel" ref="carousel">
-    <div class="slider">
-      <div class="slide active" id="slide-1">
+    <div class="slider" ref="slider">
+      <slot> </slot>
+      <!--    <div>
         <p>Slide1</p>
       </div>
-      <div class="slide" id="slide-2">
+      <div>
         <p>Slide2</p>
       </div>
-      <div class="slide" id="slide-3">
+      <div>
         <p>Slide3</p>
       </div>
-      <div class="slide" id="slide-4">
+      <div>
         <p>Slide4</p>
       </div>
-      <div class="slide" id="slide-5">
+      <div>
         <p>Slide5</p>
       </div>
+      <div>
+        <p>Slide6</p>
+      </div> -->
     </div>
     <div class="slide-nav">
       <div
@@ -44,7 +48,16 @@
 
 <script>
 export default {
+  mounted() {
+    this.setupSlides();
+  },
   methods: {
+    setupSlides() {
+      this.$refs.slider.children.forEach((ele, index) => {
+        if (index == 0) ele.classList.add("active");
+        ele.classList.add("slide");
+      });
+    },
     goToSlide(whereTo) {
       if (!whereTo) return;
 
@@ -52,6 +65,8 @@ export default {
 
       let scrollToElement;
       activeSlide.classList.remove("active");
+
+      console.log(whereTo);
 
       if (whereTo == "prev") {
         if (!activeSlide.previousElementSibling) {
@@ -67,6 +82,8 @@ export default {
         }
       } else {
       }
+
+      console.log(scrollToElement);
 
       scrollToElement.scrollIntoView({
         behavior: "auto",
@@ -89,7 +106,9 @@ export default {
 
   .slider {
     display: flex;
+    justify-content: space-between;
     flex-flow: row nowrap;
+    padding: 0 40%;
     width: 100%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -97,14 +116,7 @@ export default {
     -webkit-overflow-scrolling: touch;
 
     .slide {
-      width: 600px;
-      height: 300px;
-      @extend %display-flex;
       flex-shrink: 0;
-      background: rgb(67, 188, 224);
-      border-radius: 15px;
-      margin: 20px;
-      color: black;
       transition: all 0.5s ease-in-out;
       transform-origin: center;
       scroll-snap-align: center;
@@ -121,8 +133,8 @@ export default {
   }
 
   .slider::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 0px;
+    height: 0px;
   }
   .slider::-webkit-scrollbar-thumb {
     background: black;
