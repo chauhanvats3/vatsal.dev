@@ -43,7 +43,7 @@ export default {
     goToSlide(whereTo) {
       if (!whereTo) return;
 
-      window.scrollBy(0, 10);
+      window.scrollBy(0, 1);
 
       setTimeout(() => {
         let activeSlide = this.$refs.carousel.querySelector(".slide.active");
