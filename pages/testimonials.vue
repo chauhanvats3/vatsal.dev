@@ -2,11 +2,13 @@
   <div class="testimonials">
     <Heading heading="Some Of The Praises My Work Has Got " />
 
-    <EachReviewCard
-      v-for="project in projects"
-      :key="project.review.key"
-      :dataset="project.review"
-    />
+    <CardCarousel>
+      <EachReviewCard
+        v-for="project in projects"
+        :key="project.review.key"
+        :dataset="project.review"
+      />
+    </CardCarousel>
 
     <ScrollToTop />
     <IntersectionObserver />

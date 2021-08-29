@@ -112,6 +112,7 @@ export default {
   }
 
   @media (max-width: 800px) {
+    margin: 30px 100%;
     &__info {
       .title {
         .cta {

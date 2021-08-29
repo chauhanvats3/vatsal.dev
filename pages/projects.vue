@@ -2,11 +2,13 @@
   <div class="portfolio">
     <Heading heading="The feathers in my cap " />
     <div class="projects">
-      <EachProjectCard
-        :dataset="project"
-        v-for="project in projects"
-        :key="project.key"
-      />
+      <CardCarousel>
+        <EachProjectCard
+          :dataset="project"
+          v-for="project in projects"
+          :key="project.key"
+        />
+      </CardCarousel>
     </div>
     <ScrollToTop />
     <IntersectionObserver />
