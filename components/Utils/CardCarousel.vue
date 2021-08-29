@@ -2,24 +2,6 @@
   <div class="carousel" ref="carousel">
     <div class="slider" ref="slider">
       <slot> </slot>
-      <!--    <div>
-        <p>Slide1</p>
-      </div>
-      <div>
-        <p>Slide2</p>
-      </div>
-      <div>
-        <p>Slide3</p>
-      </div>
-      <div>
-        <p>Slide4</p>
-      </div>
-      <div>
-        <p>Slide5</p>
-      </div>
-      <div>
-        <p>Slide6</p>
-      </div> -->
     </div>
     <div class="slide-nav">
       <div
@@ -61,37 +43,41 @@ export default {
     goToSlide(whereTo) {
       if (!whereTo) return;
 
-      let activeSlide = this.$refs.carousel.querySelector(".slide.active");
+      window.scrollBy(0, 10);
 
-      let scrollToElement;
-      activeSlide.classList.remove("active");
+      setTimeout(() => {
+        let activeSlide = this.$refs.carousel.querySelector(".slide.active");
 
-      console.log(whereTo);
+        let scrollToElement;
+        activeSlide.classList.remove("active");
 
-      if (whereTo == "prev") {
-        if (!activeSlide.previousElementSibling) {
-          scrollToElement = activeSlide.parentElement.lastElementChild;
+        console.log(whereTo);
+
+        if (whereTo == "prev") {
+          if (!activeSlide.previousElementSibling) {
+            scrollToElement = activeSlide.parentElement.lastElementChild;
+          } else {
+            scrollToElement = activeSlide.previousElementSibling;
+          }
+        } else if (whereTo == "next") {
+          if (!activeSlide.nextElementSibling) {
+            scrollToElement = activeSlide.parentElement.firstElementChild;
+          } else {
+            scrollToElement = activeSlide.nextElementSibling;
+          }
         } else {
-          scrollToElement = activeSlide.previousElementSibling;
         }
-      } else if (whereTo == "next") {
-        if (!activeSlide.nextElementSibling) {
-          scrollToElement = activeSlide.parentElement.firstElementChild;
-        } else {
-          scrollToElement = activeSlide.nextElementSibling;
-        }
-      } else {
-      }
 
-      console.log(scrollToElement);
+        console.log(scrollToElement);
 
-      scrollToElement.scrollIntoView({
-        behavior: "auto",
-        block: "center",
-        inline: "center"
-      });
+        scrollToElement.scrollIntoView({
+          behavior: "auto",
+          block: "center",
+          inline: "center"
+        });
 
-      scrollToElement.classList.add("active");
+        scrollToElement.classList.add("active");
+      }, 400);
     }
   }
 };
