@@ -177,7 +177,7 @@ export default {
         font-size: 1rem;
         letter-spacing: 0.1rem;
         font-weight: 100;
-        background: rgba(255, 255, 255, 0.486);
+        background: rgba(133, 133, 133, 0.349);
         border-radius: 7px;
         @supports (backdrop-filter: blur()) {
           backdrop-filter: blur(4px);

@@ -94,7 +94,7 @@ export default {};
     border-radius: 20px;
     @extend %display-flex;
     @supports (backdrop-filter: blur()) {
-      backdrop-filter: blur(3px);
+      backdrop-filter: blur(2px);
     }
   }
 }

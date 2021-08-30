@@ -89,6 +89,7 @@ export default {
   overflow: hidden;
   min-height: 200px;
   position: relative;
+  margin: 50px 20px;
 
   .slider {
     display: flex;
@@ -106,6 +107,7 @@ export default {
       transition: all 0.5s ease-in-out;
       transform-origin: center;
       scroll-snap-align: center;
+      margin: 40px;
     }
 
     .slide.active {
@@ -114,7 +116,8 @@ export default {
     }
 
     .slide:not(.active) {
-      opacity: 0.65;
+      opacity: 0.45;
+      filter: blur(4px);
     }
   }
 

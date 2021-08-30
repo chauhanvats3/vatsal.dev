@@ -174,7 +174,7 @@ export default {
 .contact {
   @extend %display-flex;
   align-items: center;
-  background: #f3f3f3;
+  background: #ebebeb;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   padding: 100px 0 100px 0;

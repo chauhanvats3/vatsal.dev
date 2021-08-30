@@ -5,6 +5,7 @@
     <HomeCTA />
     <HomeProjects />
     <HomeTestimonials />
+    <HomeAbout />
     <HomeContact />
 
     <IntersectionObserver />
