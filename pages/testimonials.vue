@@ -1,6 +1,6 @@
 <template>
   <div class="testimonials">
-    <Heading heading="Some Of The Praises My Work Has Got " />
+    <Heading>Some Of The Praises My Work Has Got</Heading>
 
     <CardCarousel>
       <EachReviewCard

@@ -1,6 +1,6 @@
 <template>
   <div class="projects">
-    <Heading heading="Recently, I Worked For" />
+    <Heading>Recently, I Worked For</Heading>
 
     <CardCarousel>
       <EachProjectCard

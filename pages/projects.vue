@@ -1,6 +1,6 @@
 <template>
   <div class="portfolio">
-    <Heading heading="The feathers in my cap " />
+    <Heading>The feathers in my cap</Heading>
     <div class="projects">
       <CardCarousel>
         <EachProjectCard

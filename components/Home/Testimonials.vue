@@ -1,6 +1,6 @@
 <template>
   <div class="testimonials section">
-    <Heading heading="Which Was Well Received" />
+    <Heading>Which Was Well Received</Heading>
 
     <CardCarousel>
       <EachReviewCard

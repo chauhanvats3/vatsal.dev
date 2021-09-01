@@ -1,7 +1,5 @@
 <template>
-  <div class="soon">
-    Coming Soon
-  </div>
+  <Heading>Coming Soon</Heading>
 </template>
 
 <script>
