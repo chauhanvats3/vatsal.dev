@@ -12,7 +12,17 @@
           }
         "
       >
-        <
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16 8v-4l8 8-8 8v-4h-16l8-8h8z"
+            transform="rotate(180 12 12)"
+          />
+        </svg>
       </div>
       <div
         class="btn"
@@ -22,7 +32,14 @@
           }
         "
       >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
         >
+          <path d="M16 8v-4l8 8-8 8v-4h-16l8-8h8z" />
+        </svg>
       </div>
     </div>
   </div>
@@ -51,8 +68,6 @@ export default {
         let scrollToElement;
         activeSlide.classList.remove("active");
 
-        console.log(whereTo);
-
         if (whereTo == "prev") {
           if (!activeSlide.previousElementSibling) {
             scrollToElement = activeSlide.parentElement.lastElementChild;
@@ -67,8 +82,6 @@ export default {
           }
         } else {
         }
-
-        console.log(scrollToElement);
 
         scrollToElement.scrollIntoView({
           behavior: "auto",
@@ -86,10 +99,9 @@ export default {
 <style lang="scss" scoped>
 .carousel {
   width: 100%;
-  overflow: hidden;
   min-height: 200px;
   position: relative;
-  margin: 50px 20px;
+  margin: 20px 20px 100px 20px;
 
   .slider {
     display: flex;
@@ -100,7 +112,6 @@ export default {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
 
     .slide {
       flex-shrink: 0;
@@ -134,6 +145,7 @@ export default {
   }
 
   .slide-nav {
+    @extend %display-flex;
     .btn {
       @extend %display-flex;
       border-radius: 50%;
@@ -145,6 +157,13 @@ export default {
       margin-top: -25px;
       z-index: 2;
       transition: all 0.3s ease;
+
+      svg {
+        fill: white;
+      }
+    }
+    .btn:nth-of-type(1) {
+      left: 0;
     }
     .btn:nth-of-type(2) {
       right: 0;
