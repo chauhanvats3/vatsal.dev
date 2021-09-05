@@ -115,7 +115,7 @@ export default {};
           margin: 15px 0;
 
           @media (max-width: 800px) {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
           }
 
           a {
