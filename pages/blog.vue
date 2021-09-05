@@ -1,5 +1,7 @@
 <template>
-  <Heading>Coming Soon</Heading>
+  <div class="blog">
+    Coming Soon
+  </div>
 </template>
 
 <script>
@@ -9,7 +11,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.soon {
+.blog {
   @extend %display-flex;
   width: 100%;
   height: 100vh;
@@ -18,5 +20,7 @@ export default {
   font-family: $poiret;
   color: $blue-dark;
   padding: 10px;
+  letter-spacing: 0.2rem;
+  word-spacing: 0.8rem;
 }
 </style>
