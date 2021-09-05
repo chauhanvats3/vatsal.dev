@@ -114,6 +114,10 @@ export default {};
           letter-spacing: 0.1rem;
           margin: 15px 0;
 
+          @media (max-width: 800px) {
+            font-size: 1.4rem;
+          }
+
           a {
             color: $blue-light;
           }
