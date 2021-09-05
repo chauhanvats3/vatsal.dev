@@ -173,6 +173,7 @@ export default {
 <style lang="scss" scoped>
 .contact {
   @extend %display-flex;
+  width: 100%;
   align-items: center;
   background: #ebebeb;
   border-top-left-radius: 25px;
