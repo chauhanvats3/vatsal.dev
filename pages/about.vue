@@ -106,7 +106,7 @@ export default {};
         align-items: flex-start;
 
         @media (max-width: 800px) {
-          margin: 5px 15%;
+          margin: 5px 5%;
         }
         p {
           font-size: 1.7rem;
