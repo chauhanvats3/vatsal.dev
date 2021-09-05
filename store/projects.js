@@ -6,7 +6,7 @@ export const state = () => ({
     pills: ["Web Design", "Web Development", "Chrome Extension", "Logo"],
     bgColor: "#125C6E",
     descColor: "#ffffff",
-    image: "/images/projects/gangaview/web-mobile/whole-min.png",
+    image: "/images/projects/gangaview/web-mobile/whole.webp",
     link: "https://gangaview.com",
     key: "prt-sgvgh",
     review: {
@@ -19,7 +19,7 @@ export const state = () => ({
       bgImage: "/images/projects/gangaview/bg.svg",
       bgWave: "/images/projects/gangaview/wave/",
       fontColor: "white",
-      image: "/images/projects/gangaview/review.jpg",
+      image: "/images/projects/gangaview/review.webp",
       projectname: "gangaview",
       key: "tst-sgvgh"
     }
@@ -30,7 +30,7 @@ export const state = () => ({
     pills: ["Web Development"],
     bgColor: "#FFD700",
     descColor: "#000000",
-    image: "/images/projects/satvikyogshala/website/whole.png",
+    image: "/images/projects/satvikyogshala/website/whole.webp",
     link: "https://satvikyogshala.com",
     key: "prt-svkyg",
     review: {
@@ -41,7 +41,7 @@ export const state = () => ({
         "Thanks you bro for developing my website. Surely will work with you again when I need a redesign in the near future.",
       bgColor: "255, 215, 0",
       fontColor: "black",
-      image: "/images/projects/satvikyogshala/review.jpg",
+      image: "/images/projects/satvikyogshala/review.webp",
       bgImage: "/images/projects/satvikyogshala/bg.svg",
       bgWave: "/images/projects/satvikyogshala/wave/",
       projectname: "satvikyogshala",

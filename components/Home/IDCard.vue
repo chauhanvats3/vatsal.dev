@@ -1,6 +1,6 @@
 <template>
   <div class="id-card">
-    <img src="/images/vatsal.jpg" alt="" class="photo" />
+    <img src="/images/vatsal.webp" alt="" class="photo" />
     <div class="name">
       <strong>Vatsal</strong><br />
       Chauhan

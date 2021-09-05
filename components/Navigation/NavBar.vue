@@ -3,11 +3,10 @@
     <NuxtLink to="/">
       <div class="logo">
         <img
-          class=" drop-shadow"
-          srcset="/logo/logo-full-280w.png 280w, /logo/logo-full.svg 2000w"
+          srcset="/logo/logo-full-280w.webp 280w, /logo/logo-full.webp 2000w"
           sizes="(max-width: 600px) 280px,
             2000px"
-          src="/logo/logo-full-280w.png"
+          src="/logo/logo-full-280w.webp"
           alt="Vatsal Chauhan Logo"
         />
       </div>
@@ -90,7 +89,7 @@ export default {
     width: 150px;
 
     img {
-      height: 100%;
+      height: 75px;
     }
   }
 

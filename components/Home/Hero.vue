@@ -193,7 +193,7 @@ export default {
   }
 
   .developer {
-    background-image: url("/images/home/hero/developer.png"),
+    background-image: url("/images/home/hero/developer.webp"),
       url("/images/home/hero/base.svg"), url("/bg/hero-bg.svg");
   }
 
