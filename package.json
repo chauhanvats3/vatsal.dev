@@ -13,6 +13,7 @@
   "dependencies": {
     "@nuxt/content": "^1.5.3",
     "@nuxtjs/axios": "^5.13.1",
+    "@nuxtjs/robots": "^2.5.0",
     "core-js": "^3.9.1",
     "nodemailer": "^6.6.0",
     "nuxt": "^2.2.0"
