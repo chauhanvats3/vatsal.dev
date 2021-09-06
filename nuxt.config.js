@@ -59,7 +59,9 @@ export default {
     "@nuxtjs/svg",
     "@nuxtjs/robots"
   ],
-
+  robots: {
+    Sitemap: "https://vatsal.dev/sitemap.xml"
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
