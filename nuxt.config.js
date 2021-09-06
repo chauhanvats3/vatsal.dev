@@ -56,7 +56,8 @@ export default {
     "@nuxtjs/axios",
     "@nuxt/content",
     "@nuxtjs/style-resources",
-    "@nuxtjs/svg"
+    "@nuxtjs/svg",
+    "@nuxtjs/robots"
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
