@@ -3,7 +3,7 @@
     <Heading>This is me</Heading>
     <HomeIDCard />
 
-    <NuxtLink to="/about">
+    <NuxtLink to="/about" class="about-me-btn">
       <p class="btn">About Me</p>
     </NuxtLink>
   </div>
@@ -24,5 +24,8 @@ export default {};
   z-index: 2;
   margin-top: -20px;
   position: relative;
+  .about-me-btn {
+    margin-top: 100px;
+  }
 }
 </style>

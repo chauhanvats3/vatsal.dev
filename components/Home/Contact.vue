@@ -14,11 +14,7 @@
         :val.sync="dataset.email.val"
         @input:val="dataset.email.val = $event"
       />
-      <!-- <InputText
-        :metadata="dataset.message"
-        :val.sync="dataset.message.val"
-        @input:val="dataset.message.val = $event"
-      /> -->
+
       <InputTextArea
         :metadata="dataset.message"
         :val.sync="dataset.message.val"
@@ -201,8 +197,9 @@ export default {
     width: min(90%, 60ch);
   }
   .btn {
-    margin: 30px;
+    margin: 100px 30px 30px 30px;
     align-self: center;
+    transition: all 0.5s ease-in-out;
   }
   .btn.sending {
     cursor: wait;
