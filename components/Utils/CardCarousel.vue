@@ -156,7 +156,7 @@ export default {
       width: 50px;
       height: 50px;
       position: absolute;
-      top: 50%;
+      top: 45%;
       margin-top: -25px;
       z-index: 2;
       transition: all 0.3s ease;
