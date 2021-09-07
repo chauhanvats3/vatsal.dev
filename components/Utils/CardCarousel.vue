@@ -87,8 +87,8 @@ export default {
         }
 
         scrollToElement.scrollIntoView({
-          behavior: "auto",
-          block: "center",
+          behavior: "smooth",
+          block: "nearest",
           inline: "center"
         });
 
@@ -104,7 +104,7 @@ export default {
   width: 100%;
   min-height: 200px;
   position: relative;
-  margin: 20px 20px 100px 20px;
+  padding: 20px 20px 100px 20px;
 
   .slider {
     display: flex;
