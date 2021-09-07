@@ -49,6 +49,7 @@
 export default {
   mounted() {
     this.setupSlides();
+    this.goToSlide("0");
   },
   methods: {
     setupSlides() {
@@ -81,6 +82,8 @@ export default {
             scrollToElement = activeSlide.nextElementSibling;
           }
         } else {
+          let allSlides = this.$refs.carousel.querySelectorAll(".slide");
+          scrollToElement = allSlides[whereTo];
         }
 
         scrollToElement.scrollIntoView({

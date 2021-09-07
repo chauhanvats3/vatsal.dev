@@ -4,9 +4,6 @@
 
 <script>
 export default {
-  mounted() {
-    console.log(this.metadata);
-  },
   props: ["metadata"],
   head() {
     return {
