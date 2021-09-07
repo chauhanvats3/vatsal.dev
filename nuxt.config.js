@@ -4,7 +4,7 @@ export default {
   devtools: true,
   loading: {
     color: "#084067",
-    height: "4px",
+    height: "3px",
     continuous: true
   },
 
