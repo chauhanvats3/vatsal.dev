@@ -10,7 +10,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "Vatsal Chauhan",
+    titleTemplate: "%s | " + "Vatsal Chauhan , Designer / Developer",
+    title: "Unknown Page",
     htmlAttrs: {
       lang: "en"
     },

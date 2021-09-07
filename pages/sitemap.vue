@@ -1,5 +1,6 @@
 <template>
   <div class="sitemap">
+    <Metatags :metadata="metadata" />
     <Heading>Sitemap </Heading>
     <div class="links">
       <NuxtLink to="/">
@@ -32,7 +33,20 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      metadata: {
+        title: "Sitemap",
+        description: "All major links on this website.",
+        image: "https://vatsal.dev/images/screenshots/sitemap.webp",
+        location: "",
+        creator: "",
+        site: ""
+      }
+    };
+  }
+};
 </script>
 
 <style lang="scss" scoped>

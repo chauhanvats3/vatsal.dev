@@ -1,5 +1,7 @@
 <template>
   <div class="about">
+    <Metatags :metadata="metadata" />
+
     <Heading>Hello There! I am</Heading>
     <HomeIDCard />
     <div class="intro">
@@ -16,7 +18,8 @@
         <Heading type="h3">As a developer</Heading>
         <div class="content">
           <p>
-            I develop web apps that are SEO friendly and have high
+            I develop web apps that are performant, responsive, SEO friendly and
+            have high
             <a href="https://web.dev/measure/" target="_blank" rel="noreferrer"
               >Lighthouse</a
             >
@@ -78,7 +81,21 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      metadata: {
+        title: "About Me",
+        description:
+          "Hi! I am Vatsal Chauhan. I design modern UI/UX for single page web apps that are fast, responsive and SEO friendly",
+        image: "https://vatsal.dev/images/screenshots/about.webp",
+        location: "/about",
+        creator: "",
+        site: ""
+      }
+    };
+  }
+};
 </script>
 
 <style lang="scss" scoped>

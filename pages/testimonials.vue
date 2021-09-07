@@ -1,5 +1,6 @@
 <template>
   <div class="testimonials">
+    <Metatags :metadata="metadata" />
     <Heading>Some Of The Praises My Work Has Got</Heading>
 
     <CardCarousel>
@@ -21,6 +22,18 @@ export default {
     projects() {
       return this.$store.state.projects;
     }
+  },
+  data() {
+    return {
+      metadata: {
+        title: "Testimonials",
+        description: "All the praises that my work has got.",
+        image: "https://vatsal.dev/images/screenshots/testimonials.webp",
+        location: "",
+        creator: "",
+        site: ""
+      }
+    };
   }
 };
 </script>

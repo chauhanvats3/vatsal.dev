@@ -1,5 +1,6 @@
 <template>
   <div class="portfolio">
+    <Metatags :metadata="metadata" />
     <Heading>The feathers in my cap</Heading>
     <div class="projects">
       <CardCarousel>
@@ -21,6 +22,19 @@ export default {
     projects() {
       return this.$store.state.projects;
     }
+  },
+  data() {
+    return {
+      metadata: {
+        title: "Portfolio",
+        description:
+          "Here are some of the projects that I have worked on recently.",
+        image: "https://vatsal.dev/images/screenshots/sitemap.webp",
+        location: "",
+        creator: "",
+        site: ""
+      }
+    };
   }
 };
 </script>

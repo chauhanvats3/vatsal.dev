@@ -1,5 +1,7 @@
 <template>
   <div class="blog">
+    <Metatags :metadata="metadata" />
+
     Coming Soon
   </div>
 </template>
@@ -7,6 +9,18 @@
 <script>
 export default {
   //TODO: Custom Parallax , Blob Animation
+  data() {
+    return {
+      metadata: {
+        title: "Blog",
+        description: "Blogposts Coming Soon",
+        image: "https://source.unsplash.com/random",
+        location: "",
+        creator: "",
+        site: ""
+      }
+    };
+  }
 };
 </script>
 
