@@ -50,6 +50,7 @@ export default {
   mounted() {
     this.setupSlides();
     this.goToSlide("0");
+    this.addObserver();
   },
   methods: {
     setupSlides() {
@@ -94,6 +95,31 @@ export default {
 
         scrollToElement.classList.add("active");
       }, 100);
+    },
+    addObserver() {
+      let visibilityObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach(entry => {
+            let target = entry.target;
+
+            let activeSlide = this.$refs.carousel.querySelector(
+              ".slide.active"
+            );
+
+            if (entry.isIntersecting) {
+              activeSlide.classList.remove("active");
+              target.classList.add("active");
+            }
+          });
+        },
+        { threshold: 0.7 }
+      );
+      Array.prototype.slice
+        .call(this.$refs.slider.children)
+        .reverse()
+        .forEach((ele, index) => {
+          visibilityObserver.observe(ele);
+        });
     }
   }
 };
