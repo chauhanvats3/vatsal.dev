@@ -1,11 +1,19 @@
 <template>
   <div class="cta">
-    <div class="btn"><a href="/contact">Let's Chat</a></div>
+    <div class="btn" @click="buttonClicked">
+      <p>Let's Chat</p>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    buttonClicked() {
+      this.$router.push({ path: "/contact" });
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
