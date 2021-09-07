@@ -2,13 +2,7 @@
   <div class="navbar">
     <NuxtLink to="/">
       <div class="logo">
-        <img
-          srcset="/logo/logo-full-280w.webp 280w, /logo/logo-full.webp 2000w"
-          sizes="(max-width: 600px) 280px,
-            2000px"
-          src="/logo/logo-full-280w.webp"
-          alt="Vatsal Chauhan Logo"
-        />
+        <img src="/logo/logo-full-280w.webp" alt="Vatsal Chauhan Logo" />
       </div>
     </NuxtLink>
 
@@ -105,9 +99,6 @@ export default {
       li {
         font-size: 1rem;
         position: relative;
-      }
-
-      .nuxt-link-exact-active {
       }
 
       .line {
