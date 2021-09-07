@@ -52,7 +52,7 @@ export default {
   }
 
   .projects {
-    width: min(115ch, 98%);
+    width: 100%;
     height: 100%;
     @extend %display-flex;
     padding: 20px 0;

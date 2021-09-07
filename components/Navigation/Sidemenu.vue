@@ -1,13 +1,10 @@
 <template>
   <div class="sideMenu">
     <ul>
-      <li
-        v-for="(item, index) in menuItems"
-        :key="item.title"
-        @click="itemClicked"
-      >
+      <li v-for="item in menuItems" :key="item.title" @click="itemClicked">
         <NuxtLink :to="item.link">
           <p class="menuItem">{{ item.title }}</p>
+          <div class="line"></div>
         </NuxtLink>
       </li>
     </ul>
@@ -43,6 +40,7 @@ export default {
     li {
       margin: 20px;
       font-size: 2rem;
+      position: relative;
 
       p {
         font-family: $poiret;
@@ -50,6 +48,25 @@ export default {
         letter-spacing: 0.2rem;
       }
     }
+
+    .line {
+      position: absolute;
+      width: 0%;
+      height: 3px;
+      background: $blue-light;
+      bottom: 0px;
+      z-index: 105;
+      transition: all 0.5s ease;
+      transform-origin: center;
+    }
+
+    .nuxt-link-exact-active .line {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 1250px) {
+    display: none;
   }
 }
 </style>

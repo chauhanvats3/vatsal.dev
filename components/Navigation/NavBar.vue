@@ -17,6 +17,7 @@
         <li v-for="item in menuItems" :key="item.title">
           <NuxtLink :to="item.link">
             <p class="menuItem">{{ item.title }}</p>
+            <div class="line"></div>
           </NuxtLink>
         </li>
       </ul>
@@ -103,6 +104,25 @@ export default {
       flex-flow: row wrap;
       li {
         font-size: 1rem;
+        position: relative;
+      }
+
+      .nuxt-link-exact-active {
+      }
+
+      .line {
+        position: absolute;
+        width: 0%;
+        height: 3px;
+        background: $blue-light;
+        bottom: 0px;
+        z-index: 105;
+        transition: all 0.5s ease;
+        transform-origin: center;
+      }
+
+      .nuxt-link-exact-active .line {
+        width: 100%;
       }
 
       .menuItem {
@@ -111,11 +131,12 @@ export default {
         margin: 0 25px;
         font-family: $poiret;
         letter-spacing: 0.2rem;
+        transition: all 0.3s ease;
       }
 
       li:hover {
         .menuItem {
-          color: $blue-metal;
+          transform: scale3d(1.2, 1.2, 1);
         }
       }
     }
