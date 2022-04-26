@@ -22,7 +22,7 @@ export default {
   methods: {
     chatButtonClicked() {
       this.$router.push({ path: "/contact" });
-    }
+    },
   },
   mounted() {
     this.addHeroObserver();
@@ -32,7 +32,7 @@ export default {
   methods: {
     addHeroObserver() {
       let heroCallback = (entries, observer) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             this.$refs.hero.classList.remove("hide");
             this.$refs.overlay.classList.remove("hide");
@@ -55,7 +55,7 @@ export default {
 
     addDeveloperObserver() {
       let overlayCallback = (entries, observer) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           let ratio = entry.intersectionRatio;
           let direction = "";
           var st = window.pageYOffset || document.documentElement.scrollTop;
@@ -77,7 +77,7 @@ export default {
         });
       };
       let overlayObserver = new IntersectionObserver(overlayCallback, {
-        threshold: [0.5]
+        threshold: [0.5],
       });
       overlayObserver.observe(this.$refs.developer);
     },
@@ -94,8 +94,8 @@ export default {
           }, 650);
         }, index * 150);
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
